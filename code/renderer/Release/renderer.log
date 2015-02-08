@@ -1,0 +1,9 @@
+﻿Build started 2015-02-06 19:13:49.
+     1>Project "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\renderer\renderer.vcxproj" on node 3 (Build target(s)).
+     1>Lib:
+         renderer.vcxproj -> C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\renderer\.\Release\renderer.lib
+     1>Done Building Project "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\renderer\renderer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.17
