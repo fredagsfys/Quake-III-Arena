@@ -1,0 +1,93 @@
+﻿Build started 2015-02-06 22:34:34.
+     1>Project "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\quake3.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug/" /Gd /TC /analyze- /errorReport:prompt qcommon\common.c
+         common.c
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(149): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(346) : see declaration of '_vsnprintf'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(183): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(186): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(174) : see declaration of 'asctime'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(218): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(346) : see declaration of '_vsnprintf'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(274): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(691): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(1154): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(2258): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(2288): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(2302): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\devharis\desktop\quake-iii-arena-master\code\qcommon\common.c(2320): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/quake3.exe" /INCREMENTAL /NOLOGO winmm.lib wsock32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/quake3.pdb" /MAP:".\Debug/quake3.map" /SUBSYSTEM:WINDOWS /STACK:"8388608" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\quake3.lib" /MACHINE:X86 /SAFESEH win32\winquake.res
+         .\Debug/cl_cgame.obj
+         .\Debug/cl_cin.obj
+         .\Debug/cl_console.obj
+         .\Debug/cl_input.obj
+         .\Debug/cl_keys.obj
+         .\Debug/cl_main.obj
+         .\Debug/cl_net_chan.obj
+         .\Debug/cl_parse.obj
+         .\Debug/cl_scrn.obj
+         .\Debug/cl_ui.obj
+         .\Debug/snd_adpcm.obj
+         .\Debug/snd_dma.obj
+         .\Debug/snd_mem.obj
+         .\Debug/snd_mix.obj
+         .\Debug/snd_wavelet.obj
+         .\Debug/q_math.obj
+         .\Debug/q_shared.obj
+         .\Debug/cmd.obj
+         .\Debug/cm_load.obj
+         .\Debug/cm_patch.obj
+         .\Debug/cm_polylib.obj
+         .\Debug/cm_test.obj
+         .\Debug/cm_trace.obj
+         .\Debug/common.obj
+         .\Debug/cvar.obj
+         .\Debug/files.obj
+         .\Debug/huffman.obj
+         .\Debug/md4.obj
+         .\Debug/msg.obj
+         .\Debug/net_chan.obj
+         .\Debug/unzip.obj
+         .\Debug/vm.obj
+         .\Debug/vm_interpreted.obj
+         .\Debug/vm_x86.obj
+         .\Debug/sv_bot.obj
+         .\Debug/sv_ccmds.obj
+         .\Debug/sv_client.obj
+         .\Debug/sv_game.obj
+         .\Debug/sv_init.obj
+         .\Debug/sv_main.obj
+         .\Debug/sv_net_chan.obj
+         .\Debug/sv_snapshot.obj
+         .\Debug/sv_world.obj
+         .\Debug/win_input.obj
+         .\Debug/win_main.obj
+         .\Debug/win_net.obj
+         .\Debug/win_shared.obj
+         .\Debug/win_snd.obj
+         .\Debug/win_syscon.obj
+         .\Debug/win_wndproc.obj
+         "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\botlib\Debug\botlib.lib"
+         "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\renderer\Debug\renderer.lib"
+         "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\splines\Debug\Splines.lib"
+         quake3.vcxproj -> C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\.\Debug\quake3.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o".\Debug\quake3.bsc" .\Debug/cl_cgame.sbr .\Debug/cl_cin.sbr .\Debug/cl_console.sbr .\Debug/cl_input.sbr .\Debug/cl_keys.sbr .\Debug/cl_main.sbr .\Debug/cl_net_chan.sbr .\Debug/cl_parse.sbr .\Debug/cl_scrn.sbr .\Debug/cl_ui.sbr .\Debug/snd_adpcm.sbr .\Debug/snd_dma.sbr .\Debug/snd_mem.sbr .\Debug/snd_mix.sbr .\Debug/snd_wavelet.sbr .\Debug/q_math.sbr .\Debug/q_shared.sbr .\Debug/cmd.sbr .\Debug/cm_load.sbr .\Debug/cm_patch.sbr .\Debug/cm_polylib.sbr .\Debug/cm_test.sbr .\Debug/cm_trace.sbr .\Debug/common.sbr .\Debug/cvar.sbr .\Debug/files.sbr .\Debug/huffman.sbr .\Debug/md4.sbr .\Debug/msg.sbr .\Debug/net_chan.sbr .\Debug/unzip.sbr .\Debug/vm.sbr .\Debug/vm_interpreted.sbr .\Debug/vm_x86.sbr .\Debug/sv_bot.sbr .\Debug/sv_ccmds.sbr .\Debug/sv_client.sbr .\Debug/sv_game.sbr .\Debug/sv_init.sbr .\Debug/sv_main.sbr .\Debug/sv_net_chan.sbr .\Debug/sv_snapshot.sbr .\Debug/sv_world.sbr .\Debug/win_input.sbr .\Debug/win_main.sbr .\Debug/win_net.sbr .\Debug/win_shared.sbr .\Debug/win_snd.sbr .\Debug/win_syscon.sbr .\Debug/win_wndproc.sbr
+       PostBuildEvent:
+         rem bash -c "perl ./unix/cons -- debug"
+         :VCEnd
+     1>Done Building Project "C:\Users\devHaris\Desktop\Quake-III-Arena-master\code\quake3.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.47
