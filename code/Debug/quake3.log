@@ -1,4 +1,4 @@
-﻿Build started 2015-03-03 22:02:03.
+﻿Build started 2015-03-03 22:03:39.
      1>Project "E:\GitHub\Quake-III-Arena\code\quake3.vcxproj" on node 2 (Build target(s)).
      1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/quake3.exe" /INCREMENTAL /NOLOGO winmm.lib wsock32.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/quake3.pdb" /MAP:".\Debug/quake3.map" /SUBSYSTEM:WINDOWS /STACK:"8388608" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\quake3.lib" /MACHINE:X86 /SAFESEH win32\winquake.res
@@ -55,9 +55,13 @@
          "E:\GitHub\Quake-III-Arena\code\botlib\Debug\botlib.lib"
          "E:\GitHub\Quake-III-Arena\code\renderer\Debug\renderer.lib"
          "E:\GitHub\Quake-III-Arena\code\splines\Debug\Splines.lib"
-     1>LINK : fatal error LNK1168: cannot open .\Debug/quake3.exe for writing
-     1>Done Building Project "E:\GitHub\Quake-III-Arena\code\quake3.vcxproj" (Build target(s)) -- FAILED.
+     1>cl_cgame.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+         quake3.vcxproj -> E:\GitHub\Quake-III-Arena\code\.\Debug\quake3.exe
+       PostBuildEvent:
+         rem bash -c "perl ./unix/cons -- debug"
+         :VCEnd
+     1>Done Building Project "E:\GitHub\Quake-III-Arena\code\quake3.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.24
+Time Elapsed 00:00:02.18
