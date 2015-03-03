@@ -1,12 +1,63 @@
-﻿Build started 2015-03-03 21:42:46.
+﻿Build started 2015-03-03 22:02:03.
      1>Project "E:\GitHub\Quake-III-Arena\code\quake3.vcxproj" on node 2 (Build target(s)).
      1>Link:
-         quake3.vcxproj -> E:\GitHub\Quake-III-Arena\code\.\Debug\quake3.exe
-       PostBuildEvent:
-         rem bash -c "perl ./unix/cons -- debug"
-         :VCEnd
-     1>Done Building Project "E:\GitHub\Quake-III-Arena\code\quake3.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/quake3.exe" /INCREMENTAL /NOLOGO winmm.lib wsock32.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/quake3.pdb" /MAP:".\Debug/quake3.map" /SUBSYSTEM:WINDOWS /STACK:"8388608" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\quake3.lib" /MACHINE:X86 /SAFESEH win32\winquake.res
+         .\Debug/cl_cgame.obj
+         .\Debug/cl_cin.obj
+         .\Debug/cl_console.obj
+         .\Debug/cl_input.obj
+         .\Debug/cl_keys.obj
+         .\Debug/cl_main.obj
+         .\Debug/cl_net_chan.obj
+         .\Debug/cl_parse.obj
+         .\Debug/cl_scrn.obj
+         .\Debug/cl_ui.obj
+         .\Debug/snd_adpcm.obj
+         .\Debug/snd_dma.obj
+         .\Debug/snd_mem.obj
+         .\Debug/snd_mix.obj
+         .\Debug/snd_wavelet.obj
+         .\Debug/q_math.obj
+         .\Debug/q_shared.obj
+         .\Debug/cmd.obj
+         .\Debug/cm_load.obj
+         .\Debug/cm_patch.obj
+         .\Debug/cm_polylib.obj
+         .\Debug/cm_test.obj
+         .\Debug/cm_trace.obj
+         .\Debug/common.obj
+         .\Debug/cvar.obj
+         .\Debug/files.obj
+         .\Debug/huffman.obj
+         .\Debug/md4.obj
+         .\Debug/msg.obj
+         .\Debug/net_chan.obj
+         .\Debug/unzip.obj
+         .\Debug/vm.obj
+         .\Debug/vm_interpreted.obj
+         .\Debug/vm_x86.obj
+         .\Debug/sv_bot.obj
+         .\Debug/sv_ccmds.obj
+         .\Debug/sv_client.obj
+         .\Debug/sv_game.obj
+         .\Debug/sv_init.obj
+         .\Debug/sv_main.obj
+         .\Debug/sv_net_chan.obj
+         .\Debug/sv_snapshot.obj
+         .\Debug/sv_world.obj
+         .\Debug/win_input.obj
+         .\Debug/win_main.obj
+         .\Debug/win_net.obj
+         .\Debug/win_shared.obj
+         .\Debug/win_snd.obj
+         .\Debug/win_syscon.obj
+         .\Debug/win_wndproc.obj
+         "E:\GitHub\Quake-III-Arena\code\botlib\Debug\botlib.lib"
+         "E:\GitHub\Quake-III-Arena\code\renderer\Debug\renderer.lib"
+         "E:\GitHub\Quake-III-Arena\code\splines\Debug\Splines.lib"
+     1>LINK : fatal error LNK1168: cannot open .\Debug/quake3.exe for writing
+     1>Done Building Project "E:\GitHub\Quake-III-Arena\code\quake3.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.27
+Time Elapsed 00:00:00.24

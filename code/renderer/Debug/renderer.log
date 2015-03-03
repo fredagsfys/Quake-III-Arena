@@ -1,9 +1,9 @@
-﻿Build started 2015-03-03 21:42:46.
-     1>Project "E:\GitHub\Quake-III-Arena\code\renderer\renderer.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2015-03-03 22:02:02.
+     1>Project "E:\GitHub\Quake-III-Arena\code\renderer\renderer.vcxproj" on node 4 (Build target(s)).
      1>Lib:
          renderer.vcxproj -> E:\GitHub\Quake-III-Arena\code\renderer\.\Debug\renderer.lib
      1>Done Building Project "E:\GitHub\Quake-III-Arena\code\renderer\renderer.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.15
+Time Elapsed 00:00:00.36

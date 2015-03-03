@@ -1,9 +1,9 @@
-﻿Build started 2015-03-03 21:42:46.
-     1>Project "E:\GitHub\Quake-III-Arena\code\botlib\botlib.vcxproj" on node 4 (Build target(s)).
+﻿Build started 2015-03-03 22:02:02.
+     1>Project "E:\GitHub\Quake-III-Arena\code\botlib\botlib.vcxproj" on node 3 (Build target(s)).
      1>Lib:
          botlib.vcxproj -> E:\GitHub\Quake-III-Arena\code\botlib\.\Debug\botlib.lib
      1>Done Building Project "E:\GitHub\Quake-III-Arena\code\botlib\botlib.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.09
+Time Elapsed 00:00:00.30

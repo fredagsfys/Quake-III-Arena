@@ -1,4 +1,4 @@
-﻿Build started 2015-03-03 21:42:45.
+﻿Build started 2015-03-03 22:02:02.
      1>Project "E:\GitHub\Quake-III-Arena\code\splines\Splines.vcxproj" on node 2 (Build target(s)).
      1>Lib:
          Splines.vcxproj -> E:\GitHub\Quake-III-Arena\code\splines\.\Debug\Splines.lib
@@ -6,4 +6,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:00.26

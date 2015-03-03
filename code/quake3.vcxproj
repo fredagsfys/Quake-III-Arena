@@ -189,8 +189,8 @@
     <OutDir>.\Release_TA\</OutDir>
     <IntDir>.\Release_TA\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release TA|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -199,8 +199,8 @@
     <OutDir>.\Debug\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -209,8 +209,8 @@
     <OutDir>.\quake3___Win32_Release_TA_DEMO\</OutDir>
     <IntDir>.\quake3___Win32_Release_TA_DEMO\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release TA DEMO|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -219,8 +219,8 @@
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -229,8 +229,8 @@
     <OutDir>.\quake3___Win32_Debug_TA_DEMO\</OutDir>
     <IntDir>.\quake3___Win32_Debug_TA_DEMO\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug TA DEMO|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -239,8 +239,8 @@
     <OutDir>.\quake3___Win32_vector0\</OutDir>
     <IntDir>.\quake3___Win32_vector0\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vector|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -249,8 +249,8 @@
     <OutDir>.\Debug_TA\</OutDir>
     <IntDir>.\Debug_TA\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug TA|x64'">
     <LinkIncremental>true</LinkIncremental>
