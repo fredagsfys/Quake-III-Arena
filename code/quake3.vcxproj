@@ -189,6 +189,8 @@
     <OutDir>.\Release_TA\</OutDir>
     <IntDir>.\Release_TA\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release TA|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -197,6 +199,8 @@
     <OutDir>.\Debug\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -205,6 +209,8 @@
     <OutDir>.\quake3___Win32_Release_TA_DEMO\</OutDir>
     <IntDir>.\quake3___Win32_Release_TA_DEMO\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release TA DEMO|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -213,6 +219,8 @@
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -221,6 +229,8 @@
     <OutDir>.\quake3___Win32_Debug_TA_DEMO\</OutDir>
     <IntDir>.\quake3___Win32_Debug_TA_DEMO\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug TA DEMO|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -229,6 +239,8 @@
     <OutDir>.\quake3___Win32_vector0\</OutDir>
     <IntDir>.\quake3___Win32_vector0\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vector|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -237,6 +249,8 @@
     <OutDir>.\Debug_TA\</OutDir>
     <IntDir>.\Debug_TA\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug TA|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -259,7 +273,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Release_TA/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ProgramDatabaseFile>Release_TA/quake3.pdb</ProgramDatabaseFile>
@@ -348,7 +362,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Debug/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -441,7 +455,7 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\quake3___Win32_Release_TA_DEMO/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -524,7 +538,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Release/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -606,7 +620,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\quake3___Win32_Debug_TA_DEMO/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -692,7 +706,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\quake3___Win32_vector0/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -776,7 +790,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;wsock32.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Debug_TA/quake3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
