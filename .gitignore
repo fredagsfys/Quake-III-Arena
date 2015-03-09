@@ -38,6 +38,5 @@ code/Debug/
 code/botlib/Debug/
 code/renderer/Debug/
 code/splines/Debug/
-
-SDL2-2.0.3
+SDL2/
 
