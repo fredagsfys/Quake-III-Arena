@@ -32,3 +32,6 @@
 
 code/baseq3/
 code/Backup/
+*.cfg
+SDL2-2.0.3
+
