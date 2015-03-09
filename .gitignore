@@ -26,7 +26,6 @@
 *.app
 *.sdf
 *.opensdf
-*.vcxproj
 *.ipch
 *.bsc
 *.suo
