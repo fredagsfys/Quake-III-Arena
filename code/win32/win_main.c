@@ -41,6 +41,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 static char		sys_cmdline[MAX_STRING_CHARS];
 
+//OSKAR EDIT
+#include "../../q3_test/app_config.h"
+int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
+//OSKAR EDIT
+
 // define this to use alternate spanking method
 // I found out that the regular way doesn't work on my box for some reason
 // see the associated spank.sh script
@@ -1250,4 +1255,9 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 	// never gets here
 }
 
-
+int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+	// DO SETUP OF SYSTEM BEFORE WINMAIN
+	
+	//
+	WinMain(hInstance, hPrevInstance, lpCmdLine, nCmdShow);
+}

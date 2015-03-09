@@ -2746,7 +2746,17 @@ static void FS_Startup( const char *gameName ) {
 	fs_debug = Cvar_Get( "fs_debug", "0", 0 );
 	fs_copyfiles = Cvar_Get( "fs_copyfiles", "0", CVAR_INIT );
 	fs_cdpath = Cvar_Get ("fs_cdpath", Sys_DefaultCDPath(), CVAR_INIT );
-	fs_basepath = Cvar_Get ("fs_basepath", Sys_DefaultInstallPath(), CVAR_INIT );
+	
+	
+	//fs_basepath = Cvar_Get ("fs_basepath", Sys_DefaultInstallPath(), CVAR_INIT ); OSKAR FIX
+	char fpath[_MAX_PATH], drive[_MAX_DRIVE], dir[_MAX_DIR], fname[_MAX_FNAME], ext[_MAX_EXT];
+	_splitpath(Sys_DefaultInstallPath(), &drive, &dir, &fname, &ext);
+	strcpy(fpath, drive);
+	strcat(fpath, dir);
+	strcat(fpath, "code\\");
+	fs_basepath = Cvar_Get("fs_basepath", fpath, CVAR_INIT);
+
+
 	fs_basegame = Cvar_Get ("fs_basegame", "", CVAR_INIT );
   homePath = Sys_DefaultHomePath();
   if (!homePath || !homePath[0]) {

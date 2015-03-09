@@ -18,6 +18,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "renderer", "renderer\render
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ui", "ui\ui.vcxproj", "{A8EAC38E-C7DA-42F8-811D-77FD092B9D19}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "q3_test", "..\q3_test\q3_test.vcxproj", "{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852} = {81CB51C4-B434-4E12-B69B-BAEE102F2852}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Alpha|Win32 = Debug Alpha|Win32
@@ -319,6 +324,33 @@ Global
 		{A8EAC38E-C7DA-42F8-811D-77FD092B9D19}.vector|Win32.ActiveCfg = vector|Win32
 		{A8EAC38E-C7DA-42F8-811D-77FD092B9D19}.vector|Win32.Build.0 = vector|Win32
 		{A8EAC38E-C7DA-42F8-811D-77FD092B9D19}.vector|x64.ActiveCfg = vector|x64
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug Alpha|Win32.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug Alpha|Win32.Build.0 = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug Alpha|x64.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug TA DEMO|Win32.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug TA DEMO|Win32.Build.0 = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug TA DEMO|x64.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug TA|Win32.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug TA|Win32.Build.0 = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug TA|x64.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug|Win32.Build.0 = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Debug|x64.ActiveCfg = Debug|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release Alpha|Win32.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release Alpha|Win32.Build.0 = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release Alpha|x64.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release TA DEMO|Win32.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release TA DEMO|Win32.Build.0 = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release TA DEMO|x64.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release TA|Win32.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release TA|Win32.Build.0 = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release TA|x64.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release|Win32.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release|Win32.Build.0 = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.Release|x64.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.vector|Win32.ActiveCfg = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.vector|Win32.Build.0 = Release|Win32
+		{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}.vector|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
