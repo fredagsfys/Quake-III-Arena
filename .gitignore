@@ -31,7 +31,12 @@
 *.suo
 *.cfg
 
+q3_test/Debug/
 code/baseq3/
+code/game/Debug/
+code/cgame/Debug/
+code/q3_ui/Debug/
+code/q3_ui/q3_ui___Win32_Debug/
 code/Backup/
 code/Debug/
 code/botlib/Debug/
