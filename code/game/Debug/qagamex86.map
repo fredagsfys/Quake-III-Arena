@@ -1,6 +1,6 @@
  qagamex86
 
- Timestamp is 54f61ca0 (Tue Mar 03 21:42:08 2015)
+ Timestamp is 54fdc01e (Mon Mar 09 16:45:34 2015)
 
  Preferred load address is 20000000
 
@@ -41,10 +41,10 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___guard_fids_count        00000000     <absolute>
- 0000:00000000       ___guard_flags             00000000     <absolute>
  0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000000       ___guard_flags             00000000     <absolute>
  0000:00000000       ___guard_fids_table        00000000     <absolute>
+ 0000:00000000       ___guard_fids_count        00000000     <absolute>
  0000:0000000c       ___safe_se_handler_count   0000000c     <absolute>
  0000:00000000       ___ImageBase               20000000     <linker-defined>
  0001:00000000       _BotChatTest               20001000 f   ai_chat.obj
@@ -1062,8 +1062,8 @@
  0001:0005da40       __CIsin                    2005ea40 f   LIBCMTD:sin.obj
  0001:0005da7b       __CIsin_default            2005ea7b f   LIBCMTD:sin.obj
  0001:0005da8f       __sin_default              2005ea8f     LIBCMTD:sin.obj
- 0001:0005db30       __alloca_probe             2005eb30 f   LIBCMTD:chkstk.obj
  0001:0005db30       __chkstk                   2005eb30 f   LIBCMTD:chkstk.obj
+ 0001:0005db30       __alloca_probe             2005eb30 f   LIBCMTD:chkstk.obj
  0001:0005db60       __tolower                  2005eb60 f   LIBCMTD:tolower.obj
  0001:0005db70       __tolower_l                2005eb70 f   LIBCMTD:tolower.obj
  0001:0005ddb0       _tolower                   2005edb0 f   LIBCMTD:tolower.obj
@@ -1864,8 +1864,8 @@
  0001:000a1309       __abnormal_termination     200a2309 f   LIBCMTD:exsup.obj
  0001:000a132c       __NLG_Notify1              200a232c f   LIBCMTD:exsup.obj
  0001:000a1335       __NLG_Notify               200a2335 f   LIBCMTD:exsup.obj
- 0001:000a134c       __NLG_Dispatch             200a234c     LIBCMTD:exsup.obj
  0001:000a134c       __NLG_Dispatch2            200a234c     LIBCMTD:exsup.obj
+ 0001:000a134c       __NLG_Dispatch             200a234c     LIBCMTD:exsup.obj
  0001:000a1354       __NLG_Call                 200a2354 f   LIBCMTD:exsup.obj
  0001:000a1356       __NLG_Return2              200a2356     LIBCMTD:exsup.obj
  0001:000a1360       ??3@YAXPAX@Z               200a2360 f   LIBCMTD:dbgdel.obj
@@ -1899,14 +1899,14 @@
  0001:000a18b0       ??1bad_typeid@std@@UAE@XZ  200a28b0 f   LIBCMTD:stdexcpt.obj
  0001:000a18d0       ??1exception@std@@UAE@XZ   200a28d0 f   LIBCMTD:stdexcpt.obj
  0001:000a18f0       ??4exception@std@@QAEAAV01@ABV01@@Z 200a28f0 f   LIBCMTD:stdexcpt.obj
- 0001:000a1940       ??_E__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1940       ??_G__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
- 0001:000a1970       ??_Gbad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1940       ??_E__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1970       ??_Ebad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
- 0001:000a19a0       ??_Ebad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1970       ??_Gbad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
  0001:000a19a0       ??_Gbad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
- 0001:000a19d0       ??_Gexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a19a0       ??_Ebad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
  0001:000a19d0       ??_Eexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a19d0       ??_Gexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
  0001:000a1a00       ?_Copy_str@exception@std@@AAEXPBD@Z 200a2a00 f   LIBCMTD:stdexcpt.obj
  0001:000a1a60       ?_Tidy@exception@std@@AAEXXZ 200a2a60 f   LIBCMTD:stdexcpt.obj
  0001:000a1aa0       ?what@exception@std@@UBEPBDXZ 200a2aa0 f   LIBCMTD:stdexcpt.obj
@@ -3385,7 +3385,7 @@
  0002:00004dd4       ??_C@_08HCPAIKAO@gamename?$AA@ 200b4dd4     g_main.obj
  0002:00004de0       ??_C@_06KOMAFLML@baseq3?$AA@ 200b4de0     g_main.obj
  0002:00004de8       ??_C@_08CLLHAKFA@gamedate?$AA@ 200b4de8     g_main.obj
- 0002:00004df4       ??_C@_0M@PCJHIJ@Mar?5?53?52015?$AA@ 200b4df4     g_main.obj
+ 0002:00004df4       ??_C@_0M@KEICMIMH@Mar?5?59?52015?$AA@ 200b4df4     g_main.obj
  0002:00004e00       ??_C@_0M@GHMJJAD@g_restarted?$AA@ 200b4e00     g_main.obj
  0002:00004e0c       ??_C@_0L@DFBEGALI@sv_mapname?$AA@ 200b4e0c     g_main.obj
  0002:00004e18       ??_C@_0BB@JCLDAPBF@g_maxGameClients?$AA@ 200b4e18     g_main.obj
