@@ -2,7 +2,6 @@
 #include "fff.h"
 #include "unity.h"
 
-
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 
 void test(void) {
@@ -17,7 +16,26 @@ void test(void) {
 	while (1) {}*/
 }
 
-int WINAPI WinMain2(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+
+int main(void) {
+	char* line[1024];
+
+	do {
+
+		scanf("%s", line);
+		
+		if (strchr(line, 'run')) { // RUN TESTS
+
+			puts("Running tests...");
+			// DO SOMETHING
+
+
+		}
+
+	} while (!strchr(line, 'exit'));
+}
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	appConfig config = { CONNECT_FAIL };
 
 	int threadId;
@@ -30,7 +48,7 @@ int WINAPI WinMain2(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 		0,			//   DWORD fdwCreate,
 		&threadId);*/
 
-	RunApplication(config, hInstance, NULL, "", SW_SHOW);
+	//RunApplication(config, hInstance, NULL, "", SW_SHOW);
 
 	//WaitForSingleObject(h, INFINITE);
 	//HANDLE* h2[1];
@@ -38,7 +56,7 @@ int WINAPI WinMain2(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 
 	//MsgWaitForMultipleObjects(1, h2, 1, INFINITE, QS_ALLEVENTS);
 
-
+	getchar();
 }
 
 
