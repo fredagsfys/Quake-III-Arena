@@ -3,8 +3,17 @@
 #include "unity.h"
 
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
+void Cbuf_ExecuteText(int exec_when, const char *text);
+void Cmd_Echo_f(void);
+
+void test2(char* msg) {
+	Cmd_AddCommand("echo2", Cmd_Echo_f);
+	Cbuf_ExecuteText(2, msg);
+};
 
 void test(void) {
+
+	appConfig config = { CONNECT_FAIL, &test2 };
 
 	/*Sys_CreateConsole();
 	Com_InitSmallZoneMemory();
@@ -14,10 +23,28 @@ void test(void) {
 	Cbuf_AddText("echo hej");
 	Cbuf_Execute();
 	while (1) {}*/
+
+	RunApplication(config, NULL, NULL, "", SW_SHOW);
 }
 
 
 int main(void) {
+
+	int threadId;
+
+	puts("Starting quake3...");
+
+	HANDLE h = CreateThread(
+		NULL,	// LPSECURITY_ATTRIBUTES lpsa,
+		0,		// DWORD cbStack,
+		(LPTHREAD_START_ROUTINE)test,	// LPTHREAD_START_ROUTINE lpStartAddr,
+		0,			// LPVOID lpvThreadParm,
+		0,			//   DWORD fdwCreate,
+		&threadId);
+	//WaitForSingleObject(h, INFINITE);
+
+	puts("quake3 started!");
+
 	char* line[1024];
 
 	do {
@@ -29,28 +56,18 @@ int main(void) {
 			puts("Running tests...");
 			// DO SOMETHING
 
-
 		}
 
 	} while (!strchr(line, 'exit'));
 }
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-	appConfig config = { CONNECT_FAIL };
+int WINAPI WinMain2(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
-	int threadId;
 
-	/*HANDLE h = CreateThread(
-		NULL,	// LPSECURITY_ATTRIBUTES lpsa,
-		0,		// DWORD cbStack,
-		(LPTHREAD_START_ROUTINE)test,	// LPTHREAD_START_ROUTINE lpStartAddr,
-		0,			// LPVOID lpvThreadParm,
-		0,			//   DWORD fdwCreate,
-		&threadId);*/
 
 	//RunApplication(config, hInstance, NULL, "", SW_SHOW);
 
-	//WaitForSingleObject(h, INFINITE);
+
 	//HANDLE* h2[1];
 	//h2[0] = h;
 

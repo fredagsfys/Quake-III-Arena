@@ -10,5 +10,6 @@ typedef enum simulatedError {
 
 typedef struct configStruct {
 	simulatedError errorType;
+	void* ptr;
 } appConfig;
 

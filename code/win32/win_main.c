@@ -1295,6 +1295,14 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 		Sys_ShowConsole(0, qfalse);
 	}
 
+	
+
+	void(*testing)(char* msg);
+
+	testing = config.ptr;
+
+	testing("echo2 hej");
+
 	// main game loop
 	while (1) {
 		// if not running as a game client, sleep a bit
