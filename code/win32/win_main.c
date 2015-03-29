@@ -42,7 +42,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 static char		sys_cmdline[MAX_STRING_CHARS];
 
 //OSKAR EDIT
-#include "../../q3_test/app_config.h"
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 //OSKAR EDIT
 
@@ -1214,7 +1213,9 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 
 	Sys_InitStreamThread();
 
-	Com_Init( sys_cmdline );
+	appConfig config;
+
+	Com_Init( sys_cmdline , config);
 	NET_Init();
 
 	_getcwd (cwd, sizeof(cwd));
@@ -1283,7 +1284,7 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 
 	Sys_InitStreamThread();
 
-	Com_Init(sys_cmdline);
+	Com_Init(sys_cmdline, config); // OSKAR FIX
 	NET_Init();
 
 	_getcwd(cwd, sizeof(cwd));
@@ -1294,14 +1295,6 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 	if (!com_dedicated->integer && !com_viewlog->integer) {
 		Sys_ShowConsole(0, qfalse);
 	}
-
-	
-
-	void(*testing)(char* msg);
-
-	testing = config.ptr;
-
-	testing("echo2 hej");
 
 	// main game loop
 	while (1) {
@@ -1323,6 +1316,12 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 
 		// run the game
 		Com_Frame();
+
+		if (!config.finished) {
+			void(*testing)(appConfig config) = config.ptr;
+			testing(config);
+			config.finished = 1;
+		}
 
 		endTime = Sys_Milliseconds();
 		totalMsec += endTime - startTime;

@@ -321,6 +321,34 @@ static	char		cmd_cmd[BIG_INFO_STRING]; // the original command we received (no t
 
 static	cmd_function_t	*cmd_functions;		// possible commands to execute
 
+// OSKAR FIX
+int checkIfCommandExists(char* command) {
+
+	int size = 0;
+	while (1) {
+		char c = command[size];
+		if (c == '\0') break;
+		size++;
+	}
+
+	int found = 0;
+
+	cmd_function_t *cmd;
+	int i = 0;
+	for (cmd = cmd_functions; cmd; cmd = cmd->next) {
+		for (int j = 0; j < size; j++)
+		{
+			if (cmd->name[j] == '\0' || cmd->name[j] != command[j]) break;
+			if (j == (size - 1)) found = 1;
+		}
+		if (found) break;
+		i++;
+	}
+
+	return found;
+}
+
+
 /*
 ============
 Cmd_Argc

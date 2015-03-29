@@ -1,6 +1,6 @@
  qagamex86
 
- Timestamp is 54fdc01e (Mon Mar 09 16:45:34 2015)
+ Timestamp is 5518482c (Sun Mar 29 20:45:00 2015)
 
  Preferred load address is 20000000
 
@@ -41,8 +41,8 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___guard_flags             00000000     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___guard_fids_table        00000000     <absolute>
  0000:00000000       ___guard_fids_count        00000000     <absolute>
  0000:0000000c       ___safe_se_handler_count   0000000c     <absolute>
@@ -1757,8 +1757,8 @@
  0001:00097cb0       ??0bad_exception@std@@QAE@ABV01@@Z 20098cb0 f i LIBCMTD:frame.obj
  0001:00097ce0       ??0bad_exception@std@@QAE@PBD@Z 20098ce0 f i LIBCMTD:frame.obj
  0001:00097d10       ??1bad_exception@std@@UAE@XZ 20098d10 f i LIBCMTD:frame.obj
- 0001:00097d30       ??_Gbad_exception@std@@UAEPAXI@Z 20098d30 f i LIBCMTD:frame.obj
  0001:00097d30       ??_Ebad_exception@std@@UAEPAXI@Z 20098d30 f i LIBCMTD:frame.obj
+ 0001:00097d30       ??_Gbad_exception@std@@UAEPAXI@Z 20098d30 f i LIBCMTD:frame.obj
  0001:00098920       ?__uncaught_exception@@YA_NXZ 20099920 f   LIBCMTD:frame.obj
  0001:00098950       ?_is_exception_typeof@@YAHABVtype_info@@PAU_EXCEPTION_POINTERS@@@Z 20099950 f   LIBCMTD:frame.obj
  0001:00098a30       __SetWinRTOutOfMemoryExceptionCallback 20099a30 f   LIBCMTD:frame.obj
@@ -1877,8 +1877,8 @@
  0001:000a14f0       ??4type_info@@AAEAAV0@ABV0@@Z 200a24f0 f   LIBCMTD:typinfo.obj
  0001:000a1500       ??8type_info@@QBE_NABV0@@Z 200a2500 f   LIBCMTD:typinfo.obj
  0001:000a1540       ??9type_info@@QBE_NABV0@@Z 200a2540 f   LIBCMTD:typinfo.obj
- 0001:000a1580       ??_Etype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
  0001:000a1580       ??_Gtype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
+ 0001:000a1580       ??_Etype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
  0001:000a15b0       ?_name_internal_method@type_info@@QBEPBDPAU__type_info_node@@@Z 200a25b0 f   LIBCMTD:typinfo.obj
  0001:000a15d0       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 200a25d0 f   LIBCMTD:typinfo.obj
  0001:000a15f0       ?before@type_info@@QBE_NABV1@@Z 200a25f0 f   LIBCMTD:typinfo.obj
@@ -1899,14 +1899,14 @@
  0001:000a18b0       ??1bad_typeid@std@@UAE@XZ  200a28b0 f   LIBCMTD:stdexcpt.obj
  0001:000a18d0       ??1exception@std@@UAE@XZ   200a28d0 f   LIBCMTD:stdexcpt.obj
  0001:000a18f0       ??4exception@std@@QAEAAV01@ABV01@@Z 200a28f0 f   LIBCMTD:stdexcpt.obj
- 0001:000a1940       ??_G__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1940       ??_E__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
- 0001:000a1970       ??_Ebad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1940       ??_G__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1970       ??_Gbad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
- 0001:000a19a0       ??_Gbad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1970       ??_Ebad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
  0001:000a19a0       ??_Ebad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
- 0001:000a19d0       ??_Eexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a19a0       ??_Gbad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
  0001:000a19d0       ??_Gexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a19d0       ??_Eexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
  0001:000a1a00       ?_Copy_str@exception@std@@AAEXPBD@Z 200a2a00 f   LIBCMTD:stdexcpt.obj
  0001:000a1a60       ?_Tidy@exception@std@@AAEXXZ 200a2a60 f   LIBCMTD:stdexcpt.obj
  0001:000a1aa0       ?what@exception@std@@UBEPBDXZ 200a2aa0 f   LIBCMTD:stdexcpt.obj
@@ -3385,7 +3385,7 @@
  0002:00004dd4       ??_C@_08HCPAIKAO@gamename?$AA@ 200b4dd4     g_main.obj
  0002:00004de0       ??_C@_06KOMAFLML@baseq3?$AA@ 200b4de0     g_main.obj
  0002:00004de8       ??_C@_08CLLHAKFA@gamedate?$AA@ 200b4de8     g_main.obj
- 0002:00004df4       ??_C@_0M@KEICMIMH@Mar?5?59?52015?$AA@ 200b4df4     g_main.obj
+ 0002:00004df4       ??_C@_0M@JKBMPOJB@Mar?529?52015?$AA@ 200b4df4     g_main.obj
  0002:00004e00       ??_C@_0M@GHMJJAD@g_restarted?$AA@ 200b4e00     g_main.obj
  0002:00004e0c       ??_C@_0L@DFBEGALI@sv_mapname?$AA@ 200b4e0c     g_main.obj
  0002:00004e18       ??_C@_0BB@JCLDAPBF@g_maxGameClients?$AA@ 200b4e18     g_main.obj
@@ -3777,8 +3777,8 @@
  0002:000078a0       ??_C@_1LO@CHAFGADE@?$AAw?$AAc?$AAs?$AAc?$AAa?$AAt?$AA_?$AAs?$AA?$CI?$AAa?$AAs?$AAs?$AAe?$AAr?$AAt?$AAb?$AAu?$AAf?$AA?0?$AA?5?$AA?$CI?$AA6?$AA4?$AA?5?$AA?$CK?$AA?5?$AA9?$AA?$CJ?$AA?0?$AA?5?$AAL?$AA?$CC@ 200b78a0     LIBCMTD:wassert.obj
  0002:00007960       ??_C@_1HK@POCJMFGK@?$AA?$CI?$AAP?$AAr?$AAe?$AAs?$AAs?$AA?5?$AAR?$AAe?$AAt?$AAr?$AAy?$AA?5?$AAt?$AAo?$AA?5?$AAd?$AAe?$AAb?$AAu?$AAg?$AA?5?$AAt?$AAh?$AAe?$AA?5?$AAa?$AAp?$AAp?$AAl?$AAi?$AAc@ 200b7960     LIBCMTD:wassert.obj
  0002:000079e0       ??_C@_1EK@MBDPDCGA@?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?5?$AAV?$AAi?$AAs?$AAu?$AAa?$AAl?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAR?$AAu?$AAn?$AAt?$AAi?$AAm?$AAe?$AA?5?$AAL?$AAi?$AAb@ 200b79e0     LIBCMTD:wassert.obj
- 0002:00007a2c       __pDefaultRawDllMain       200b7a2c     LIBCMTD:dllcrt0.obj
  0002:00007a2c       __pRawDllMain              200b7a2c     LIBCMTD:dllcrt0.obj
+ 0002:00007a2c       __pDefaultRawDllMain       200b7a2c     LIBCMTD:dllcrt0.obj
  0002:00007a30       ??_C@_0CL@OOIKPIHN@f?3?2dd?2vctools?2crt?2crtw32?2startup@ 200b7a30     LIBCMTD:dllcrt0.obj
  0002:00007a5c       ??_C@_1BK@MGMFAEKH@?$AAk?$AAe?$AAr?$AAn?$AAe?$AAl?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@ 200b7a5c     LIBCMTD:winapisupp.obj
  0002:00007a78       ??_C@_08KNHFBNJ@FlsAlloc?$AA@ 200b7a78     LIBCMTD:winapisupp.obj

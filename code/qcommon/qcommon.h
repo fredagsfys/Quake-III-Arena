@@ -25,6 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "../qcommon/cm_public.h"
 
+// OSKAR FIX
+#include "../../q3_test/app_config.h"
+
 //#define	PRE_RELEASE_DEMO
 
 //============================================================================
@@ -807,7 +810,7 @@ void Hunk_Trash( void );
 void Com_TouchMemory( void );
 
 // commandLine should not include the executable name (argv[0])
-void Com_Init( char *commandLine );
+void Com_Init( char *commandLine, appConfig config); // OSKAR FIX
 void Com_Frame( void );
 void Com_Shutdown( void );
 

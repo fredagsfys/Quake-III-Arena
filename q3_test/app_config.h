@@ -1,4 +1,4 @@
-#include <Windows.h>
+
 
 typedef enum simulatedError {
 	CLIENT_DROPPED,
@@ -11,5 +11,11 @@ typedef enum simulatedError {
 typedef struct configStruct {
 	simulatedError errorType;
 	void* ptr;
+	void* commandPtr;
+	char* commandName;
+	char* execString;
+	int* finished;
+	int* messageThreadId;
+	int* isServer;
 } appConfig;
 

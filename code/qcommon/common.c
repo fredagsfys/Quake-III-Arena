@@ -2348,7 +2348,7 @@ static void Com_WriteCDKey( const char *filename, const char *ikey ) {
 Com_Init
 =================
 */
-void Com_Init( char *commandLine ) {
+void Com_Init( char *commandLine, appConfig config ) {
 	char	*s;
 
 	Com_Printf( "%s %s %s\n", Q3_VERSION, CPUSTRING, __DATE__ );
@@ -2401,12 +2401,28 @@ void Com_Init( char *commandLine ) {
 	Com_StartupVariable( NULL );
 
   // get dedicated here for proper hunk megs initialization
-#ifdef DEDICATED
+
+	// OSKAR FIX
+/*#ifdef DEDICATED
 	com_dedicated = Cvar_Get ("dedicated", "1", CVAR_ROM);
 #else
-	//com_dedicated = Cvar_Get ("dedicated", "0", CVAR_LATCH); - OSKAR FIX
+	com_dedicated = Cvar_Get ("dedicated", "0", CVAR_LATCH);
 	com_dedicated = Cvar_Get("dedicated", "1", CVAR_ROM);
-#endif
+#endif*/
+	if (config.isServer) {
+		if (com_dedicated) {
+			com_dedicated->integer = 1;
+		} else {
+			com_dedicated = Cvar_Get("dedicated", "1", CVAR_ROM);
+		}
+	} else {
+		if (com_dedicated) {
+			com_dedicated->integer = 0;
+		} else {
+			com_dedicated = Cvar_Get("dedicated", "0", CVAR_LATCH);
+		}
+	}
+
 	// allocate the stack based hunk allocator
 	Com_InitHunkMemory();
 
