@@ -7,6 +7,7 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 void Cbuf_ExecuteText(int exec_when, const char *text);
 void Cmd_Echo_f(void);
 void CL_Connect_f(void);
+void CL_Init(void);
 int checkIfCommandExists(char* command);
 
 void clientFunc(appConfig config) {
@@ -15,14 +16,14 @@ void clientFunc(appConfig config) {
 	puts("");
 	puts("Starting test one, creating command 'echo2' and using it");
 
-	Cmd_RemoveCommand(config.commandName);
+	/*Cmd_RemoveCommand(config.commandName);
 	Cmd_AddCommand(config.commandName, config.commandPtr);
 
 	BOOL hej = checkIfCommandExists(config.commandName);
 	if (hej) {
 		Cbuf_ExecuteText(1, "echo2 echo2 was found");
 		puts("Echo2 was found. Test successful!");
-	}
+	}*/
 }
 
 void serverFunc(appConfig config) {
@@ -33,11 +34,12 @@ void serverFunc(appConfig config) {
 
 	Cmd_RemoveCommand(config.commandName);
 	Cmd_AddCommand(config.commandName, config.commandPtr);
+	CL_Init();
 
 	BOOL hej = checkIfCommandExists(config.commandName);
 	if (hej) {
-		Cbuf_ExecuteText(1, "echo2 echo2 was found");
-		puts("Echo2 was found. Test successful!");
+		Cbuf_ExecuteText(1, config.execString);
+		//puts("Echo2 was found. Test successful!");
 	}
 }
 
@@ -62,9 +64,9 @@ void server(void) {
 	config.errorType = CONNECT_FAIL;
 	config.isServer = TRUE;
 	config.ptr = &serverFunc;
-	config.commandName = "echo2";
-	config.commandPtr = &Cmd_Echo_f;
-	config.execString = "echo2 1234123123";
+	config.commandName = "connect";
+	config.commandPtr = &CL_Connect_f;
+	config.execString = "connect 127.0.0.1";
 	config.messageThreadId = 0;
 	config.finished = FALSE;
 

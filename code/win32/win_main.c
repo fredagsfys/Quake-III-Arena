@@ -1285,6 +1285,7 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 	Sys_InitStreamThread();
 
 	Com_Init(sys_cmdline, config); // OSKAR FIX
+
 	NET_Init();
 
 	_getcwd(cwd, sizeof(cwd));

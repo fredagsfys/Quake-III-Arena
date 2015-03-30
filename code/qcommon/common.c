@@ -2361,6 +2361,7 @@ void Com_Init( char *commandLine, appConfig config ) {
   Com_InitPushEvent();
 
 	Com_InitSmallZoneMemory();
+
 	Cvar_Init ();
 
 	// prepare enough of the subsystems to handle
@@ -2477,7 +2478,6 @@ void Com_Init( char *commandLine, appConfig config ) {
 
 	s = va("%s %s %s", Q3_VERSION, CPUSTRING, __DATE__ );
 	com_version = Cvar_Get ("version", s, CVAR_ROM | CVAR_SERVERINFO );
-
 	Sys_Init();
 	Netchan_Init( Com_Milliseconds() & 0xffff );	// pick a port value that should be nice and random
 	VM_Init();
@@ -2661,10 +2661,6 @@ void Com_Frame( void ) {
 	int           timeBeforeClient;
 	int           timeAfter;
   
-
-
-
-
 	if ( setjmp (abortframe) ) {
 		return;			// an ERR_DROP was thrown
 	}
