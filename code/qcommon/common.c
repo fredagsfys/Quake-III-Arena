@@ -2404,25 +2404,12 @@ void Com_Init( char *commandLine, appConfig config ) {
   // get dedicated here for proper hunk megs initialization
 
 	// OSKAR FIX
-/*#ifdef DEDICATED
+#ifdef DEDICATED
 	com_dedicated = Cvar_Get ("dedicated", "1", CVAR_ROM);
 #else
-	com_dedicated = Cvar_Get ("dedicated", "0", CVAR_LATCH);
+	//com_dedicated = Cvar_Get ("dedicated", "0", CVAR_LATCH);
 	com_dedicated = Cvar_Get("dedicated", "1", CVAR_ROM);
-#endif*/
-	if (config.isServer) {
-		if (com_dedicated) {
-			com_dedicated->integer = 1;
-		} else {
-			com_dedicated = Cvar_Get("dedicated", "1", CVAR_ROM);
-		}
-	} else {
-		if (com_dedicated) {
-			com_dedicated->integer = 0;
-		} else {
-			com_dedicated = Cvar_Get("dedicated", "0", CVAR_LATCH);
-		}
-	}
+#endif
 
 	// allocate the stack based hunk allocator
 	Com_InitHunkMemory();

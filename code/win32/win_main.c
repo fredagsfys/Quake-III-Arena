@@ -43,6 +43,7 @@ static char		sys_cmdline[MAX_STRING_CHARS];
 
 //OSKAR EDIT
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
+appConfig activeConfig;
 //OSKAR EDIT
 
 // define this to use alternate spanking method
@@ -1297,6 +1298,8 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 		Sys_ShowConsole(0, qfalse);
 	}
 
+	activeConfig = config;
+
 	// main game loop
 	while (1) {
 		// if not running as a game client, sleep a bit
@@ -1318,10 +1321,19 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 		// run the game
 		Com_Frame();
 
-		if (!config.finished) {
-			void(*testing)(appConfig config) = config.ptr;
-			testing(config);
-			config.finished = 1;
+		int configCount = 1;
+		if (activeConfig.finished) {
+			if (activeConfig.next && countMsec > (100 * configCount)) {
+				activeConfig = *activeConfig.next;
+				void(*testing)(appConfig config) = activeConfig.ptr;
+				testing(activeConfig);
+				activeConfig.finished = 1;
+			}
+		} else {
+			void(*testing)(appConfig config) = activeConfig.ptr;
+			testing(activeConfig);
+			activeConfig.finished = 1;
+			configCount++;
 		}
 
 		endTime = Sys_Milliseconds();
@@ -1332,4 +1344,8 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 	// never gets here
 	//
 	//WinMain(hInstance, hPrevInstance, lpCmdLine, nCmdShow);
+}
+
+appConfig getConfig(void) {
+	return activeConfig;
 }

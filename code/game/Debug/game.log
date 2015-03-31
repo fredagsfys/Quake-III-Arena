@@ -1,141 +1,141 @@
-﻿Build started 2015-03-30 09:59:36.
-     1>Project "C:\Users\ok222ax\Documents\GitHub\Quake-III-Arena\code\game\game.vcxproj" on node 4 (Build target(s)).
+﻿Build started 2015-03-31 14:17:26.
+     1>Project "E:\GitHub\Quake-III-Arena\code\game\game.vcxproj" on node 5 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D BUILDING_REF_GL /D DEBUG /D GLOBALRANK /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug\\" /Gd /TC /analyze- /errorReport:prompt ai_chat.c ai_cmd.c ai_dmnet.c ai_dmq3.c ai_main.c ai_team.c ai_vcmd.c bg_misc.c bg_pmove.c bg_slidemove.c g_active.c g_arenas.c g_bot.c g_client.c g_cmds.c g_combat.c g_items.c g_main.c g_mem.c g_misc.c g_missile.c g_mover.c g_session.c g_spawn.c g_svcmds.c g_syscalls.c g_target.c g_team.c g_trigger.c g_utils.c g_weapon.c q_math.c q_shared.c
+         Z:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D BUILDING_REF_GL /D DEBUG /D GLOBALRANK /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug\\" /Gd /TC /analyze- /errorReport:prompt ai_chat.c ai_cmd.c ai_dmnet.c ai_dmq3.c ai_main.c ai_team.c ai_vcmd.c bg_misc.c bg_pmove.c bg_slidemove.c g_active.c g_arenas.c g_bot.c g_client.c g_cmds.c g_combat.c g_items.c g_main.c g_mem.c g_misc.c g_missile.c g_mover.c g_session.c g_spawn.c g_svcmds.c g_syscalls.c g_target.c g_team.c g_trigger.c g_utils.c g_weapon.c q_math.c q_shared.c
          ai_chat.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_chat.c(268): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_chat.c(591): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_chat.c(760): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_chat.c(921): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_chat.c(1193): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_chat.c(268): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_chat.c(591): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_chat.c(760): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_chat.c(921): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_chat.c(1193): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
          ai_cmd.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_cmd.c(1118): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_cmd.c(1147): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_cmd.c(1189): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_cmd.c(1310): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_cmd.c(1118): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_cmd.c(1147): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_cmd.c(1189): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>e:\github\quake-iii-arena\code\game\ai_cmd.c(1310): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
          ai_dmnet.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmnet.c(700): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmnet.c(702): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmnet.c(703): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\ai_dmnet.c(700): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_dmnet.c(702): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\ai_dmnet.c(703): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
          ai_dmq3.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmq3.c(1397): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmq3.c(1416): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmq3.c(1491): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmq3.c(1525): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_dmq3.c(3685): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_dmq3.c(1397): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_dmq3.c(1416): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_dmq3.c(1491): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_dmq3.c(1525): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_dmq3.c(3685): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
          ai_main.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(100): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(285): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(288): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(289): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(435): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(438): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(1144): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(1575): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(1590): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_main.c(1618): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(100): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(285): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(288): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(289): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(435): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(438): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(1144): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(1575): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(1590): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_main.c(1618): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
          ai_team.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_team.c(191): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\ai_team.c(1962): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\ai_team.c(191): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\ai_team.c(1962): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
          ai_vcmd.c
          bg_misc.c
          bg_pmove.c
          bg_slidemove.c
          g_active.c
          g_arenas.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_arenas.c(133): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\g_arenas.c(133): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
          g_bot.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(106): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(113): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(178): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(292): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(323): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(775): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(777): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(779): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(781): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(783): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(785): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(787): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(789): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(915): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_bot.c(916): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(106): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(113): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(178): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(292): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(323): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(775): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(777): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(779): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(781): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(783): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(785): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(787): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(789): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(915): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_bot.c(916): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
          g_client.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_client.c(720): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_client.c(857): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_client.c(858): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_client.c(860): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_client.c(861): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_client.c(720): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_client.c(857): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_client.c(858): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_client.c(860): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_client.c(861): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
          g_cmds.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_cmds.c(81): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_cmds.c(1403): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\g_cmds.c(81): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_cmds.c(1403): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
          g_combat.c
          g_items.c
          g_main.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_main.c(246): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_main.c(257): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_main.c(547): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_main.c(558): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_main.c(1092): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\g_main.c(246): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\g_main.c(257): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\g_main.c(547): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\g_main.c(558): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\g_main.c(1092): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
          g_mem.c
          g_misc.c
          Generating Code...
@@ -143,57 +143,57 @@
          g_missile.c
          g_mover.c
          g_session.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_session.c(89): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>e:\github\quake-iii-arena\code\game\g_session.c(89): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(304) : see declaration of 'sscanf'
          g_spawn.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_spawn.c(68): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_spawn.c(371): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>e:\github\quake-iii-arena\code\game\g_spawn.c(68): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>e:\github\quake-iii-arena\code\game\g_spawn.c(371): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(304) : see declaration of 'sscanf'
          g_svcmds.c
          g_syscalls.c
          g_target.c
          g_team.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_team.c(110): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_team.c(1114): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_team.c(110): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\g_team.c(1114): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
          g_trigger.c
          g_utils.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_utils.c(44): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_utils.c(50): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\g_utils.c(51): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_utils.c(44): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_utils.c(50): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\g_utils.c(51): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
          g_weapon.c
          q_math.c
          q_shared.c
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(268): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(280): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(723): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(876): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(912): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(1072): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(1127): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(1202): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(1203): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>c:\users\ok222ax\documents\github\quake-iii-arena\code\game\q_shared.c(1250): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(268): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(280): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(723): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(876): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(912): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(1072): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(1127): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(1202): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(1203): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\github\quake-iii-arena\code\game\q_shared.c(1250): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 z:\visual studio 2013\vc\include\string.h(118) : see declaration of 'strcat'
          Generating Code...
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(C:\Users\ok222ax\Documents\GitHub\Quake-III-Arena\code\game\.\Debug\game.dll) does not match the Linker's OutputFile property value (C:\Users\ok222ax\Documents\GitHub\Quake-III-Arena\code\Debug\qagamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(E:\GitHub\Quake-III-Arena\code\game\.\Debug\game.dll) does not match the Linker's OutputFile property value (E:\GitHub\Quake-III-Arena\code\Debug\qagamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1195,5): warning MSB8012: TargetName(game) does not match the Linker's OutputFile property value (qagamex86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Debug/qagamex86.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\game.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/qagamex86.pdb" /MAP:".\Debug/qagamex86.map" /SUBSYSTEM:WINDOWS /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/qagamex86.lib" /MACHINE:X86 /SAFESEH /DLL .\Debug/ai_chat.obj
+         Z:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Debug/qagamex86.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\game.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/qagamex86.pdb" /MAP:".\Debug/qagamex86.map" /SUBSYSTEM:WINDOWS /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/qagamex86.lib" /MACHINE:X86 /SAFESEH /DLL .\Debug/ai_chat.obj
          .\Debug/ai_cmd.obj
          .\Debug/ai_dmnet.obj
          .\Debug/ai_dmq3.obj
@@ -228,11 +228,11 @@
          .\Debug/q_shared.obj
      1>ai_chat.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
             Creating library .\Debug/qagamex86.lib and object .\Debug/qagamex86.exp
-         game.vcxproj -> C:\Users\ok222ax\Documents\GitHub\Quake-III-Arena\code\game\.\Debug\game.dll
+         game.vcxproj -> E:\GitHub\Quake-III-Arena\code\game\.\Debug\game.dll
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o".\Debug\game.bsc" .\Debug\ai_chat.sbr .\Debug\ai_cmd.sbr .\Debug\ai_dmnet.sbr .\Debug\ai_dmq3.sbr .\Debug\ai_main.sbr .\Debug\ai_team.sbr .\Debug\ai_vcmd.sbr .\Debug\bg_misc.sbr .\Debug\bg_pmove.sbr .\Debug\bg_slidemove.sbr .\Debug\g_active.sbr .\Debug\g_arenas.sbr .\Debug\g_bot.sbr .\Debug\g_client.sbr .\Debug\g_cmds.sbr .\Debug\g_combat.sbr .\Debug\g_items.sbr .\Debug\g_main.sbr .\Debug\g_mem.sbr .\Debug\g_misc.sbr .\Debug\g_missile.sbr .\Debug\g_mover.sbr .\Debug\g_session.sbr .\Debug\g_spawn.sbr .\Debug\g_svcmds.sbr .\Debug\g_syscalls.sbr .\Debug\g_target.sbr .\Debug\g_team.sbr .\Debug\g_trigger.sbr .\Debug\g_utils.sbr .\Debug\g_weapon.sbr .\Debug\q_math.sbr .\Debug\q_shared.sbr
-     1>Done Building Project "C:\Users\ok222ax\Documents\GitHub\Quake-III-Arena\code\game\game.vcxproj" (Build target(s)).
+         Z:\Visual Studio 2013\VC\bin\bscmake.exe /nologo /o".\Debug\game.bsc" .\Debug\ai_chat.sbr .\Debug\ai_cmd.sbr .\Debug\ai_dmnet.sbr .\Debug\ai_dmq3.sbr .\Debug\ai_main.sbr .\Debug\ai_team.sbr .\Debug\ai_vcmd.sbr .\Debug\bg_misc.sbr .\Debug\bg_pmove.sbr .\Debug\bg_slidemove.sbr .\Debug\g_active.sbr .\Debug\g_arenas.sbr .\Debug\g_bot.sbr .\Debug\g_client.sbr .\Debug\g_cmds.sbr .\Debug\g_combat.sbr .\Debug\g_items.sbr .\Debug\g_main.sbr .\Debug\g_mem.sbr .\Debug\g_misc.sbr .\Debug\g_missile.sbr .\Debug\g_mover.sbr .\Debug\g_session.sbr .\Debug\g_spawn.sbr .\Debug\g_svcmds.sbr .\Debug\g_syscalls.sbr .\Debug\g_target.sbr .\Debug\g_team.sbr .\Debug\g_trigger.sbr .\Debug\g_utils.sbr .\Debug\g_weapon.sbr .\Debug\q_math.sbr .\Debug\q_shared.sbr
+     1>Done Building Project "E:\GitHub\Quake-III-Arena\code\game\game.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:08.11
+Time Elapsed 00:00:06.13

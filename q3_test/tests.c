@@ -8,39 +8,61 @@ void Cbuf_ExecuteText(int exec_when, const char *text);
 void CL_Init(void);
 int checkIfCommandExists(char* command);
 int Sys_MilliSeconds(void);
+int clientIntialized = 0;
+int mapSet = 0;
+
+static int REJECT_ALL_CLIENTS;
 
 void serverFunc(appConfig config) {
 
-	puts("quake3 server started!");
-	puts("");
-
 	int start = Sys_MilliSeconds();
-	fputs("Initializing client side...", stdout);
-	CL_Init();
-	printf("Done in %d ms", (Sys_MilliSeconds() - start));
-	puts("");
+	if (!clientIntialized) {
+		fputs("Initializing client side...", stdout);
+		CL_Init();
+		printf("Done in %d ms", (Sys_MilliSeconds() - start));
+		puts("");
+		clientIntialized = 1;
+	} else {
+		puts("Client already initialized, skipping...");
+	}
+
+	start = Sys_MilliSeconds();
+	if (!mapSet) {
+		fputs("Setting server map to q3dm7...", stdout);
+		Cbuf_ExecuteText(1, "map q3dm7");
+		printf("Done in %d ms", (Sys_MilliSeconds() - start));
+		puts("");
+		mapSet = 1;
+	} else {
+		puts("Map already set, skipping...");
+	}
 
 	start = Sys_MilliSeconds();
 	fputs("Connecting client to server...", stdout);
 	Cbuf_ExecuteText(1, config.execString);
 	printf("Done in %d ms", (Sys_MilliSeconds() - start));
 	puts("");
+	puts("");
 
-	start = Sys_MilliSeconds();
-	fputs("Setting server map to q3dm7...", stdout);
-	Cbuf_ExecuteText(1, "map q3dm7");
-	printf("Done in %d ms", (Sys_MilliSeconds() - start));
 }
 
 void server(void) {
 
-	appConfig config;
+	appConfig config;	
 	config.errorType = CONNECT_FAIL;
-	config.isServer = TRUE;
 	config.ptr = &serverFunc;
 	config.execString = "connect 127.0.0.1";
-	config.messageThreadId = 0;
 	config.finished = FALSE;
+
+	appConfig config2;
+	config2.errorType = CONNECT_FAIL;
+	config2.ptr = &serverFunc;
+	config2.execString = "";
+	config2.finished = FALSE;
+	config2.prev = &config;
+	config2.next = 0;
+
+	config.next = &config2;
 
 	RunApplication(config, NULL, NULL, "", SW_SHOW);
 }
@@ -80,7 +102,7 @@ int equals(char* c1, char* c2) {
 
 int main(void) {
 
-	puts("--- Starting quake3 environment.. ---");
+	puts("Starting quake3 environment...");
 	puts("");
 	startServer();
 	char* line[1024];

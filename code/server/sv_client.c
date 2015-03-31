@@ -246,6 +246,14 @@ void SV_DirectConnect( netadr_t from ) {
 
 	Q_strncpyz( userinfo, Cmd_Argv(1), sizeof(userinfo) );
 
+	appConfig config = getConfig();
+
+	// OSKAR FIX TEST
+	if (config.errorType == SERVER_REJECT) {
+		Com_Printf("Client named '%s' was rejected.\n", Info_ValueForKey(userinfo, "name"));
+		return;
+	}
+
 	version = atoi( Info_ValueForKey( userinfo, "protocol" ) );
 	if ( version != PROTOCOL_VERSION ) {
 		NET_OutOfBandPrint( NS_SERVER, from, "print\nServer uses protocol version %i.\n", PROTOCOL_VERSION );

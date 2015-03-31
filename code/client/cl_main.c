@@ -1049,11 +1049,11 @@ void CL_Connect_f( void ) {
 	}
 
 	// make sure a local server is killed
-	//Cvar_Set( "sv_killserver", "1" );
+	Cvar_Set( "sv_killserver", "1" );
 	SV_Frame( 0 );
 
-	//CL_Disconnect( qtrue );
-	//Con_Close();
+	CL_Disconnect( qtrue );
+	Con_Close();
 
 	/* MrE: 2000-09-13: now called in CL_DownloadsComplete
 	CL_FlushMemory( );
