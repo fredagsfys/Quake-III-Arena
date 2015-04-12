@@ -651,8 +651,7 @@ void CL_FlushMemory( void ) {
 		Hunk_ClearToMark();
 	}
 
-	//CL_StartHunkUsers();
-	// OSKAR FIX
+	CL_StartHunkUsers();
 }
 
 /*
@@ -754,9 +753,7 @@ void CL_Disconnect( qboolean showMainMenu ) {
 
 	// send a disconnect message to the server
 	// send it a few times in case one is dropped
-
-	//if ( cls.state >= CA_CONNECTED ) { // OSKAR FIX
-	if ( cls.state >= CA_CHALLENGING ) {
+	if ( cls.state >= CA_CONNECTED ) {
 		CL_AddReliableCommand( "disconnect" );
 		CL_WritePacket();
 		CL_WritePacket();
@@ -1002,9 +999,7 @@ void CL_Disconnect_f( void ) {
 	SCR_StopCinematic();
 	Cvar_Set("ui_singlePlayerActive", "0");
 	if ( cls.state != CA_DISCONNECTED && cls.state != CA_CINEMATIC ) {
-		//Com_Error (ERR_DISCONNECT, "Disconnected from server");
-		// OSKAR FIX
-		Com_Error(ERR_SERVERDISCONNECT, "Disconnected from server");
+		Com_Error (ERR_DISCONNECT, "Disconnected from server");
 	}
 }
 
@@ -1050,12 +1045,11 @@ void CL_Connect_f( void ) {
 
 	if ( com_sv_running->integer && !strcmp( server, "localhost" ) ) {
 		// if running a local server, kill it
-		//SV_Shutdown( "Server quit\n" ); // OSKAR FIX
+		SV_Shutdown( "Server quit\n" );
 	}
 
-	// OSKAR FIX
 	// make sure a local server is killed
-	/*Cvar_Set( "sv_killserver", "1" );
+	Cvar_Set( "sv_killserver", "1" );
 	SV_Frame( 0 );
 
 	CL_Disconnect( qtrue );
