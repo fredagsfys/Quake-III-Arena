@@ -251,6 +251,7 @@ void SV_DirectConnect( netadr_t from ) {
 	// OSKAR FIX TEST
 	if (config.errorType == SERVER_REJECT) {
 		Com_Printf("Client named '%s' was rejected.\n", Info_ValueForKey(userinfo, "name"));
+		printf("Client named '%s' was rejected by the server!\n\n", Info_ValueForKey(userinfo, "name"));
 		return;
 	}
 
@@ -435,6 +436,8 @@ gotnewcl:
 
 		NET_OutOfBandPrint( NS_SERVER, from, "print\n%s\n", denied );
 		Com_DPrintf ("Game rejected a connection: %s.\n", denied);
+
+		printf("Client named '%s' denied by server!\n\n", Info_ValueForKey(userinfo, "name"));
 		return;
 	}
 
@@ -1505,7 +1508,8 @@ void SV_ExecuteClientMessage( client_t *cl, msg_t *msg ) {
 			Com_DPrintf( "%s : dropped gamestate, resending\n", cl->name );
 			SV_SendClientGameState( cl );
 		}
-		return;
+		//return;
+		// OSKAR FIX, COULD NOT DISCONNECT BECAUSE SERVER IDS WERE NOT MATCHING?
 	}
 
 	// read optional clientCommand strings

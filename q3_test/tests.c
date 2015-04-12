@@ -15,6 +15,8 @@ static int REJECT_ALL_CLIENTS;
 
 void serverFunc(appConfig config) {
 
+	printf("Performing test with config: %d\n", config.errorType);
+
 	int start = Sys_MilliSeconds();
 	if (!clientIntialized) {
 		fputs("Initializing client side...", stdout);

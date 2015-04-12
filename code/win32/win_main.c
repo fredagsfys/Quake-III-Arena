@@ -1285,7 +1285,7 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 
 	Sys_InitStreamThread();
 
-	Com_Init(sys_cmdline, config); // OSKAR FIX
+	Com_Init(sys_cmdline);
 
 	NET_Init();
 
@@ -1323,7 +1323,7 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 
 		int configCount = 1;
 		if (activeConfig.finished) {
-			if (activeConfig.next && countMsec > (100 * configCount)) {
+			if (activeConfig.next && countMsec > (50 * configCount)) {
 				activeConfig = *activeConfig.next;
 				void(*testing)(appConfig config) = activeConfig.ptr;
 				testing(activeConfig);
