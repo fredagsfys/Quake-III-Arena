@@ -370,10 +370,10 @@ static void SV_Kick_f( void ) {
 		}
 		return;
 	}
-	if( cl->netchan.remoteAddress.type == NA_LOOPBACK ) {
+	/*if( cl->netchan.remoteAddress.type == NA_LOOPBACK ) {
 		SV_SendServerCommand(NULL, "print \"%s\"", "Cannot kick host player\n");
 		return;
-	}
+	}*/ // OSKAR FIX
 
 	SV_DropClient( cl, "was kicked" );
 	cl->lastPacketTime = svs.time;	// in case there is a funny zombie
