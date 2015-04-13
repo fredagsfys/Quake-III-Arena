@@ -235,7 +235,7 @@ void QDECL Com_Error( int code, const char *fmt, ... ) {
 	static int	errorCount;
 	int			currentTime;
 
-#if defined(_WIN32) && defined(_DEBUG)
+/*#if defined(_WIN32) && defined(_DEBUG)
 	if ( code != ERR_DISCONNECT && code != ERR_NEED_CD ) {
 		if (!com_noErrorInterrupt->integer) {
 			__asm {
@@ -243,7 +243,7 @@ void QDECL Com_Error( int code, const char *fmt, ... ) {
 			}
 		}
 	}
-#endif
+#endif*/ // OSKAR FIX
 
 	// when we are running automated scripts, make sure we
 	// know if anything failed
@@ -2424,7 +2424,7 @@ void Com_Init( char *commandLine, appConfig config ) {
 	com_maxfps = Cvar_Get ("com_maxfps", "85", CVAR_ARCHIVE);
 	com_blood = Cvar_Get ("com_blood", "1", CVAR_ARCHIVE);
 
-	com_developer = Cvar_Get ("developer", "0", CVAR_TEMP );
+	com_developer = Cvar_Get ("developer", "1", CVAR_TEMP );
 	com_logfile = Cvar_Get ("logfile", "0", CVAR_TEMP );
 
 	com_timescale = Cvar_Get ("timescale", "1", CVAR_CHEAT | CVAR_SYSTEMINFO );

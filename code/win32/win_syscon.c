@@ -315,8 +315,10 @@ void Sys_CreateConsole( void )
 	wc.lpszMenuName  = 0;
 	wc.lpszClassName = DEDCLASS;
 
-	if ( !RegisterClass (&wc) )
-		return;
+	if (!RegisterClass(&wc)) {
+		DWORD noob = GetLastError();
+		//return;
+	}
 
 	rect.left = 0;
 	rect.right = 540;

@@ -11,6 +11,7 @@ typedef struct appConfigT {
 	simulatedError errorType;
 	void* ptr;
 	void* commandPtr;
+	int* reset;
 	char* commandName;
 	char* execString;
 	int* finished;

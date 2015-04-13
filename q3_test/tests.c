@@ -11,8 +11,6 @@ int Sys_MilliSeconds(void);
 int clientIntialized = 0;
 int mapSet = 0;
 
-static int REJECT_ALL_CLIENTS;
-
 void serverFunc(appConfig config) {
 
 	int start = Sys_MilliSeconds();
@@ -37,12 +35,22 @@ void serverFunc(appConfig config) {
 		puts("Map already set, skipping...");
 	}
 
-	start = Sys_MilliSeconds();
-	fputs("Connecting client to server...", stdout);
-	Cbuf_ExecuteText(1, config.execString);
-	printf("Done in %d ms", (Sys_MilliSeconds() - start));
-	puts("");
-	puts("");
+	if (config.execString == "") {
+		puts("Config had no execString, skipping...");
+	} else {
+		start = Sys_MilliSeconds();
+		printf("Running execString: %s...", config.execString);
+		Cbuf_ExecuteText(1, config.execString);
+		printf("Done in %d ms", (Sys_MilliSeconds() - start));
+		puts("");
+		puts("");
+	}
+
+	if (config.reset) {
+		puts("Resetting varibles...");
+		clientIntialized = 0;
+		mapSet = 0;
+	}
 
 }
 
@@ -53,6 +61,7 @@ void server(void) {
 	config.ptr = &serverFunc;
 	config.execString = "connect 127.0.0.1";
 	config.finished = FALSE;
+	config.reset = FALSE;
 
 	appConfig config2;
 	config2.errorType = CONNECT_FAIL;
@@ -61,6 +70,7 @@ void server(void) {
 	config2.finished = FALSE;
 	config2.prev = &config;
 	config2.next = 0;
+	config2.reset = TRUE;
 
 	config.next = &config2;
 
@@ -110,6 +120,10 @@ int main(void) {
 	do {
 
 		scanf("%s", line);
+
+		if (equals(line, "start")) {
+			startServer();
+		}
 
 	} while (!equals(line, "exit"));
 }

@@ -157,7 +157,8 @@ void Sys_Quit( void ) {
 	IN_Shutdown();
 	Sys_DestroyConsole();
 
-	exit (0);
+	ExitThread(0);
+	//exit (0);
 }
 
 /*
