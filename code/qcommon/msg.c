@@ -1344,6 +1344,9 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 		print = 0;
 	}
 
+	print = 1;
+	printf("%3i: playerstate\n", msg->readcount);
+
 	numFields = sizeof( playerStateFields ) / sizeof( playerStateFields[0] );
 	lc = MSG_ReadByte(msg);
 
@@ -1365,12 +1368,14 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 					*(float *)toF = trunc; 
 					if ( print ) {
 						Com_Printf( "%s:%i ", field->name, trunc );
+						printf("%s:%i\n", field->name, trunc);
 					}
 				} else {
 					// full floating point value
 					*toF = MSG_ReadBits( msg, 32 );
 					if ( print ) {
 						Com_Printf( "%s:%f ", field->name, *(float *)toF );
+						printf("%s:%i\n", field->name, trunc);
 					}
 				}
 			} else {
@@ -1378,6 +1383,7 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 				*toF = MSG_ReadBits( msg, field->bits );
 				if ( print ) {
 					Com_Printf( "%s:%i ", field->name, *toF );
+					printf("%s:%i\n", field->name, trunc);
 				}
 			}
 		}
@@ -1444,7 +1450,9 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 			endBit = ( msg->readcount - 1 ) * 8 + msg->bit - GENTITYNUM_BITS;
 		}
 		Com_Printf( " (%i bits)\n", endBit - startBit  );
+		printf("(%i bits)\n", endBit - startBit);
 	}
+
 }
 
 int msg_hData[256] = {

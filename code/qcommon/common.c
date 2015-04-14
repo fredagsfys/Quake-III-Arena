@@ -2142,7 +2142,7 @@ int Com_EventLoop( void ) {
 				puts("Server received a packet!");
 				Com_RunAndTimeServerPacket( &evFrom, &buf );
 			} else {
-				puts("Client received a packet!");
+				//puts("Client received a packet!");
 				CL_PacketEvent( evFrom, &buf );
 			}
 			break;

@@ -605,8 +605,6 @@ void CL_ParseServerMessage( msg_t *msg ) {
 		clc.reliableAcknowledge = clc.reliableSequence;
 	}
 
-	printf("Packet with command type: ");
-
 	//
 	// parse the message
 	//
@@ -639,19 +637,15 @@ void CL_ParseServerMessage( msg_t *msg ) {
 		case svc_nop:
 			break;
 		case svc_serverCommand:
-			printf("serverCommand\n");
 			CL_ParseCommandString( msg );
 			break;
 		case svc_gamestate:
-			printf("gameState\n");
 			CL_ParseGamestate( msg );
 			break;
 		case svc_snapshot:
-			printf("snapshot\n");
 			CL_ParseSnapshot( msg );
 			break;
 		case svc_download:
-			printf("download\n");
 			CL_ParseDownload( msg );
 			break;
 		}
