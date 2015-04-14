@@ -1895,6 +1895,7 @@ void CL_PacketEvent( netadr_t from, msg_t *msg ) {
 	clc.lastPacketTime = cls.realtime;
 
 	if ( msg->cursize >= 4 && *(int *)msg->data == -1 ) {
+		puts("Received a connectionless packet!");
 		CL_ConnectionlessPacket( from, msg );
 		return;
 	}
