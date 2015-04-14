@@ -1345,7 +1345,7 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 	}
 
 	print = 1;
-	printf("%3i: playerstate\n", msg->readcount);
+	//printf("%3i: playerstate\n", msg->readcount);
 
 	numFields = sizeof( playerStateFields ) / sizeof( playerStateFields[0] );
 	lc = MSG_ReadByte(msg);
@@ -1405,6 +1405,7 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 			for (i=0 ; i<16 ; i++) {
 				if (bits & (1<<i) ) {
 					to->stats[i] = MSG_ReadShort(msg);
+					printf("stats:%i\n", to->stats[i]);
 				}
 			}
 		}
@@ -1416,6 +1417,7 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 			for (i=0 ; i<16 ; i++) {
 				if (bits & (1<<i) ) {
 					to->persistant[i] = MSG_ReadShort(msg);
+					printf("persistant:%i\n", to->persistant[i]);
 				}
 			}
 		}
@@ -1427,6 +1429,7 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 			for (i=0 ; i<16 ; i++) {
 				if (bits & (1<<i) ) {
 					to->ammo[i] = MSG_ReadShort(msg);
+					printf("ammo:%i\n", to->ammo[i]);
 				}
 			}
 		}
@@ -1438,6 +1441,7 @@ void MSG_ReadDeltaPlayerstate (msg_t *msg, playerState_t *from, playerState_t *t
 			for (i=0 ; i<16 ; i++) {
 				if (bits & (1<<i) ) {
 					to->powerups[i] = MSG_ReadLong(msg);
+					printf("powerups:%i\n", to->powerups[i]);
 				}
 			}
 		}
