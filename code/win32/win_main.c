@@ -1286,7 +1286,9 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 
 	Sys_InitStreamThread();
 
-	Com_Init(sys_cmdline, config); // OSKAR FIX
+	activeConfig = config;
+
+	Com_Init(sys_cmdline);
 
 	NET_Init();
 
@@ -1298,8 +1300,6 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 	if (!com_dedicated->integer && !com_viewlog->integer) {
 		Sys_ShowConsole(0, qfalse);
 	}
-
-	activeConfig = config;
 
 	// main game loop
 	while (1) {

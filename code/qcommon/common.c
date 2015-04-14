@@ -2139,8 +2139,10 @@ int Com_EventLoop( void ) {
 			}
 			Com_Memcpy( buf.data, (byte *)((netadr_t *)ev.evPtr + 1), buf.cursize );
 			if ( com_sv_running->integer ) {
+				puts("Server received a packet!");
 				Com_RunAndTimeServerPacket( &evFrom, &buf );
 			} else {
+				puts("Client received a packet!");
 				CL_PacketEvent( evFrom, &buf );
 			}
 			break;
@@ -2348,7 +2350,7 @@ static void Com_WriteCDKey( const char *filename, const char *ikey ) {
 Com_Init
 =================
 */
-void Com_Init( char *commandLine, appConfig config ) {
+void Com_Init( char *commandLine) {
 	char	*s;
 
 	Com_Printf( "%s %s %s\n", Q3_VERSION, CPUSTRING, __DATE__ );
@@ -2404,12 +2406,20 @@ void Com_Init( char *commandLine, appConfig config ) {
   // get dedicated here for proper hunk megs initialization
 
 	// OSKAR FIX
-#ifdef DEDICATED
+/*#ifdef DEDICATED
 	com_dedicated = Cvar_Get ("dedicated", "1", CVAR_ROM);
 #else
 	//com_dedicated = Cvar_Get ("dedicated", "0", CVAR_LATCH);
 	com_dedicated = Cvar_Get("dedicated", "1", CVAR_ROM);
-#endif
+#endif*/
+
+	// OSKAR FIX
+	appConfig config = getConfig();
+	if (config.server) {
+		com_dedicated = Cvar_Get("dedicated", "1", CVAR_ROM);
+	} else {
+		com_dedicated = Cvar_Get("dedicated", "0", CVAR_LATCH);
+	}
 
 	// allocate the stack based hunk allocator
 	Com_InitHunkMemory();

@@ -11,7 +11,7 @@ int Sys_MilliSeconds(void);
 int clientIntialized = 0;
 int mapSet = 0;
 
-void serverFunc(appConfig config) {
+void threadFunc(appConfig config) {
 
 	int start = Sys_MilliSeconds();
 	if (!clientIntialized) {
@@ -54,25 +54,27 @@ void serverFunc(appConfig config) {
 
 }
 
-void server(void) {
+void thread(void) {
 
 	appConfig config;	
 	config.errorType = CONNECT_FAIL;
-	config.ptr = &serverFunc;
-	config.execString = "connect 127.0.0.1";
-	config.finished = FALSE;
+	config.ptr = &threadFunc;
+	config.execString = "";
+	config.finished = TRUE;
 	config.reset = FALSE;
+	config.server = 0;
+	config.next = NULL;
 
-	appConfig config2;
+	/*appConfig config2;
 	config2.errorType = CONNECT_FAIL;
-	config2.ptr = &serverFunc;
+	config2.ptr = &threadFunc;
 	config2.execString = "";
 	config2.finished = FALSE;
 	config2.prev = &config;
 	config2.next = 0;
 	config2.reset = TRUE;
 
-	config.next = &config2;
+	config.next = &config2;*/
 
 	RunApplication(config, NULL, NULL, "", SW_SHOW);
 }
@@ -90,9 +92,9 @@ HANDLE startThread(void* func, int* threadId) {
 	return h;
 }
 
-void startServer(void) {
+void startQuake(void) {
 	int threadId;
-	HANDLE serverHandle = startThread(server, &threadId);
+	HANDLE Threadhandle = startThread(&thread, &threadId);
 }
 
 int equals(char* c1, char* c2) {
@@ -114,7 +116,7 @@ int main(void) {
 
 	puts("Starting quake3 environment...");
 	puts("");
-	startServer();
+	startQuake();
 	char* line[1024];
 
 	do {
@@ -122,7 +124,7 @@ int main(void) {
 		scanf("%s", line);
 
 		if (equals(line, "start")) {
-			startServer();
+			startQuake();
 		}
 
 	} while (!equals(line, "exit"));

@@ -1,4 +1,4 @@
-﻿Build started 2015-03-31 14:17:26.
+﻿Build started 2015-04-14 18:27:05.
      1>Project "E:\GitHub\Quake-III-Arena\code\cgame\cgame.vcxproj" on node 6 (Rebuild target(s)).
      1>ClCompile:
          Z:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug\\" /Gd /TC /analyze- /errorReport:prompt ..\game\bg_misc.c ..\game\bg_pmove.c ..\game\bg_slidemove.c ..\game\q_math.c ..\game\q_shared.c ..\ui\ui_shared.c cg_consolecmds.c cg_draw.c cg_drawtools.c cg_effects.c cg_ents.c cg_event.c cg_info.c cg_localents.c cg_main.c cg_marks.c cg_players.c cg_playerstate.c cg_predict.c cg_scoreboard.c cg_servercmds.c cg_snapshot.c cg_syscalls.c cg_view.c cg_weapons.c
@@ -137,4 +137,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.55
+Time Elapsed 00:00:03.92
