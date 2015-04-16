@@ -59,10 +59,10 @@ void thread(void) {
 	appConfig config;	
 	config.errorType = CONNECT_FAIL;
 	config.ptr = &threadFunc;
-	config.execString = "";
-	config.finished = TRUE;
+	config.execString = "connect 127.0.0.1";
+	config.finished = FALSE;
 	config.reset = FALSE;
-	config.server = 0;
+	config.server = 1;
 	config.next = NULL;
 
 	/*appConfig config2;
