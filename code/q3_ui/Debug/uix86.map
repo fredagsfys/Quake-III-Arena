@@ -1,6 +1,6 @@
  uix86
 
- Timestamp is 552f9ca9 (Thu Apr 16 13:27:37 2015)
+ Timestamp is 552fb94d (Thu Apr 16 15:29:49 2015)
 
  Preferred load address is 40000000
 
@@ -20,21 +20,21 @@
  0002:00000188 00000004H .CRT$XTA                DATA
  0002:0000018c 00000004H .CRT$XTZ                DATA
  0002:00000190 00016f18H .rdata                  DATA
- 0002:000170a8 00000074H .rdata$debug            DATA
- 0002:0001711c 00000388H .rdata$r                DATA
- 0002:000174b0 00000030H .rdata$sxdata           DATA
- 0002:000174e0 00000004H .rtc$IAA                DATA
- 0002:000174e4 000000a8H .rtc$IMZ                DATA
- 0002:0001758c 00000004H .rtc$IZZ                DATA
- 0002:00017590 00000004H .rtc$TAA                DATA
- 0002:00017594 000000a8H .rtc$TMZ                DATA
- 0002:0001763c 00000004H .rtc$TZZ                DATA
- 0002:00017640 00000b08H .xdata$x                DATA
- 0002:00018150 00000056H .edata                  DATA
- 0002:000181a8 00000014H .idata$2                DATA
- 0002:000181bc 00000014H .idata$3                DATA
- 0002:000181d0 00000150H .idata$4                DATA
- 0002:00018320 0000060eH .idata$6                DATA
+ 0002:000170a8 00000070H .rdata$debug            DATA
+ 0002:00017118 00000388H .rdata$r                DATA
+ 0002:000174a0 00000030H .rdata$sxdata           DATA
+ 0002:000174d0 00000004H .rtc$IAA                DATA
+ 0002:000174d4 000000a8H .rtc$IMZ                DATA
+ 0002:0001757c 00000004H .rtc$IZZ                DATA
+ 0002:00017580 00000004H .rtc$TAA                DATA
+ 0002:00017584 000000a8H .rtc$TMZ                DATA
+ 0002:0001762c 00000004H .rtc$TZZ                DATA
+ 0002:00017630 00000b08H .xdata$x                DATA
+ 0002:00018140 00000056H .edata                  DATA
+ 0002:00018198 00000014H .idata$2                DATA
+ 0002:000181ac 00000014H .idata$3                DATA
+ 0002:000181c0 00000150H .idata$4                DATA
+ 0002:00018310 0000060eH .idata$6                DATA
  0003:00000000 00003ab4H .data                   DATA
  0003:00003ab4 0000014fH .data$r                 DATA
  0003:00003c20 000702e4H .bss                    DATA
@@ -43,10 +43,10 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___guard_fids_count        00000000     <absolute>
- 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___guard_fids_table        00000000     <absolute>
  0000:00000000       ___guard_flags             00000000     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000000       ___guard_fids_count        00000000     <absolute>
  0000:0000000c       ___safe_se_handler_count   0000000c     <absolute>
  0000:00000000       ___ImageBase               40000000     <linker-defined>
  0001:00000000       _BG_AddPredictableEventToPlayerstate 40001000 f   bg_misc.obj
@@ -1194,8 +1194,8 @@
  0001:0006bbf0       ??0bad_exception@std@@QAE@ABV01@@Z 4006cbf0 f i LIBCMTD:frame.obj
  0001:0006bc20       ??0bad_exception@std@@QAE@PBD@Z 4006cc20 f i LIBCMTD:frame.obj
  0001:0006bc50       ??1bad_exception@std@@UAE@XZ 4006cc50 f i LIBCMTD:frame.obj
- 0001:0006bc70       ??_Ebad_exception@std@@UAEPAXI@Z 4006cc70 f i LIBCMTD:frame.obj
  0001:0006bc70       ??_Gbad_exception@std@@UAEPAXI@Z 4006cc70 f i LIBCMTD:frame.obj
+ 0001:0006bc70       ??_Ebad_exception@std@@UAEPAXI@Z 4006cc70 f i LIBCMTD:frame.obj
  0001:0006c860       ?__uncaught_exception@@YA_NXZ 4006d860 f   LIBCMTD:frame.obj
  0001:0006c890       ?_is_exception_typeof@@YAHABVtype_info@@PAU_EXCEPTION_POINTERS@@@Z 4006d890 f   LIBCMTD:frame.obj
  0001:0006c970       __SetWinRTOutOfMemoryExceptionCallback 4006d970 f   LIBCMTD:frame.obj
@@ -1303,8 +1303,8 @@
  0001:00074989       __abnormal_termination     40075989 f   LIBCMTD:exsup.obj
  0001:000749ac       __NLG_Notify1              400759ac f   LIBCMTD:exsup.obj
  0001:000749b5       __NLG_Notify               400759b5 f   LIBCMTD:exsup.obj
- 0001:000749cc       __NLG_Dispatch2            400759cc     LIBCMTD:exsup.obj
  0001:000749cc       __NLG_Dispatch             400759cc     LIBCMTD:exsup.obj
+ 0001:000749cc       __NLG_Dispatch2            400759cc     LIBCMTD:exsup.obj
  0001:000749d4       __NLG_Call                 400759d4 f   LIBCMTD:exsup.obj
  0001:000749d6       __NLG_Return2              400759d6     LIBCMTD:exsup.obj
  0001:000749e0       ??3@YAXPAX@Z               400759e0 f   LIBCMTD:dbgdel.obj
@@ -1316,8 +1316,8 @@
  0001:00074b70       ??4type_info@@AAEAAV0@ABV0@@Z 40075b70 f   LIBCMTD:typinfo.obj
  0001:00074b80       ??8type_info@@QBE_NABV0@@Z 40075b80 f   LIBCMTD:typinfo.obj
  0001:00074bc0       ??9type_info@@QBE_NABV0@@Z 40075bc0 f   LIBCMTD:typinfo.obj
- 0001:00074c00       ??_Gtype_info@@UAEPAXI@Z   40075c00 f i LIBCMTD:typinfo.obj
  0001:00074c00       ??_Etype_info@@UAEPAXI@Z   40075c00 f i LIBCMTD:typinfo.obj
+ 0001:00074c00       ??_Gtype_info@@UAEPAXI@Z   40075c00 f i LIBCMTD:typinfo.obj
  0001:00074c30       ?_name_internal_method@type_info@@QBEPBDPAU__type_info_node@@@Z 40075c30 f   LIBCMTD:typinfo.obj
  0001:00074c50       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 40075c50 f   LIBCMTD:typinfo.obj
  0001:00074c70       ?before@type_info@@QBE_NABV1@@Z 40075c70 f   LIBCMTD:typinfo.obj
@@ -1340,12 +1340,12 @@
  0001:00074f70       ??4exception@std@@QAEAAV01@ABV01@@Z 40075f70 f   LIBCMTD:stdexcpt.obj
  0001:00074fc0       ??_G__non_rtti_object@std@@UAEPAXI@Z 40075fc0 f i LIBCMTD:stdexcpt.obj
  0001:00074fc0       ??_E__non_rtti_object@std@@UAEPAXI@Z 40075fc0 f i LIBCMTD:stdexcpt.obj
- 0001:00074ff0       ??_Ebad_cast@std@@UAEPAXI@Z 40075ff0 f i LIBCMTD:stdexcpt.obj
  0001:00074ff0       ??_Gbad_cast@std@@UAEPAXI@Z 40075ff0 f i LIBCMTD:stdexcpt.obj
+ 0001:00074ff0       ??_Ebad_cast@std@@UAEPAXI@Z 40075ff0 f i LIBCMTD:stdexcpt.obj
  0001:00075020       ??_Ebad_typeid@std@@UAEPAXI@Z 40076020 f i LIBCMTD:stdexcpt.obj
  0001:00075020       ??_Gbad_typeid@std@@UAEPAXI@Z 40076020 f i LIBCMTD:stdexcpt.obj
- 0001:00075050       ??_Gexception@std@@UAEPAXI@Z 40076050 f i LIBCMTD:stdexcpt.obj
  0001:00075050       ??_Eexception@std@@UAEPAXI@Z 40076050 f i LIBCMTD:stdexcpt.obj
+ 0001:00075050       ??_Gexception@std@@UAEPAXI@Z 40076050 f i LIBCMTD:stdexcpt.obj
  0001:00075080       ?_Copy_str@exception@std@@AAEXPBD@Z 40076080 f   LIBCMTD:stdexcpt.obj
  0001:000750e0       ?_Tidy@exception@std@@AAEXXZ 400760e0 f   LIBCMTD:stdexcpt.obj
  0001:00075120       ?what@exception@std@@UBEPBDXZ 40076120 f   LIBCMTD:stdexcpt.obj
@@ -1992,10 +1992,10 @@
  0002:000017c4       __real@44480000            400857c4     bg_misc.obj
  0002:000017c8       __real@c2100000            400857c8     bg_misc.obj
  0002:000017cc       __real@c2480000            400857cc     bg_misc.obj
- 0002:000017d0       ??_C@_1IM@GAHHAEIF@?$AAc?$AA?3?$AA?2?$AAu?$AAs?$AAe?$AAr?$AAs?$AA?2?$AAd?$AAe?$AAv?$AAh?$AAa?$AAr?$AAi?$AAs?$AA?2?$AAd?$AAo?$AAc?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?2?$AAg?$AAi?$AAt?$AAh@ 400857d0     q_math.obj
- 0002:0000185c       ??_C@_1DE@EJPCDGJI@?$AAQ?$AA_?$AAf?$AAa?$AAb?$AAs?$AA?$CI?$AAi?$AAn?$AAv?$AA_?$AAd?$AAe?$AAn?$AAo?$AAm?$AA?$CJ?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AA0?$AA?4?$AA0?$AAf?$AA?$AA@ 4008585c     q_math.obj
- 0002:00001890       __real@3c8efa35            40085890     q_math.obj
- 0002:00001894       __real@3f000000            40085894     q_math.obj
+ 0002:000017d0       ??_C@_1IG@BLAALICD@?$AAc?$AA?3?$AA?2?$AAu?$AAs?$AAe?$AAr?$AAs?$AA?2?$AAh?$AAa?$AAr?$AAi?$AAs?$AA?2?$AAd?$AAo?$AAc?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?2?$AAg?$AAi?$AAt?$AAh?$AAu?$AAb?$AA?2@ 400857d0     q_math.obj
+ 0002:00001858       ??_C@_1DE@EJPCDGJI@?$AAQ?$AA_?$AAf?$AAa?$AAb?$AAs?$AA?$CI?$AAi?$AAn?$AAv?$AA_?$AAd?$AAe?$AAn?$AAo?$AAm?$AA?$CJ?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AA0?$AA?4?$AA0?$AAf?$AA?$AA@ 40085858     q_math.obj
+ 0002:0000188c       __real@3c8efa35            4008588c     q_math.obj
+ 0002:00001890       __real@3f000000            40085890     q_math.obj
  0002:00001898       __real@3f76800000000000    40085898     q_math.obj
  0002:000018a0       __real@3f800000            400858a0     q_math.obj
  0002:000018a4       __real@3fc00000            400858a4     q_math.obj
@@ -3016,8 +3016,8 @@
  0002:0000602c       ??_C@_1M@INMHODIG@?$AAq?$AAs?$AAo?$AAr?$AAt?$AA?$AA@ 4008a02c     LIBCMTD:qsort.obj
  0002:00006038       ??_C@_1BE@NJBEBBME@?$AAw?$AAi?$AAd?$AAt?$AAh?$AA?5?$AA?$DO?$AA?5?$AA0?$AA?$AA@ 4008a038     LIBCMTD:qsort.obj
  0002:0000604c       ??_C@_1BK@HJGMBFLF@?$AAc?$AAo?$AAm?$AAp?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAN?$AAU?$AAL?$AAL?$AA?$AA@ 4008a04c     LIBCMTD:qsort.obj
- 0002:00006068       __pDefaultRawDllMain       4008a068     LIBCMTD:dllcrt0.obj
  0002:00006068       __pRawDllMain              4008a068     LIBCMTD:dllcrt0.obj
+ 0002:00006068       __pDefaultRawDllMain       4008a068     LIBCMTD:dllcrt0.obj
  0002:0000606c       ??_C@_0CL@OOIKPIHN@f?3?2dd?2vctools?2crt?2crtw32?2startup@ 4008a06c     LIBCMTD:dllcrt0.obj
  0002:00006950       __indefinite               4008a950     LIBCMTD:87disp.obj
  0002:0000695a       __piby2                    4008a95a     LIBCMTD:87disp.obj
@@ -4456,65 +4456,65 @@
  0002:00017038       ??_C@_04OKOHEJBO@?5?$DP?$DP?5?$AA@ 4009b038     LIBCMTD:undname.obj
  0002:00017040       ??_C@_1CA@JGBKKNCE@?$AA_?$AA_?$AAw?$AAs?$AAt?$AAr?$AAg?$AAt?$AAo?$AAl?$AAd?$AA1?$AA2?$AA_?$AAl?$AA?$AA@ 4009b040     LIBCMTD:wstrgtold.obj
  0002:00017060       __load_config_used         4009b060     LIBCMTD:loadcfg.obj
- 0002:0001711c       ??_R4bad_exception@std@@6B@ 4009b11c     LIBCMTD:frame.obj
- 0002:00017130       ??_R3bad_exception@std@@8  4009b130     LIBCMTD:frame.obj
- 0002:00017140       ??_R2bad_exception@std@@8  4009b140     LIBCMTD:frame.obj
- 0002:0001714c       ??_R1A@?0A@EA@bad_exception@std@@8 4009b14c     LIBCMTD:frame.obj
- 0002:00017168       ??_R1A@?0A@EA@exception@std@@8 4009b168     LIBCMTD:frame.obj
- 0002:00017184       ??_R3exception@std@@8      4009b184     LIBCMTD:frame.obj
- 0002:00017194       ??_R2exception@std@@8      4009b194     LIBCMTD:frame.obj
- 0002:0001719c       ??_R4type_info@@6B@        4009b19c     LIBCMTD:typinfo.obj
- 0002:000171b0       ??_R3type_info@@8          4009b1b0     LIBCMTD:typinfo.obj
- 0002:000171c0       ??_R2type_info@@8          4009b1c0     LIBCMTD:typinfo.obj
- 0002:000171c8       ??_R1A@?0A@EA@type_info@@8 4009b1c8     LIBCMTD:typinfo.obj
- 0002:000171e4       ??_R4exception@std@@6B@    4009b1e4     LIBCMTD:stdexcpt.obj
- 0002:000171f8       ??_R4bad_cast@std@@6B@     4009b1f8     LIBCMTD:stdexcpt.obj
- 0002:0001720c       ??_R3bad_cast@std@@8       4009b20c     LIBCMTD:stdexcpt.obj
- 0002:0001721c       ??_R2bad_cast@std@@8       4009b21c     LIBCMTD:stdexcpt.obj
- 0002:00017228       ??_R1A@?0A@EA@bad_cast@std@@8 4009b228     LIBCMTD:stdexcpt.obj
- 0002:00017244       ??_R4bad_typeid@std@@6B@   4009b244     LIBCMTD:stdexcpt.obj
- 0002:00017258       ??_R3bad_typeid@std@@8     4009b258     LIBCMTD:stdexcpt.obj
- 0002:00017268       ??_R2bad_typeid@std@@8     4009b268     LIBCMTD:stdexcpt.obj
- 0002:00017274       ??_R1A@?0A@EA@bad_typeid@std@@8 4009b274     LIBCMTD:stdexcpt.obj
- 0002:00017290       ??_R4__non_rtti_object@std@@6B@ 4009b290     LIBCMTD:stdexcpt.obj
- 0002:000172a4       ??_R3__non_rtti_object@std@@8 4009b2a4     LIBCMTD:stdexcpt.obj
- 0002:000172b4       ??_R2__non_rtti_object@std@@8 4009b2b4     LIBCMTD:stdexcpt.obj
- 0002:000172c4       ??_R1A@?0A@EA@__non_rtti_object@std@@8 4009b2c4     LIBCMTD:stdexcpt.obj
- 0002:000172e0       ??_R4DNameNode@@6B@        4009b2e0     LIBCMTD:undname.obj
- 0002:000172f4       ??_R3DNameNode@@8          4009b2f4     LIBCMTD:undname.obj
- 0002:00017304       ??_R2DNameNode@@8          4009b304     LIBCMTD:undname.obj
- 0002:0001730c       ??_R1A@?0A@EA@DNameNode@@8 4009b30c     LIBCMTD:undname.obj
- 0002:00017328       ??_R4charNode@@6B@         4009b328     LIBCMTD:undname.obj
- 0002:0001733c       ??_R3charNode@@8           4009b33c     LIBCMTD:undname.obj
- 0002:0001734c       ??_R2charNode@@8           4009b34c     LIBCMTD:undname.obj
- 0002:00017358       ??_R1A@?0A@EA@charNode@@8  4009b358     LIBCMTD:undname.obj
- 0002:00017374       ??_R4pcharNode@@6B@        4009b374     LIBCMTD:undname.obj
- 0002:00017388       ??_R3pcharNode@@8          4009b388     LIBCMTD:undname.obj
- 0002:00017398       ??_R2pcharNode@@8          4009b398     LIBCMTD:undname.obj
- 0002:000173a4       ??_R1A@?0A@EA@pcharNode@@8 4009b3a4     LIBCMTD:undname.obj
- 0002:000173c0       ??_R4pDNameNode@@6B@       4009b3c0     LIBCMTD:undname.obj
- 0002:000173d4       ??_R3pDNameNode@@8         4009b3d4     LIBCMTD:undname.obj
- 0002:000173e4       ??_R2pDNameNode@@8         4009b3e4     LIBCMTD:undname.obj
- 0002:000173f0       ??_R1A@?0A@EA@pDNameNode@@8 4009b3f0     LIBCMTD:undname.obj
- 0002:0001740c       ??_R4DNameStatusNode@@6B@  4009b40c     LIBCMTD:undname.obj
- 0002:00017420       ??_R3DNameStatusNode@@8    4009b420     LIBCMTD:undname.obj
- 0002:00017430       ??_R2DNameStatusNode@@8    4009b430     LIBCMTD:undname.obj
- 0002:0001743c       ??_R1A@?0A@EA@DNameStatusNode@@8 4009b43c     LIBCMTD:undname.obj
- 0002:00017458       ??_R4pairNode@@6B@         4009b458     LIBCMTD:undname.obj
- 0002:0001746c       ??_R3pairNode@@8           4009b46c     LIBCMTD:undname.obj
- 0002:0001747c       ??_R2pairNode@@8           4009b47c     LIBCMTD:undname.obj
- 0002:00017488       ??_R1A@?0A@EA@pairNode@@8  4009b488     LIBCMTD:undname.obj
- 0002:000174b0       ___safe_se_handler_table   4009b4b0     <linker-defined>
- 0002:000174e0       ___rtc_iaa                 4009b4e0     LIBCMTD:initsect.obj
- 0002:0001758c       ___rtc_izz                 4009b58c     LIBCMTD:initsect.obj
- 0002:00017590       ___rtc_taa                 4009b590     LIBCMTD:initsect.obj
- 0002:0001763c       ___rtc_tzz                 4009b63c     LIBCMTD:initsect.obj
- 0002:00017e9c       __TI2?AVbad_exception@std@@ 4009be9c     LIBCMTD:frame.obj
- 0002:00017eac       __CTA2?AVbad_exception@std@@ 4009beac     LIBCMTD:frame.obj
- 0002:00017eb8       __CT??_R0?AVbad_exception@std@@@8??0bad_exception@std@@QAE@ABV01@@Z12 4009beb8     LIBCMTD:frame.obj
- 0002:00017ed4       __CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 4009bed4     LIBCMTD:frame.obj
- 0002:000181a8       __IMPORT_DESCRIPTOR_KERNEL32 4009c1a8     kernel32:KERNEL32.dll
- 0002:000181bc       __NULL_IMPORT_DESCRIPTOR   4009c1bc     kernel32:KERNEL32.dll
+ 0002:00017118       ??_R4bad_exception@std@@6B@ 4009b118     LIBCMTD:frame.obj
+ 0002:0001712c       ??_R3bad_exception@std@@8  4009b12c     LIBCMTD:frame.obj
+ 0002:0001713c       ??_R2bad_exception@std@@8  4009b13c     LIBCMTD:frame.obj
+ 0002:00017148       ??_R1A@?0A@EA@bad_exception@std@@8 4009b148     LIBCMTD:frame.obj
+ 0002:00017164       ??_R1A@?0A@EA@exception@std@@8 4009b164     LIBCMTD:frame.obj
+ 0002:00017180       ??_R3exception@std@@8      4009b180     LIBCMTD:frame.obj
+ 0002:00017190       ??_R2exception@std@@8      4009b190     LIBCMTD:frame.obj
+ 0002:00017198       ??_R4type_info@@6B@        4009b198     LIBCMTD:typinfo.obj
+ 0002:000171ac       ??_R3type_info@@8          4009b1ac     LIBCMTD:typinfo.obj
+ 0002:000171bc       ??_R2type_info@@8          4009b1bc     LIBCMTD:typinfo.obj
+ 0002:000171c4       ??_R1A@?0A@EA@type_info@@8 4009b1c4     LIBCMTD:typinfo.obj
+ 0002:000171e0       ??_R4exception@std@@6B@    4009b1e0     LIBCMTD:stdexcpt.obj
+ 0002:000171f4       ??_R4bad_cast@std@@6B@     4009b1f4     LIBCMTD:stdexcpt.obj
+ 0002:00017208       ??_R3bad_cast@std@@8       4009b208     LIBCMTD:stdexcpt.obj
+ 0002:00017218       ??_R2bad_cast@std@@8       4009b218     LIBCMTD:stdexcpt.obj
+ 0002:00017224       ??_R1A@?0A@EA@bad_cast@std@@8 4009b224     LIBCMTD:stdexcpt.obj
+ 0002:00017240       ??_R4bad_typeid@std@@6B@   4009b240     LIBCMTD:stdexcpt.obj
+ 0002:00017254       ??_R3bad_typeid@std@@8     4009b254     LIBCMTD:stdexcpt.obj
+ 0002:00017264       ??_R2bad_typeid@std@@8     4009b264     LIBCMTD:stdexcpt.obj
+ 0002:00017270       ??_R1A@?0A@EA@bad_typeid@std@@8 4009b270     LIBCMTD:stdexcpt.obj
+ 0002:0001728c       ??_R4__non_rtti_object@std@@6B@ 4009b28c     LIBCMTD:stdexcpt.obj
+ 0002:000172a0       ??_R3__non_rtti_object@std@@8 4009b2a0     LIBCMTD:stdexcpt.obj
+ 0002:000172b0       ??_R2__non_rtti_object@std@@8 4009b2b0     LIBCMTD:stdexcpt.obj
+ 0002:000172c0       ??_R1A@?0A@EA@__non_rtti_object@std@@8 4009b2c0     LIBCMTD:stdexcpt.obj
+ 0002:000172dc       ??_R4DNameNode@@6B@        4009b2dc     LIBCMTD:undname.obj
+ 0002:000172f0       ??_R3DNameNode@@8          4009b2f0     LIBCMTD:undname.obj
+ 0002:00017300       ??_R2DNameNode@@8          4009b300     LIBCMTD:undname.obj
+ 0002:00017308       ??_R1A@?0A@EA@DNameNode@@8 4009b308     LIBCMTD:undname.obj
+ 0002:00017324       ??_R4charNode@@6B@         4009b324     LIBCMTD:undname.obj
+ 0002:00017338       ??_R3charNode@@8           4009b338     LIBCMTD:undname.obj
+ 0002:00017348       ??_R2charNode@@8           4009b348     LIBCMTD:undname.obj
+ 0002:00017354       ??_R1A@?0A@EA@charNode@@8  4009b354     LIBCMTD:undname.obj
+ 0002:00017370       ??_R4pcharNode@@6B@        4009b370     LIBCMTD:undname.obj
+ 0002:00017384       ??_R3pcharNode@@8          4009b384     LIBCMTD:undname.obj
+ 0002:00017394       ??_R2pcharNode@@8          4009b394     LIBCMTD:undname.obj
+ 0002:000173a0       ??_R1A@?0A@EA@pcharNode@@8 4009b3a0     LIBCMTD:undname.obj
+ 0002:000173bc       ??_R4pDNameNode@@6B@       4009b3bc     LIBCMTD:undname.obj
+ 0002:000173d0       ??_R3pDNameNode@@8         4009b3d0     LIBCMTD:undname.obj
+ 0002:000173e0       ??_R2pDNameNode@@8         4009b3e0     LIBCMTD:undname.obj
+ 0002:000173ec       ??_R1A@?0A@EA@pDNameNode@@8 4009b3ec     LIBCMTD:undname.obj
+ 0002:00017408       ??_R4DNameStatusNode@@6B@  4009b408     LIBCMTD:undname.obj
+ 0002:0001741c       ??_R3DNameStatusNode@@8    4009b41c     LIBCMTD:undname.obj
+ 0002:0001742c       ??_R2DNameStatusNode@@8    4009b42c     LIBCMTD:undname.obj
+ 0002:00017438       ??_R1A@?0A@EA@DNameStatusNode@@8 4009b438     LIBCMTD:undname.obj
+ 0002:00017454       ??_R4pairNode@@6B@         4009b454     LIBCMTD:undname.obj
+ 0002:00017468       ??_R3pairNode@@8           4009b468     LIBCMTD:undname.obj
+ 0002:00017478       ??_R2pairNode@@8           4009b478     LIBCMTD:undname.obj
+ 0002:00017484       ??_R1A@?0A@EA@pairNode@@8  4009b484     LIBCMTD:undname.obj
+ 0002:000174a0       ___safe_se_handler_table   4009b4a0     <linker-defined>
+ 0002:000174d0       ___rtc_iaa                 4009b4d0     LIBCMTD:initsect.obj
+ 0002:0001757c       ___rtc_izz                 4009b57c     LIBCMTD:initsect.obj
+ 0002:00017580       ___rtc_taa                 4009b580     LIBCMTD:initsect.obj
+ 0002:0001762c       ___rtc_tzz                 4009b62c     LIBCMTD:initsect.obj
+ 0002:00017e8c       __TI2?AVbad_exception@std@@ 4009be8c     LIBCMTD:frame.obj
+ 0002:00017e9c       __CTA2?AVbad_exception@std@@ 4009be9c     LIBCMTD:frame.obj
+ 0002:00017ea8       __CT??_R0?AVbad_exception@std@@@8??0bad_exception@std@@QAE@ABV01@@Z12 4009bea8     LIBCMTD:frame.obj
+ 0002:00017ec4       __CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 4009bec4     LIBCMTD:frame.obj
+ 0002:00018198       __IMPORT_DESCRIPTOR_KERNEL32 4009c198     kernel32:KERNEL32.dll
+ 0002:000181ac       __NULL_IMPORT_DESCRIPTOR   4009c1ac     kernel32:KERNEL32.dll
  0003:00000000       _eventnames                4009d000     bg_misc.obj
  0003:00000130       _bg_itemlist               4009d130     bg_misc.obj
  0003:000008b4       _bg_numItems               4009d8b4     bg_misc.obj
@@ -5955,186 +5955,186 @@
  0002:00016530       _tokenTable                4009a530     LIBCMTD:undname.obj
  0002:00016568       _nameTable                 4009a568     LIBCMTD:undname.obj
  0002:000166a8       _rttiTable                 4009a6a8     LIBCMTD:undname.obj
- 0002:000174e4       __RTC_InitBase.rtc$IMZ     4009b4e4     bg_misc.obj
- 0002:000174e8       __RTC_InitBase.rtc$IMZ     4009b4e8     q_math.obj
- 0002:000174ec       __RTC_InitBase.rtc$IMZ     4009b4ec     q_shared.obj
- 0002:000174f0       __RTC_InitBase.rtc$IMZ     4009b4f0     ui_syscalls.obj
- 0002:000174f4       __RTC_InitBase.rtc$IMZ     4009b4f4     ui_addbots.obj
- 0002:000174f8       __RTC_InitBase.rtc$IMZ     4009b4f8     ui_atoms.obj
- 0002:000174fc       __RTC_InitBase.rtc$IMZ     4009b4fc     ui_cdkey.obj
- 0002:00017500       __RTC_InitBase.rtc$IMZ     4009b500     ui_cinematics.obj
- 0002:00017504       __RTC_InitBase.rtc$IMZ     4009b504     ui_confirm.obj
- 0002:00017508       __RTC_InitBase.rtc$IMZ     4009b508     ui_connect.obj
- 0002:0001750c       __RTC_InitBase.rtc$IMZ     4009b50c     ui_controls2.obj
- 0002:00017510       __RTC_InitBase.rtc$IMZ     4009b510     ui_credits.obj
- 0002:00017514       __RTC_InitBase.rtc$IMZ     4009b514     ui_demo2.obj
- 0002:00017518       __RTC_InitBase.rtc$IMZ     4009b518     ui_display.obj
- 0002:0001751c       __RTC_InitBase.rtc$IMZ     4009b51c     ui_gameinfo.obj
- 0002:00017520       __RTC_InitBase.rtc$IMZ     4009b520     ui_ingame.obj
- 0002:00017524       __RTC_InitBase.rtc$IMZ     4009b524     ui_main.obj
- 0002:00017528       __RTC_InitBase.rtc$IMZ     4009b528     ui_menu.obj
- 0002:0001752c       __RTC_InitBase.rtc$IMZ     4009b52c     ui_mfield.obj
- 0002:00017530       __RTC_InitBase.rtc$IMZ     4009b530     ui_mods.obj
- 0002:00017534       __RTC_InitBase.rtc$IMZ     4009b534     ui_network.obj
- 0002:00017538       __RTC_InitBase.rtc$IMZ     4009b538     ui_options.obj
- 0002:0001753c       __RTC_InitBase.rtc$IMZ     4009b53c     ui_playermodel.obj
- 0002:00017540       __RTC_InitBase.rtc$IMZ     4009b540     ui_players.obj
- 0002:00017544       __RTC_InitBase.rtc$IMZ     4009b544     ui_playersettings.obj
- 0002:00017548       __RTC_InitBase.rtc$IMZ     4009b548     ui_preferences.obj
- 0002:0001754c       __RTC_InitBase.rtc$IMZ     4009b54c     ui_qmenu.obj
- 0002:00017550       __RTC_InitBase.rtc$IMZ     4009b550     ui_removebots.obj
- 0002:00017554       __RTC_InitBase.rtc$IMZ     4009b554     ui_serverinfo.obj
- 0002:00017558       __RTC_InitBase.rtc$IMZ     4009b558     ui_servers2.obj
- 0002:0001755c       __RTC_InitBase.rtc$IMZ     4009b55c     ui_setup.obj
- 0002:00017560       __RTC_InitBase.rtc$IMZ     4009b560     ui_sound.obj
- 0002:00017564       __RTC_InitBase.rtc$IMZ     4009b564     ui_sparena.obj
- 0002:00017568       __RTC_InitBase.rtc$IMZ     4009b568     ui_specifyserver.obj
- 0002:0001756c       __RTC_InitBase.rtc$IMZ     4009b56c     ui_splevel.obj
- 0002:00017570       __RTC_InitBase.rtc$IMZ     4009b570     ui_sppostgame.obj
- 0002:00017574       __RTC_InitBase.rtc$IMZ     4009b574     ui_spreset.obj
- 0002:00017578       __RTC_InitBase.rtc$IMZ     4009b578     ui_spskill.obj
- 0002:0001757c       __RTC_InitBase.rtc$IMZ     4009b57c     ui_startserver.obj
- 0002:00017580       __RTC_InitBase.rtc$IMZ     4009b580     ui_team.obj
- 0002:00017584       __RTC_InitBase.rtc$IMZ     4009b584     ui_teamorders.obj
- 0002:00017588       __RTC_InitBase.rtc$IMZ     4009b588     ui_video.obj
- 0002:00017594       __RTC_Shutdown.rtc$TMZ     4009b594     bg_misc.obj
- 0002:00017598       __RTC_Shutdown.rtc$TMZ     4009b598     q_math.obj
- 0002:0001759c       __RTC_Shutdown.rtc$TMZ     4009b59c     q_shared.obj
- 0002:000175a0       __RTC_Shutdown.rtc$TMZ     4009b5a0     ui_syscalls.obj
- 0002:000175a4       __RTC_Shutdown.rtc$TMZ     4009b5a4     ui_addbots.obj
- 0002:000175a8       __RTC_Shutdown.rtc$TMZ     4009b5a8     ui_atoms.obj
- 0002:000175ac       __RTC_Shutdown.rtc$TMZ     4009b5ac     ui_cdkey.obj
- 0002:000175b0       __RTC_Shutdown.rtc$TMZ     4009b5b0     ui_cinematics.obj
- 0002:000175b4       __RTC_Shutdown.rtc$TMZ     4009b5b4     ui_confirm.obj
- 0002:000175b8       __RTC_Shutdown.rtc$TMZ     4009b5b8     ui_connect.obj
- 0002:000175bc       __RTC_Shutdown.rtc$TMZ     4009b5bc     ui_controls2.obj
- 0002:000175c0       __RTC_Shutdown.rtc$TMZ     4009b5c0     ui_credits.obj
- 0002:000175c4       __RTC_Shutdown.rtc$TMZ     4009b5c4     ui_demo2.obj
- 0002:000175c8       __RTC_Shutdown.rtc$TMZ     4009b5c8     ui_display.obj
- 0002:000175cc       __RTC_Shutdown.rtc$TMZ     4009b5cc     ui_gameinfo.obj
- 0002:000175d0       __RTC_Shutdown.rtc$TMZ     4009b5d0     ui_ingame.obj
- 0002:000175d4       __RTC_Shutdown.rtc$TMZ     4009b5d4     ui_main.obj
- 0002:000175d8       __RTC_Shutdown.rtc$TMZ     4009b5d8     ui_menu.obj
- 0002:000175dc       __RTC_Shutdown.rtc$TMZ     4009b5dc     ui_mfield.obj
- 0002:000175e0       __RTC_Shutdown.rtc$TMZ     4009b5e0     ui_mods.obj
- 0002:000175e4       __RTC_Shutdown.rtc$TMZ     4009b5e4     ui_network.obj
- 0002:000175e8       __RTC_Shutdown.rtc$TMZ     4009b5e8     ui_options.obj
- 0002:000175ec       __RTC_Shutdown.rtc$TMZ     4009b5ec     ui_playermodel.obj
- 0002:000175f0       __RTC_Shutdown.rtc$TMZ     4009b5f0     ui_players.obj
- 0002:000175f4       __RTC_Shutdown.rtc$TMZ     4009b5f4     ui_playersettings.obj
- 0002:000175f8       __RTC_Shutdown.rtc$TMZ     4009b5f8     ui_preferences.obj
- 0002:000175fc       __RTC_Shutdown.rtc$TMZ     4009b5fc     ui_qmenu.obj
- 0002:00017600       __RTC_Shutdown.rtc$TMZ     4009b600     ui_removebots.obj
- 0002:00017604       __RTC_Shutdown.rtc$TMZ     4009b604     ui_serverinfo.obj
- 0002:00017608       __RTC_Shutdown.rtc$TMZ     4009b608     ui_servers2.obj
- 0002:0001760c       __RTC_Shutdown.rtc$TMZ     4009b60c     ui_setup.obj
- 0002:00017610       __RTC_Shutdown.rtc$TMZ     4009b610     ui_sound.obj
- 0002:00017614       __RTC_Shutdown.rtc$TMZ     4009b614     ui_sparena.obj
- 0002:00017618       __RTC_Shutdown.rtc$TMZ     4009b618     ui_specifyserver.obj
- 0002:0001761c       __RTC_Shutdown.rtc$TMZ     4009b61c     ui_splevel.obj
- 0002:00017620       __RTC_Shutdown.rtc$TMZ     4009b620     ui_sppostgame.obj
- 0002:00017624       __RTC_Shutdown.rtc$TMZ     4009b624     ui_spreset.obj
- 0002:00017628       __RTC_Shutdown.rtc$TMZ     4009b628     ui_spskill.obj
- 0002:0001762c       __RTC_Shutdown.rtc$TMZ     4009b62c     ui_startserver.obj
- 0002:00017630       __RTC_Shutdown.rtc$TMZ     4009b630     ui_team.obj
- 0002:00017634       __RTC_Shutdown.rtc$TMZ     4009b634     ui_teamorders.obj
- 0002:00017638       __RTC_Shutdown.rtc$TMZ     4009b638     ui_video.obj
- 0002:00017640       __sehtable$__CRT_INIT@12   4009b640     LIBCMTD:dllcrt0.obj
- 0002:00017660       __sehtable$___DllMainCRTStartup 4009b660     LIBCMTD:dllcrt0.obj
- 0002:00017680       __sehtable$___set_fpsr_sse2 4009b680     LIBCMTD:fpctrl.obj
- 0002:000176a0       __sehtable$___updatetlocinfo 4009b6a0     LIBCMTD:localref.obj
- 0002:000176c0       __sehtable$___updatetmbcinfo 4009b6c0     LIBCMTD:mbctype.obj
- 0002:000176e0       __sehtable$__setmbcp       4009b6e0     LIBCMTD:mbctype.obj
- 0002:000176fc       __unwindtable$?getSystemCP@@YAHH@Z 4009b6fc     LIBCMTD:mbctype.obj
- 0002:00017704       __ehfuncinfo$?getSystemCP@@YAHH@Z 4009b704     LIBCMTD:mbctype.obj
- 0002:00017728       __sehtable$__freefls@4     4009b728     LIBCMTD:tidtable.obj
- 0002:00017750       __sehtable$__initptd       4009b750     LIBCMTD:tidtable.obj
- 0002:00017778       __sehtable$__CrtSetReportHookW2 4009b778     LIBCMTD:dbgrptw.obj
- 0002:00017798       __sehtable$?DebuggerProbe@@YAHK@Z 4009b798     LIBCMTD:error.obj
- 0002:000177b8       __sehtable$?DebuggerRuntime@@YAHKHPAXPB_W@Z 4009b7b8     LIBCMTD:error.obj
- 0002:000177d8       __sehtable$_doexit         4009b7d8     LIBCMTD:crt0dat.obj
- 0002:000177f8       __sehtable$_fflush         4009b7f8     LIBCMTD:fflush.obj
- 0002:00017818       __sehtable$_flsall         4009b818     LIBCMTD:fflush.obj
- 0002:00017840       __sehtable$_setvbuf        4009b840     LIBCMTD:setvbuf.obj
- 0002:00017860       __sehtable$_fwprintf       4009b860     LIBCMTD:fwprintf.obj
- 0002:00017880       __sehtable$_signal         4009b880     LIBCMTD:winsig.obj
- 0002:000178a0       __sehtable$_raise          4009b8a0     LIBCMTD:winsig.obj
- 0002:000178c0       __sehtable$_ctrlevent_capture@4 4009b8c0     LIBCMTD:winsig.obj
- 0002:000178e0       __sehtable$__get_current_locale 4009b8e0     LIBCMTD:wsetloca.obj
- 0002:00017908       __sehtable$__free_locale   4009b908     LIBCMTD:wsetloca.obj
- 0002:00017930       __sehtable$__wsetlocale    4009b930     LIBCMTD:wsetloca.obj
- 0002:00017968       __sehtable$__locterm       4009b968     LIBCMTD:wsetloca.obj
- 0002:00017984       __unwindtable$?strtoxq@@YA_KPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b984     LIBCMTD:strtoq.obj
- 0002:0001798c       __ehfuncinfo$?strtoxq@@YA_KPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b98c     LIBCMTD:strtoq.obj
- 0002:000179b0       __unwindtable$?strtoxl@@YAKPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b9b0     LIBCMTD:strtol.obj
- 0002:000179b8       __ehfuncinfo$?strtoxl@@YAKPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b9b8     LIBCMTD:strtol.obj
- 0002:000179e0       __sehtable$__ioinit        4009b9e0     LIBCMTD:ioinit.obj
- 0002:00017a00       __sehtable$__realloc_dbg   4009ba00     LIBCMTD:dbgheap.obj
- 0002:00017a20       __sehtable$__expand_dbg    4009ba20     LIBCMTD:dbgheap.obj
- 0002:00017a40       __sehtable$__free_dbg      4009ba40     LIBCMTD:dbgheap.obj
- 0002:00017a60       __sehtable$__msize_dbg     4009ba60     LIBCMTD:dbgheap.obj
- 0002:00017a80       __sehtable$__CrtCheckMemory 4009ba80     LIBCMTD:dbgheap.obj
- 0002:00017aa0       __sehtable$__CrtSetDbgFlag 4009baa0     LIBCMTD:dbgheap.obj
- 0002:00017ac0       __sehtable$__CrtDoForAllClientObjects 4009bac0     LIBCMTD:dbgheap.obj
- 0002:00017ae0       __sehtable$__CrtIsMemoryBlock 4009bae0     LIBCMTD:dbgheap.obj
- 0002:00017b00       __sehtable$__CrtMemCheckpoint 4009bb00     LIBCMTD:dbgheap.obj
- 0002:00017b20       __sehtable$__CrtSetDbgBlockType 4009bb20     LIBCMTD:dbgheap.obj
- 0002:00017b40       __sehtable$__heap_alloc_dbg_impl 4009bb40     LIBCMTD:dbgheap.obj
- 0002:00017b60       __sehtable$?__crtIsBadReadPtr@@YAHPBXI@Z 4009bb60     LIBCMTD:dbgheap.obj
- 0002:00017b80       __sehtable$?_CrtMemDumpAllObjectsSince_stat@@YAXPBU_CrtMemState@@PAUlocaleinfo_struct@@@Z 4009bb80     LIBCMTD:dbgheap.obj
- 0002:00017ba0       __sehtable$__mtinitlocknum 4009bba0     LIBCMTD:mlock.obj
- 0002:00017bc0       __sehtable$__VCrtDbgReportA 4009bbc0     LIBCMTD:dbgrptt.obj
- 0002:00017be8       __sehtable$__VCrtDbgReportW 4009bbe8     LIBCMTD:dbgrptt.obj
- 0002:00017c10       __sehtable$__CrtSetReportHook2 4009bc10     LIBCMTD:dbgrpt.obj
- 0002:00017c30       __sehtable$__IsNonwritableInCurrentImage 4009bc30     LIBCMTD:pesect.obj
- 0002:00017c50       __sehtable$__onexit        4009bc50     LIBCMTD:onexit.obj
- 0002:00017c70       __sehtable$?terminate@@YAXXZ 4009bc70     LIBCMTD:hooks.obj
- 0002:00017c90       __sehtable$?_inconsistency@@YAXXZ 4009bc90     LIBCMTD:hooks.obj
- 0002:00017cb0       __sehtable$__fcloseall     4009bcb0     LIBCMTD:closeall.obj
- 0002:00017cd0       __sehtable$__commit        4009bcd0     LIBCMTD:commit.obj
- 0002:00017cf0       __sehtable$__write         4009bcf0     LIBCMTD:write.obj
- 0002:00017d10       __sehtable$_vfwprintf_helper 4009bd10     LIBCMTD:vfwprint.obj
- 0002:00017d30       __sehtable$__lseeki64      4009bd30     LIBCMTD:lseeki64.obj
- 0002:00017d50       __sehtable$_printf         4009bd50     LIBCMTD:printf.obj
- 0002:00017d6c       __unwindtable$?x_ismbbtype_l@@YAHPAUlocaleinfo_struct@@IHH@Z 4009bd6c     LIBCMTD:ismbbyte.obj
- 0002:00017d74       __ehfuncinfo$?x_ismbbtype_l@@YAHPAUlocaleinfo_struct@@IHH@Z 4009bd74     LIBCMTD:ismbbyte.obj
- 0002:00017d98       __sehtable$___FrameUnwindToState 4009bd98     LIBCMTD:frame.obj
- 0002:00017dc0       __sehtable$?CallCatchBlock@@YAPAXPAUEHExceptionRecord@@PAUEHRegistrationNode@@PAU_CONTEXT@@PBU_s_FuncInfo@@PAXHK@Z 4009bdc0     LIBCMTD:frame.obj
- 0002:00017de8       __sehtable$___BuildCatchObject 4009bde8     LIBCMTD:frame.obj
- 0002:00017e08       __sehtable$___DestructExceptionObject 4009be08     LIBCMTD:frame.obj
- 0002:00017e24       __catchsym$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z$2 4009be24     LIBCMTD:frame.obj
- 0002:00017e34       __unwindtable$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z 4009be34     LIBCMTD:frame.obj
- 0002:00017e44       __tryblocktable$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z 4009be44     LIBCMTD:frame.obj
- 0002:00017e58       __ehfuncinfo$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z 4009be58     LIBCMTD:frame.obj
- 0002:00017e80       __sehtable$___BuildCatchObjectHelper 4009be80     LIBCMTD:frame.obj
- 0002:00017ef0       __sehtable$_fclose         4009bef0     LIBCMTD:fclose.obj
- 0002:00017f10       __sehtable$__alloc_osfhnd  4009bf10     LIBCMTD:osfinfo.obj
- 0002:00017f38       __sehtable$___lock_fhandle 4009bf38     LIBCMTD:osfinfo.obj
- 0002:00017f58       __sehtable$__open_osfhandle 4009bf58     LIBCMTD:osfinfo.obj
- 0002:00017f78       __sehtable$__putwch        4009bf78     LIBCMTD:putwch.obj
- 0002:00017f98       __sehtable$_fputwc         4009bf98     LIBCMTD:fputwc.obj
- 0002:00017fb8       __sehtable$_vprintf_helper 4009bfb8     LIBCMTD:vprintf.obj
- 0002:00017fd8       __sehtable$??3@YAXPAX@Z    4009bfd8     LIBCMTD:dbgdel.obj
- 0002:00017ff8       __sehtable$__close         4009bff8     LIBCMTD:close.obj
- 0002:00018014       __unwindtable$?wcstoxq@@YA_KPAUlocaleinfo_struct@@PB_WPAPB_WHH@Z 4009c014     LIBCMTD:wcstoq.obj
- 0002:0001801c       __ehfuncinfo$?wcstoxq@@YA_KPAUlocaleinfo_struct@@PB_WPAPB_WHH@Z 4009c01c     LIBCMTD:wcstoq.obj
- 0002:00018040       __sehtable$?_Name_base@type_info@@CAPBDPBV1@PAU__type_info_node@@@Z 4009c040     LIBCMTD:typname.obj
- 0002:00018060       __sehtable$?_Type_info_dtor@type_info@@CAXPAV1@@Z 4009c060     LIBCMTD:typname.obj
- 0002:00018080       __sehtable$?_Name_base_internal@type_info@@CAPBDPBV1@PAU__type_info_node@@@Z 4009c080     LIBCMTD:typname.obj
- 0002:000180a0       __sehtable$?_Type_info_dtor_internal@type_info@@CAXPAV1@@Z 4009c0a0     LIBCMTD:typname.obj
- 0002:000180c0       __sehtable$___clean_type_info_names_internal 4009c0c0     LIBCMTD:typname.obj
- 0002:000180e0       __sehtable$___unDName      4009c0e0     LIBCMTD:undname.obj
- 0002:00018100       __sehtable$___unDNameEx    4009c100     LIBCMTD:undname.obj
- 0002:0001811c       __unwindtable$?make@DNameStatusNode@@SAPAV1@W4DNameStatus@@@Z 4009c11c     LIBCMTD:undname.obj
- 0002:00018124       __ehfuncinfo$?make@DNameStatusNode@@SAPAV1@W4DNameStatus@@@Z 4009c124     LIBCMTD:undname.obj
- 0002:00018150       .edata                     4009c150     uix86.exp
- 0002:00018178       rgpv                       4009c178     uix86.exp
- 0002:00018180       rgszName                   4009c180     uix86.exp
- 0002:00018188       rgwOrd                     4009c188     uix86.exp
- 0002:0001818c       szName                     4009c18c     uix86.exp
- 0002:00018196       $N00001                    4009c196     uix86.exp
- 0002:0001819f       $N00002                    4009c19f     uix86.exp
- 0002:00018920       .idata$6                   4009c920     kernel32:KERNEL32.dll
+ 0002:000174d4       __RTC_InitBase.rtc$IMZ     4009b4d4     bg_misc.obj
+ 0002:000174d8       __RTC_InitBase.rtc$IMZ     4009b4d8     q_math.obj
+ 0002:000174dc       __RTC_InitBase.rtc$IMZ     4009b4dc     q_shared.obj
+ 0002:000174e0       __RTC_InitBase.rtc$IMZ     4009b4e0     ui_syscalls.obj
+ 0002:000174e4       __RTC_InitBase.rtc$IMZ     4009b4e4     ui_addbots.obj
+ 0002:000174e8       __RTC_InitBase.rtc$IMZ     4009b4e8     ui_atoms.obj
+ 0002:000174ec       __RTC_InitBase.rtc$IMZ     4009b4ec     ui_cdkey.obj
+ 0002:000174f0       __RTC_InitBase.rtc$IMZ     4009b4f0     ui_cinematics.obj
+ 0002:000174f4       __RTC_InitBase.rtc$IMZ     4009b4f4     ui_confirm.obj
+ 0002:000174f8       __RTC_InitBase.rtc$IMZ     4009b4f8     ui_connect.obj
+ 0002:000174fc       __RTC_InitBase.rtc$IMZ     4009b4fc     ui_controls2.obj
+ 0002:00017500       __RTC_InitBase.rtc$IMZ     4009b500     ui_credits.obj
+ 0002:00017504       __RTC_InitBase.rtc$IMZ     4009b504     ui_demo2.obj
+ 0002:00017508       __RTC_InitBase.rtc$IMZ     4009b508     ui_display.obj
+ 0002:0001750c       __RTC_InitBase.rtc$IMZ     4009b50c     ui_gameinfo.obj
+ 0002:00017510       __RTC_InitBase.rtc$IMZ     4009b510     ui_ingame.obj
+ 0002:00017514       __RTC_InitBase.rtc$IMZ     4009b514     ui_main.obj
+ 0002:00017518       __RTC_InitBase.rtc$IMZ     4009b518     ui_menu.obj
+ 0002:0001751c       __RTC_InitBase.rtc$IMZ     4009b51c     ui_mfield.obj
+ 0002:00017520       __RTC_InitBase.rtc$IMZ     4009b520     ui_mods.obj
+ 0002:00017524       __RTC_InitBase.rtc$IMZ     4009b524     ui_network.obj
+ 0002:00017528       __RTC_InitBase.rtc$IMZ     4009b528     ui_options.obj
+ 0002:0001752c       __RTC_InitBase.rtc$IMZ     4009b52c     ui_playermodel.obj
+ 0002:00017530       __RTC_InitBase.rtc$IMZ     4009b530     ui_players.obj
+ 0002:00017534       __RTC_InitBase.rtc$IMZ     4009b534     ui_playersettings.obj
+ 0002:00017538       __RTC_InitBase.rtc$IMZ     4009b538     ui_preferences.obj
+ 0002:0001753c       __RTC_InitBase.rtc$IMZ     4009b53c     ui_qmenu.obj
+ 0002:00017540       __RTC_InitBase.rtc$IMZ     4009b540     ui_removebots.obj
+ 0002:00017544       __RTC_InitBase.rtc$IMZ     4009b544     ui_serverinfo.obj
+ 0002:00017548       __RTC_InitBase.rtc$IMZ     4009b548     ui_servers2.obj
+ 0002:0001754c       __RTC_InitBase.rtc$IMZ     4009b54c     ui_setup.obj
+ 0002:00017550       __RTC_InitBase.rtc$IMZ     4009b550     ui_sound.obj
+ 0002:00017554       __RTC_InitBase.rtc$IMZ     4009b554     ui_sparena.obj
+ 0002:00017558       __RTC_InitBase.rtc$IMZ     4009b558     ui_specifyserver.obj
+ 0002:0001755c       __RTC_InitBase.rtc$IMZ     4009b55c     ui_splevel.obj
+ 0002:00017560       __RTC_InitBase.rtc$IMZ     4009b560     ui_sppostgame.obj
+ 0002:00017564       __RTC_InitBase.rtc$IMZ     4009b564     ui_spreset.obj
+ 0002:00017568       __RTC_InitBase.rtc$IMZ     4009b568     ui_spskill.obj
+ 0002:0001756c       __RTC_InitBase.rtc$IMZ     4009b56c     ui_startserver.obj
+ 0002:00017570       __RTC_InitBase.rtc$IMZ     4009b570     ui_team.obj
+ 0002:00017574       __RTC_InitBase.rtc$IMZ     4009b574     ui_teamorders.obj
+ 0002:00017578       __RTC_InitBase.rtc$IMZ     4009b578     ui_video.obj
+ 0002:00017584       __RTC_Shutdown.rtc$TMZ     4009b584     bg_misc.obj
+ 0002:00017588       __RTC_Shutdown.rtc$TMZ     4009b588     q_math.obj
+ 0002:0001758c       __RTC_Shutdown.rtc$TMZ     4009b58c     q_shared.obj
+ 0002:00017590       __RTC_Shutdown.rtc$TMZ     4009b590     ui_syscalls.obj
+ 0002:00017594       __RTC_Shutdown.rtc$TMZ     4009b594     ui_addbots.obj
+ 0002:00017598       __RTC_Shutdown.rtc$TMZ     4009b598     ui_atoms.obj
+ 0002:0001759c       __RTC_Shutdown.rtc$TMZ     4009b59c     ui_cdkey.obj
+ 0002:000175a0       __RTC_Shutdown.rtc$TMZ     4009b5a0     ui_cinematics.obj
+ 0002:000175a4       __RTC_Shutdown.rtc$TMZ     4009b5a4     ui_confirm.obj
+ 0002:000175a8       __RTC_Shutdown.rtc$TMZ     4009b5a8     ui_connect.obj
+ 0002:000175ac       __RTC_Shutdown.rtc$TMZ     4009b5ac     ui_controls2.obj
+ 0002:000175b0       __RTC_Shutdown.rtc$TMZ     4009b5b0     ui_credits.obj
+ 0002:000175b4       __RTC_Shutdown.rtc$TMZ     4009b5b4     ui_demo2.obj
+ 0002:000175b8       __RTC_Shutdown.rtc$TMZ     4009b5b8     ui_display.obj
+ 0002:000175bc       __RTC_Shutdown.rtc$TMZ     4009b5bc     ui_gameinfo.obj
+ 0002:000175c0       __RTC_Shutdown.rtc$TMZ     4009b5c0     ui_ingame.obj
+ 0002:000175c4       __RTC_Shutdown.rtc$TMZ     4009b5c4     ui_main.obj
+ 0002:000175c8       __RTC_Shutdown.rtc$TMZ     4009b5c8     ui_menu.obj
+ 0002:000175cc       __RTC_Shutdown.rtc$TMZ     4009b5cc     ui_mfield.obj
+ 0002:000175d0       __RTC_Shutdown.rtc$TMZ     4009b5d0     ui_mods.obj
+ 0002:000175d4       __RTC_Shutdown.rtc$TMZ     4009b5d4     ui_network.obj
+ 0002:000175d8       __RTC_Shutdown.rtc$TMZ     4009b5d8     ui_options.obj
+ 0002:000175dc       __RTC_Shutdown.rtc$TMZ     4009b5dc     ui_playermodel.obj
+ 0002:000175e0       __RTC_Shutdown.rtc$TMZ     4009b5e0     ui_players.obj
+ 0002:000175e4       __RTC_Shutdown.rtc$TMZ     4009b5e4     ui_playersettings.obj
+ 0002:000175e8       __RTC_Shutdown.rtc$TMZ     4009b5e8     ui_preferences.obj
+ 0002:000175ec       __RTC_Shutdown.rtc$TMZ     4009b5ec     ui_qmenu.obj
+ 0002:000175f0       __RTC_Shutdown.rtc$TMZ     4009b5f0     ui_removebots.obj
+ 0002:000175f4       __RTC_Shutdown.rtc$TMZ     4009b5f4     ui_serverinfo.obj
+ 0002:000175f8       __RTC_Shutdown.rtc$TMZ     4009b5f8     ui_servers2.obj
+ 0002:000175fc       __RTC_Shutdown.rtc$TMZ     4009b5fc     ui_setup.obj
+ 0002:00017600       __RTC_Shutdown.rtc$TMZ     4009b600     ui_sound.obj
+ 0002:00017604       __RTC_Shutdown.rtc$TMZ     4009b604     ui_sparena.obj
+ 0002:00017608       __RTC_Shutdown.rtc$TMZ     4009b608     ui_specifyserver.obj
+ 0002:0001760c       __RTC_Shutdown.rtc$TMZ     4009b60c     ui_splevel.obj
+ 0002:00017610       __RTC_Shutdown.rtc$TMZ     4009b610     ui_sppostgame.obj
+ 0002:00017614       __RTC_Shutdown.rtc$TMZ     4009b614     ui_spreset.obj
+ 0002:00017618       __RTC_Shutdown.rtc$TMZ     4009b618     ui_spskill.obj
+ 0002:0001761c       __RTC_Shutdown.rtc$TMZ     4009b61c     ui_startserver.obj
+ 0002:00017620       __RTC_Shutdown.rtc$TMZ     4009b620     ui_team.obj
+ 0002:00017624       __RTC_Shutdown.rtc$TMZ     4009b624     ui_teamorders.obj
+ 0002:00017628       __RTC_Shutdown.rtc$TMZ     4009b628     ui_video.obj
+ 0002:00017630       __sehtable$__CRT_INIT@12   4009b630     LIBCMTD:dllcrt0.obj
+ 0002:00017650       __sehtable$___DllMainCRTStartup 4009b650     LIBCMTD:dllcrt0.obj
+ 0002:00017670       __sehtable$___set_fpsr_sse2 4009b670     LIBCMTD:fpctrl.obj
+ 0002:00017690       __sehtable$___updatetlocinfo 4009b690     LIBCMTD:localref.obj
+ 0002:000176b0       __sehtable$___updatetmbcinfo 4009b6b0     LIBCMTD:mbctype.obj
+ 0002:000176d0       __sehtable$__setmbcp       4009b6d0     LIBCMTD:mbctype.obj
+ 0002:000176ec       __unwindtable$?getSystemCP@@YAHH@Z 4009b6ec     LIBCMTD:mbctype.obj
+ 0002:000176f4       __ehfuncinfo$?getSystemCP@@YAHH@Z 4009b6f4     LIBCMTD:mbctype.obj
+ 0002:00017718       __sehtable$__freefls@4     4009b718     LIBCMTD:tidtable.obj
+ 0002:00017740       __sehtable$__initptd       4009b740     LIBCMTD:tidtable.obj
+ 0002:00017768       __sehtable$__CrtSetReportHookW2 4009b768     LIBCMTD:dbgrptw.obj
+ 0002:00017788       __sehtable$?DebuggerProbe@@YAHK@Z 4009b788     LIBCMTD:error.obj
+ 0002:000177a8       __sehtable$?DebuggerRuntime@@YAHKHPAXPB_W@Z 4009b7a8     LIBCMTD:error.obj
+ 0002:000177c8       __sehtable$_doexit         4009b7c8     LIBCMTD:crt0dat.obj
+ 0002:000177e8       __sehtable$_fflush         4009b7e8     LIBCMTD:fflush.obj
+ 0002:00017808       __sehtable$_flsall         4009b808     LIBCMTD:fflush.obj
+ 0002:00017830       __sehtable$_setvbuf        4009b830     LIBCMTD:setvbuf.obj
+ 0002:00017850       __sehtable$_fwprintf       4009b850     LIBCMTD:fwprintf.obj
+ 0002:00017870       __sehtable$_signal         4009b870     LIBCMTD:winsig.obj
+ 0002:00017890       __sehtable$_raise          4009b890     LIBCMTD:winsig.obj
+ 0002:000178b0       __sehtable$_ctrlevent_capture@4 4009b8b0     LIBCMTD:winsig.obj
+ 0002:000178d0       __sehtable$__get_current_locale 4009b8d0     LIBCMTD:wsetloca.obj
+ 0002:000178f8       __sehtable$__free_locale   4009b8f8     LIBCMTD:wsetloca.obj
+ 0002:00017920       __sehtable$__wsetlocale    4009b920     LIBCMTD:wsetloca.obj
+ 0002:00017958       __sehtable$__locterm       4009b958     LIBCMTD:wsetloca.obj
+ 0002:00017974       __unwindtable$?strtoxq@@YA_KPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b974     LIBCMTD:strtoq.obj
+ 0002:0001797c       __ehfuncinfo$?strtoxq@@YA_KPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b97c     LIBCMTD:strtoq.obj
+ 0002:000179a0       __unwindtable$?strtoxl@@YAKPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b9a0     LIBCMTD:strtol.obj
+ 0002:000179a8       __ehfuncinfo$?strtoxl@@YAKPAUlocaleinfo_struct@@PBDPAPBDHH@Z 4009b9a8     LIBCMTD:strtol.obj
+ 0002:000179d0       __sehtable$__ioinit        4009b9d0     LIBCMTD:ioinit.obj
+ 0002:000179f0       __sehtable$__realloc_dbg   4009b9f0     LIBCMTD:dbgheap.obj
+ 0002:00017a10       __sehtable$__expand_dbg    4009ba10     LIBCMTD:dbgheap.obj
+ 0002:00017a30       __sehtable$__free_dbg      4009ba30     LIBCMTD:dbgheap.obj
+ 0002:00017a50       __sehtable$__msize_dbg     4009ba50     LIBCMTD:dbgheap.obj
+ 0002:00017a70       __sehtable$__CrtCheckMemory 4009ba70     LIBCMTD:dbgheap.obj
+ 0002:00017a90       __sehtable$__CrtSetDbgFlag 4009ba90     LIBCMTD:dbgheap.obj
+ 0002:00017ab0       __sehtable$__CrtDoForAllClientObjects 4009bab0     LIBCMTD:dbgheap.obj
+ 0002:00017ad0       __sehtable$__CrtIsMemoryBlock 4009bad0     LIBCMTD:dbgheap.obj
+ 0002:00017af0       __sehtable$__CrtMemCheckpoint 4009baf0     LIBCMTD:dbgheap.obj
+ 0002:00017b10       __sehtable$__CrtSetDbgBlockType 4009bb10     LIBCMTD:dbgheap.obj
+ 0002:00017b30       __sehtable$__heap_alloc_dbg_impl 4009bb30     LIBCMTD:dbgheap.obj
+ 0002:00017b50       __sehtable$?__crtIsBadReadPtr@@YAHPBXI@Z 4009bb50     LIBCMTD:dbgheap.obj
+ 0002:00017b70       __sehtable$?_CrtMemDumpAllObjectsSince_stat@@YAXPBU_CrtMemState@@PAUlocaleinfo_struct@@@Z 4009bb70     LIBCMTD:dbgheap.obj
+ 0002:00017b90       __sehtable$__mtinitlocknum 4009bb90     LIBCMTD:mlock.obj
+ 0002:00017bb0       __sehtable$__VCrtDbgReportA 4009bbb0     LIBCMTD:dbgrptt.obj
+ 0002:00017bd8       __sehtable$__VCrtDbgReportW 4009bbd8     LIBCMTD:dbgrptt.obj
+ 0002:00017c00       __sehtable$__CrtSetReportHook2 4009bc00     LIBCMTD:dbgrpt.obj
+ 0002:00017c20       __sehtable$__IsNonwritableInCurrentImage 4009bc20     LIBCMTD:pesect.obj
+ 0002:00017c40       __sehtable$__onexit        4009bc40     LIBCMTD:onexit.obj
+ 0002:00017c60       __sehtable$?terminate@@YAXXZ 4009bc60     LIBCMTD:hooks.obj
+ 0002:00017c80       __sehtable$?_inconsistency@@YAXXZ 4009bc80     LIBCMTD:hooks.obj
+ 0002:00017ca0       __sehtable$__fcloseall     4009bca0     LIBCMTD:closeall.obj
+ 0002:00017cc0       __sehtable$__commit        4009bcc0     LIBCMTD:commit.obj
+ 0002:00017ce0       __sehtable$__write         4009bce0     LIBCMTD:write.obj
+ 0002:00017d00       __sehtable$_vfwprintf_helper 4009bd00     LIBCMTD:vfwprint.obj
+ 0002:00017d20       __sehtable$__lseeki64      4009bd20     LIBCMTD:lseeki64.obj
+ 0002:00017d40       __sehtable$_printf         4009bd40     LIBCMTD:printf.obj
+ 0002:00017d5c       __unwindtable$?x_ismbbtype_l@@YAHPAUlocaleinfo_struct@@IHH@Z 4009bd5c     LIBCMTD:ismbbyte.obj
+ 0002:00017d64       __ehfuncinfo$?x_ismbbtype_l@@YAHPAUlocaleinfo_struct@@IHH@Z 4009bd64     LIBCMTD:ismbbyte.obj
+ 0002:00017d88       __sehtable$___FrameUnwindToState 4009bd88     LIBCMTD:frame.obj
+ 0002:00017db0       __sehtable$?CallCatchBlock@@YAPAXPAUEHExceptionRecord@@PAUEHRegistrationNode@@PAU_CONTEXT@@PBU_s_FuncInfo@@PAXHK@Z 4009bdb0     LIBCMTD:frame.obj
+ 0002:00017dd8       __sehtable$___BuildCatchObject 4009bdd8     LIBCMTD:frame.obj
+ 0002:00017df8       __sehtable$___DestructExceptionObject 4009bdf8     LIBCMTD:frame.obj
+ 0002:00017e14       __catchsym$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z$2 4009be14     LIBCMTD:frame.obj
+ 0002:00017e24       __unwindtable$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z 4009be24     LIBCMTD:frame.obj
+ 0002:00017e34       __tryblocktable$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z 4009be34     LIBCMTD:frame.obj
+ 0002:00017e48       __ehfuncinfo$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z 4009be48     LIBCMTD:frame.obj
+ 0002:00017e70       __sehtable$___BuildCatchObjectHelper 4009be70     LIBCMTD:frame.obj
+ 0002:00017ee0       __sehtable$_fclose         4009bee0     LIBCMTD:fclose.obj
+ 0002:00017f00       __sehtable$__alloc_osfhnd  4009bf00     LIBCMTD:osfinfo.obj
+ 0002:00017f28       __sehtable$___lock_fhandle 4009bf28     LIBCMTD:osfinfo.obj
+ 0002:00017f48       __sehtable$__open_osfhandle 4009bf48     LIBCMTD:osfinfo.obj
+ 0002:00017f68       __sehtable$__putwch        4009bf68     LIBCMTD:putwch.obj
+ 0002:00017f88       __sehtable$_fputwc         4009bf88     LIBCMTD:fputwc.obj
+ 0002:00017fa8       __sehtable$_vprintf_helper 4009bfa8     LIBCMTD:vprintf.obj
+ 0002:00017fc8       __sehtable$??3@YAXPAX@Z    4009bfc8     LIBCMTD:dbgdel.obj
+ 0002:00017fe8       __sehtable$__close         4009bfe8     LIBCMTD:close.obj
+ 0002:00018004       __unwindtable$?wcstoxq@@YA_KPAUlocaleinfo_struct@@PB_WPAPB_WHH@Z 4009c004     LIBCMTD:wcstoq.obj
+ 0002:0001800c       __ehfuncinfo$?wcstoxq@@YA_KPAUlocaleinfo_struct@@PB_WPAPB_WHH@Z 4009c00c     LIBCMTD:wcstoq.obj
+ 0002:00018030       __sehtable$?_Name_base@type_info@@CAPBDPBV1@PAU__type_info_node@@@Z 4009c030     LIBCMTD:typname.obj
+ 0002:00018050       __sehtable$?_Type_info_dtor@type_info@@CAXPAV1@@Z 4009c050     LIBCMTD:typname.obj
+ 0002:00018070       __sehtable$?_Name_base_internal@type_info@@CAPBDPBV1@PAU__type_info_node@@@Z 4009c070     LIBCMTD:typname.obj
+ 0002:00018090       __sehtable$?_Type_info_dtor_internal@type_info@@CAXPAV1@@Z 4009c090     LIBCMTD:typname.obj
+ 0002:000180b0       __sehtable$___clean_type_info_names_internal 4009c0b0     LIBCMTD:typname.obj
+ 0002:000180d0       __sehtable$___unDName      4009c0d0     LIBCMTD:undname.obj
+ 0002:000180f0       __sehtable$___unDNameEx    4009c0f0     LIBCMTD:undname.obj
+ 0002:0001810c       __unwindtable$?make@DNameStatusNode@@SAPAV1@W4DNameStatus@@@Z 4009c10c     LIBCMTD:undname.obj
+ 0002:00018114       __ehfuncinfo$?make@DNameStatusNode@@SAPAV1@W4DNameStatus@@@Z 4009c114     LIBCMTD:undname.obj
+ 0002:00018140       .edata                     4009c140     uix86.exp
+ 0002:00018168       rgpv                       4009c168     uix86.exp
+ 0002:00018170       rgszName                   4009c170     uix86.exp
+ 0002:00018178       rgwOrd                     4009c178     uix86.exp
+ 0002:0001817c       szName                     4009c17c     uix86.exp
+ 0002:00018186       $N00001                    4009c186     uix86.exp
+ 0002:0001818f       $N00002                    4009c18f     uix86.exp
+ 0002:00018910       .idata$6                   4009c910     kernel32:KERNEL32.dll
  0003:000011a8       _syscall                   4009e1a8     ui_syscalls.obj
  0003:000011ac       _skillNames                4009e1ac     ui_addbots.obj
  0003:000011c4       _teamNames1                4009e1c4     ui_addbots.obj

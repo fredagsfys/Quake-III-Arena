@@ -1,6 +1,5 @@
 #include <Windows.h>
 #include "app_config.h"
-#include "fff.h"
 #include "unity.h"
 
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
@@ -17,6 +16,9 @@ void setupClientDependencies() {
 
 void threadFunc(appConfig config) {
 
+	system("Color 1A");
+	printf(config.testName);
+	system("Color 0");
 	int start = Sys_MilliSeconds();
 	if (!clientIntialized) {
 		fputs("Initializing client side...", stdout);
@@ -40,27 +42,27 @@ void threadFunc(appConfig config) {
 	}
 
 	if (config.execString == "") {
-		puts("Config had no execString, skipping...");
+		puts("Config had no execString, skipping...\n");
 	} else {
 		start = Sys_MilliSeconds();
 		printf("Running execString: %s...", config.execString);
 		Cbuf_ExecuteText(1, config.execString);
-		printf("Done in %d ms", (Sys_MilliSeconds() - start));
+		printf("\n - TEST DONE in %d ms", (Sys_MilliSeconds() - start));
 		puts("");
 		puts("");
 	}
 
 	if (config.reset) {
-		puts("Resetting varibles...");
+		puts("\n:::Resetting game state...:::\n");
 		clientIntialized = 0;
 		mapSet = 0;
 	}
-
 }
 
 void configSetup(void) {
 
 	appConfig config;	
+	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
 	config.errorType = CONNECT_FAIL;
 	config.ptr = &threadFunc;
 	config.execString = "connect 127.0.0.1";
@@ -70,6 +72,7 @@ void configSetup(void) {
 	//config.next = NULL;
 
 	appConfig config2;
+	config2.testName = "TEST # 2 - Player tries to disconnect from a online game.\n";
 	config2.errorType = CONNECT_FAIL;
 	config2.ptr = &threadFunc;
 	config2.execString = "";
@@ -81,9 +84,10 @@ void configSetup(void) {
 	config.next = &config2;
 
 	appConfig config3;
+	config3.testName = "TEST # 3 - Connected player gets kicked by host.\n";
 	config3.errorType = CONNECT_FAIL;
 	config3.ptr = &threadFunc;
-	config3.execString = "";
+	config3.execString = "kick HSKINGEN";
 	config3.finished = FALSE;
 	config3.prev = &config2;
 	config3.next = 0;

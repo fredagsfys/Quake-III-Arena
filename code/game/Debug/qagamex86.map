@@ -1,6 +1,6 @@
  qagamex86
 
- Timestamp is 552f9ca6 (Thu Apr 16 13:27:34 2015)
+ Timestamp is 552fb94c (Thu Apr 16 15:29:48 2015)
 
  Preferred load address is 20000000
 
@@ -20,8 +20,8 @@
  0002:0000018c 00000004H .CRT$XTA                DATA
  0002:00000190 00000004H .CRT$XTZ                DATA
  0002:000001a0 00016bf0H .rdata                  DATA
- 0002:00016d90 00000080H .rdata$debug            DATA
- 0002:00016e10 00000388H .rdata$r                DATA
+ 0002:00016d90 0000007cH .rdata$debug            DATA
+ 0002:00016e0c 00000388H .rdata$r                DATA
  0002:000171a0 00000030H .rdata$sxdata           DATA
  0002:000171d0 00000004H .rtc$IAA                DATA
  0002:000171d4 00000004H .rtc$IZZ                DATA
@@ -41,9 +41,9 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___guard_fids_table        00000000     <absolute>
  0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___guard_fids_count        00000000     <absolute>
+ 0000:00000000       ___guard_fids_table        00000000     <absolute>
  0000:00000000       ___guard_flags             00000000     <absolute>
  0000:0000000c       ___safe_se_handler_count   0000000c     <absolute>
  0000:00000000       ___ImageBase               20000000     <linker-defined>
@@ -1877,8 +1877,8 @@
  0001:000a14f0       ??4type_info@@AAEAAV0@ABV0@@Z 200a24f0 f   LIBCMTD:typinfo.obj
  0001:000a1500       ??8type_info@@QBE_NABV0@@Z 200a2500 f   LIBCMTD:typinfo.obj
  0001:000a1540       ??9type_info@@QBE_NABV0@@Z 200a2540 f   LIBCMTD:typinfo.obj
- 0001:000a1580       ??_Etype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
  0001:000a1580       ??_Gtype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
+ 0001:000a1580       ??_Etype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
  0001:000a15b0       ?_name_internal_method@type_info@@QBEPBDPAU__type_info_node@@@Z 200a25b0 f   LIBCMTD:typinfo.obj
  0001:000a15d0       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 200a25d0 f   LIBCMTD:typinfo.obj
  0001:000a15f0       ?before@type_info@@QBE_NABV1@@Z 200a25f0 f   LIBCMTD:typinfo.obj
@@ -1899,12 +1899,12 @@
  0001:000a18b0       ??1bad_typeid@std@@UAE@XZ  200a28b0 f   LIBCMTD:stdexcpt.obj
  0001:000a18d0       ??1exception@std@@UAE@XZ   200a28d0 f   LIBCMTD:stdexcpt.obj
  0001:000a18f0       ??4exception@std@@QAEAAV01@ABV01@@Z 200a28f0 f   LIBCMTD:stdexcpt.obj
- 0001:000a1940       ??_E__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1940       ??_G__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
- 0001:000a1970       ??_Gbad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1940       ??_E__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1970       ??_Ebad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
- 0001:000a19a0       ??_Gbad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1970       ??_Gbad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
  0001:000a19a0       ??_Ebad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
+ 0001:000a19a0       ??_Gbad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
  0001:000a19d0       ??_Eexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
  0001:000a19d0       ??_Gexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
  0001:000a1a00       ?_Copy_str@exception@std@@AAEXPBD@Z 200a2a00 f   LIBCMTD:stdexcpt.obj
@@ -3689,10 +3689,10 @@
  0002:00006474       __real@44400000            200b6474     g_weapon.obj
  0002:00006478       __real@46000000            200b6478     g_weapon.obj
  0002:0000647c       __real@48000000            200b647c     g_weapon.obj
- 0002:00006480       ??_C@_1IM@GAHHAEIF@?$AAc?$AA?3?$AA?2?$AAu?$AAs?$AAe?$AAr?$AAs?$AA?2?$AAd?$AAe?$AAv?$AAh?$AAa?$AAr?$AAi?$AAs?$AA?2?$AAd?$AAo?$AAc?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?2?$AAg?$AAi?$AAt?$AAh@ 200b6480     q_math.obj
- 0002:0000650c       ??_C@_1DE@EJPCDGJI@?$AAQ?$AA_?$AAf?$AAa?$AAb?$AAs?$AA?$CI?$AAi?$AAn?$AAv?$AA_?$AAd?$AAe?$AAn?$AAo?$AAm?$AA?$CJ?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AA0?$AA?4?$AA0?$AAf?$AA?$AA@ 200b650c     q_math.obj
- 0002:00006540       __real@3c8efa35            200b6540     q_math.obj
- 0002:00006544       __real@3fc00000            200b6544     q_math.obj
+ 0002:00006480       ??_C@_1IG@BLAALICD@?$AAc?$AA?3?$AA?2?$AAu?$AAs?$AAe?$AAr?$AAs?$AA?2?$AAh?$AAa?$AAr?$AAi?$AAs?$AA?2?$AAd?$AAo?$AAc?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?2?$AAg?$AAi?$AAt?$AAh?$AAu?$AAb?$AA?2@ 200b6480     q_math.obj
+ 0002:00006508       ??_C@_1DE@EJPCDGJI@?$AAQ?$AA_?$AAf?$AAa?$AAb?$AAs?$AA?$CI?$AAi?$AAn?$AAv?$AA_?$AAd?$AAe?$AAn?$AAo?$AAm?$AA?$CJ?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AA0?$AA?4?$AA0?$AAf?$AA?$AA@ 200b6508     q_math.obj
+ 0002:0000653c       __real@3c8efa35            200b653c     q_math.obj
+ 0002:00006540       __real@3fc00000            200b6540     q_math.obj
  0002:00006548       __real@4066c16c16c16c17    200b6548     q_math.obj
  0002:00006550       __real@c7c34f80            200b6550     q_math.obj
  0002:00006560       __xmm@80000000000000008000000000000000 200b6560     q_math.obj
@@ -3777,8 +3777,8 @@
  0002:000078d0       ??_C@_1LO@CHAFGADE@?$AAw?$AAc?$AAs?$AAc?$AAa?$AAt?$AA_?$AAs?$AA?$CI?$AAa?$AAs?$AAs?$AAe?$AAr?$AAt?$AAb?$AAu?$AAf?$AA?0?$AA?5?$AA?$CI?$AA6?$AA4?$AA?5?$AA?$CK?$AA?5?$AA9?$AA?$CJ?$AA?0?$AA?5?$AAL?$AA?$CC@ 200b78d0     LIBCMTD:wassert.obj
  0002:00007990       ??_C@_1HK@POCJMFGK@?$AA?$CI?$AAP?$AAr?$AAe?$AAs?$AAs?$AA?5?$AAR?$AAe?$AAt?$AAr?$AAy?$AA?5?$AAt?$AAo?$AA?5?$AAd?$AAe?$AAb?$AAu?$AAg?$AA?5?$AAt?$AAh?$AAe?$AA?5?$AAa?$AAp?$AAp?$AAl?$AAi?$AAc@ 200b7990     LIBCMTD:wassert.obj
  0002:00007a10       ??_C@_1EK@MBDPDCGA@?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?5?$AAV?$AAi?$AAs?$AAu?$AAa?$AAl?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAR?$AAu?$AAn?$AAt?$AAi?$AAm?$AAe?$AA?5?$AAL?$AAi?$AAb@ 200b7a10     LIBCMTD:wassert.obj
- 0002:00007a5c       __pDefaultRawDllMain       200b7a5c     LIBCMTD:dllcrt0.obj
  0002:00007a5c       __pRawDllMain              200b7a5c     LIBCMTD:dllcrt0.obj
+ 0002:00007a5c       __pDefaultRawDllMain       200b7a5c     LIBCMTD:dllcrt0.obj
  0002:00007a60       ??_C@_0CL@OOIKPIHN@f?3?2dd?2vctools?2crt?2crtw32?2startup@ 200b7a60     LIBCMTD:dllcrt0.obj
  0002:00007a8c       ??_C@_1BK@MGMFAEKH@?$AAk?$AAe?$AAr?$AAn?$AAe?$AAl?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@ 200b7a8c     LIBCMTD:winapisupp.obj
  0002:00007aa8       ??_C@_08KNHFBNJ@FlsAlloc?$AA@ 200b7aa8     LIBCMTD:winapisupp.obj
@@ -5183,54 +5183,54 @@
  0002:00016d1c       ??_C@_04OKOHEJBO@?5?$DP?$DP?5?$AA@ 200c6d1c     LIBCMTD:undname.obj
  0002:00016d24       ??_C@_1CA@JGBKKNCE@?$AA_?$AA_?$AAw?$AAs?$AAt?$AAr?$AAg?$AAt?$AAo?$AAl?$AAd?$AA1?$AA2?$AA_?$AAl?$AA?$AA@ 200c6d24     LIBCMTD:wstrgtold.obj
  0002:00016d48       __load_config_used         200c6d48     LIBCMTD:loadcfg.obj
- 0002:00016e10       ??_R4bad_exception@std@@6B@ 200c6e10     LIBCMTD:frame.obj
- 0002:00016e24       ??_R3bad_exception@std@@8  200c6e24     LIBCMTD:frame.obj
- 0002:00016e34       ??_R2bad_exception@std@@8  200c6e34     LIBCMTD:frame.obj
- 0002:00016e40       ??_R1A@?0A@EA@bad_exception@std@@8 200c6e40     LIBCMTD:frame.obj
- 0002:00016e5c       ??_R1A@?0A@EA@exception@std@@8 200c6e5c     LIBCMTD:frame.obj
- 0002:00016e78       ??_R3exception@std@@8      200c6e78     LIBCMTD:frame.obj
- 0002:00016e88       ??_R2exception@std@@8      200c6e88     LIBCMTD:frame.obj
- 0002:00016e90       ??_R4type_info@@6B@        200c6e90     LIBCMTD:typinfo.obj
- 0002:00016ea4       ??_R3type_info@@8          200c6ea4     LIBCMTD:typinfo.obj
- 0002:00016eb4       ??_R2type_info@@8          200c6eb4     LIBCMTD:typinfo.obj
- 0002:00016ebc       ??_R1A@?0A@EA@type_info@@8 200c6ebc     LIBCMTD:typinfo.obj
- 0002:00016ed8       ??_R4exception@std@@6B@    200c6ed8     LIBCMTD:stdexcpt.obj
- 0002:00016eec       ??_R4bad_cast@std@@6B@     200c6eec     LIBCMTD:stdexcpt.obj
- 0002:00016f00       ??_R3bad_cast@std@@8       200c6f00     LIBCMTD:stdexcpt.obj
- 0002:00016f10       ??_R2bad_cast@std@@8       200c6f10     LIBCMTD:stdexcpt.obj
- 0002:00016f1c       ??_R1A@?0A@EA@bad_cast@std@@8 200c6f1c     LIBCMTD:stdexcpt.obj
- 0002:00016f38       ??_R4bad_typeid@std@@6B@   200c6f38     LIBCMTD:stdexcpt.obj
- 0002:00016f4c       ??_R3bad_typeid@std@@8     200c6f4c     LIBCMTD:stdexcpt.obj
- 0002:00016f5c       ??_R2bad_typeid@std@@8     200c6f5c     LIBCMTD:stdexcpt.obj
- 0002:00016f68       ??_R1A@?0A@EA@bad_typeid@std@@8 200c6f68     LIBCMTD:stdexcpt.obj
- 0002:00016f84       ??_R4__non_rtti_object@std@@6B@ 200c6f84     LIBCMTD:stdexcpt.obj
- 0002:00016f98       ??_R3__non_rtti_object@std@@8 200c6f98     LIBCMTD:stdexcpt.obj
- 0002:00016fa8       ??_R2__non_rtti_object@std@@8 200c6fa8     LIBCMTD:stdexcpt.obj
- 0002:00016fb8       ??_R1A@?0A@EA@__non_rtti_object@std@@8 200c6fb8     LIBCMTD:stdexcpt.obj
- 0002:00016fd4       ??_R4DNameNode@@6B@        200c6fd4     LIBCMTD:undname.obj
- 0002:00016fe8       ??_R3DNameNode@@8          200c6fe8     LIBCMTD:undname.obj
- 0002:00016ff8       ??_R2DNameNode@@8          200c6ff8     LIBCMTD:undname.obj
- 0002:00017000       ??_R1A@?0A@EA@DNameNode@@8 200c7000     LIBCMTD:undname.obj
- 0002:0001701c       ??_R4charNode@@6B@         200c701c     LIBCMTD:undname.obj
- 0002:00017030       ??_R3charNode@@8           200c7030     LIBCMTD:undname.obj
- 0002:00017040       ??_R2charNode@@8           200c7040     LIBCMTD:undname.obj
- 0002:0001704c       ??_R1A@?0A@EA@charNode@@8  200c704c     LIBCMTD:undname.obj
- 0002:00017068       ??_R4pcharNode@@6B@        200c7068     LIBCMTD:undname.obj
- 0002:0001707c       ??_R3pcharNode@@8          200c707c     LIBCMTD:undname.obj
- 0002:0001708c       ??_R2pcharNode@@8          200c708c     LIBCMTD:undname.obj
- 0002:00017098       ??_R1A@?0A@EA@pcharNode@@8 200c7098     LIBCMTD:undname.obj
- 0002:000170b4       ??_R4pDNameNode@@6B@       200c70b4     LIBCMTD:undname.obj
- 0002:000170c8       ??_R3pDNameNode@@8         200c70c8     LIBCMTD:undname.obj
- 0002:000170d8       ??_R2pDNameNode@@8         200c70d8     LIBCMTD:undname.obj
- 0002:000170e4       ??_R1A@?0A@EA@pDNameNode@@8 200c70e4     LIBCMTD:undname.obj
- 0002:00017100       ??_R4DNameStatusNode@@6B@  200c7100     LIBCMTD:undname.obj
- 0002:00017114       ??_R3DNameStatusNode@@8    200c7114     LIBCMTD:undname.obj
- 0002:00017124       ??_R2DNameStatusNode@@8    200c7124     LIBCMTD:undname.obj
- 0002:00017130       ??_R1A@?0A@EA@DNameStatusNode@@8 200c7130     LIBCMTD:undname.obj
- 0002:0001714c       ??_R4pairNode@@6B@         200c714c     LIBCMTD:undname.obj
- 0002:00017160       ??_R3pairNode@@8           200c7160     LIBCMTD:undname.obj
- 0002:00017170       ??_R2pairNode@@8           200c7170     LIBCMTD:undname.obj
- 0002:0001717c       ??_R1A@?0A@EA@pairNode@@8  200c717c     LIBCMTD:undname.obj
+ 0002:00016e0c       ??_R4bad_exception@std@@6B@ 200c6e0c     LIBCMTD:frame.obj
+ 0002:00016e20       ??_R3bad_exception@std@@8  200c6e20     LIBCMTD:frame.obj
+ 0002:00016e30       ??_R2bad_exception@std@@8  200c6e30     LIBCMTD:frame.obj
+ 0002:00016e3c       ??_R1A@?0A@EA@bad_exception@std@@8 200c6e3c     LIBCMTD:frame.obj
+ 0002:00016e58       ??_R1A@?0A@EA@exception@std@@8 200c6e58     LIBCMTD:frame.obj
+ 0002:00016e74       ??_R3exception@std@@8      200c6e74     LIBCMTD:frame.obj
+ 0002:00016e84       ??_R2exception@std@@8      200c6e84     LIBCMTD:frame.obj
+ 0002:00016e8c       ??_R4type_info@@6B@        200c6e8c     LIBCMTD:typinfo.obj
+ 0002:00016ea0       ??_R3type_info@@8          200c6ea0     LIBCMTD:typinfo.obj
+ 0002:00016eb0       ??_R2type_info@@8          200c6eb0     LIBCMTD:typinfo.obj
+ 0002:00016eb8       ??_R1A@?0A@EA@type_info@@8 200c6eb8     LIBCMTD:typinfo.obj
+ 0002:00016ed4       ??_R4exception@std@@6B@    200c6ed4     LIBCMTD:stdexcpt.obj
+ 0002:00016ee8       ??_R4bad_cast@std@@6B@     200c6ee8     LIBCMTD:stdexcpt.obj
+ 0002:00016efc       ??_R3bad_cast@std@@8       200c6efc     LIBCMTD:stdexcpt.obj
+ 0002:00016f0c       ??_R2bad_cast@std@@8       200c6f0c     LIBCMTD:stdexcpt.obj
+ 0002:00016f18       ??_R1A@?0A@EA@bad_cast@std@@8 200c6f18     LIBCMTD:stdexcpt.obj
+ 0002:00016f34       ??_R4bad_typeid@std@@6B@   200c6f34     LIBCMTD:stdexcpt.obj
+ 0002:00016f48       ??_R3bad_typeid@std@@8     200c6f48     LIBCMTD:stdexcpt.obj
+ 0002:00016f58       ??_R2bad_typeid@std@@8     200c6f58     LIBCMTD:stdexcpt.obj
+ 0002:00016f64       ??_R1A@?0A@EA@bad_typeid@std@@8 200c6f64     LIBCMTD:stdexcpt.obj
+ 0002:00016f80       ??_R4__non_rtti_object@std@@6B@ 200c6f80     LIBCMTD:stdexcpt.obj
+ 0002:00016f94       ??_R3__non_rtti_object@std@@8 200c6f94     LIBCMTD:stdexcpt.obj
+ 0002:00016fa4       ??_R2__non_rtti_object@std@@8 200c6fa4     LIBCMTD:stdexcpt.obj
+ 0002:00016fb4       ??_R1A@?0A@EA@__non_rtti_object@std@@8 200c6fb4     LIBCMTD:stdexcpt.obj
+ 0002:00016fd0       ??_R4DNameNode@@6B@        200c6fd0     LIBCMTD:undname.obj
+ 0002:00016fe4       ??_R3DNameNode@@8          200c6fe4     LIBCMTD:undname.obj
+ 0002:00016ff4       ??_R2DNameNode@@8          200c6ff4     LIBCMTD:undname.obj
+ 0002:00016ffc       ??_R1A@?0A@EA@DNameNode@@8 200c6ffc     LIBCMTD:undname.obj
+ 0002:00017018       ??_R4charNode@@6B@         200c7018     LIBCMTD:undname.obj
+ 0002:0001702c       ??_R3charNode@@8           200c702c     LIBCMTD:undname.obj
+ 0002:0001703c       ??_R2charNode@@8           200c703c     LIBCMTD:undname.obj
+ 0002:00017048       ??_R1A@?0A@EA@charNode@@8  200c7048     LIBCMTD:undname.obj
+ 0002:00017064       ??_R4pcharNode@@6B@        200c7064     LIBCMTD:undname.obj
+ 0002:00017078       ??_R3pcharNode@@8          200c7078     LIBCMTD:undname.obj
+ 0002:00017088       ??_R2pcharNode@@8          200c7088     LIBCMTD:undname.obj
+ 0002:00017094       ??_R1A@?0A@EA@pcharNode@@8 200c7094     LIBCMTD:undname.obj
+ 0002:000170b0       ??_R4pDNameNode@@6B@       200c70b0     LIBCMTD:undname.obj
+ 0002:000170c4       ??_R3pDNameNode@@8         200c70c4     LIBCMTD:undname.obj
+ 0002:000170d4       ??_R2pDNameNode@@8         200c70d4     LIBCMTD:undname.obj
+ 0002:000170e0       ??_R1A@?0A@EA@pDNameNode@@8 200c70e0     LIBCMTD:undname.obj
+ 0002:000170fc       ??_R4DNameStatusNode@@6B@  200c70fc     LIBCMTD:undname.obj
+ 0002:00017110       ??_R3DNameStatusNode@@8    200c7110     LIBCMTD:undname.obj
+ 0002:00017120       ??_R2DNameStatusNode@@8    200c7120     LIBCMTD:undname.obj
+ 0002:0001712c       ??_R1A@?0A@EA@DNameStatusNode@@8 200c712c     LIBCMTD:undname.obj
+ 0002:00017148       ??_R4pairNode@@6B@         200c7148     LIBCMTD:undname.obj
+ 0002:0001715c       ??_R3pairNode@@8           200c715c     LIBCMTD:undname.obj
+ 0002:0001716c       ??_R2pairNode@@8           200c716c     LIBCMTD:undname.obj
+ 0002:00017178       ??_R1A@?0A@EA@pairNode@@8  200c7178     LIBCMTD:undname.obj
  0002:000171a0       ___safe_se_handler_table   200c71a0     <linker-defined>
  0002:000171d0       ___rtc_iaa                 200c71d0     LIBCMTD:initsect.obj
  0002:000171d4       ___rtc_izz                 200c71d4     LIBCMTD:initsect.obj

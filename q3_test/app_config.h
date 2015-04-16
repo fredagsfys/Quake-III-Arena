@@ -13,6 +13,7 @@ typedef struct appConfigT {
 	void* commandPtr;
 	int* server;
 	int* reset;
+	char* testName;
 	char* commandName;
 	char* execString;
 	int* finished;
