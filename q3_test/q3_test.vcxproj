@@ -86,7 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tests.c" />
+    <ClCompile Include="NetworkTests.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\cgame\cg_public.h" />

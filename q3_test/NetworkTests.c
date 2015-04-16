@@ -11,12 +11,16 @@ int Sys_MilliSeconds(void);
 int clientIntialized = 0;
 int mapSet = 0;
 
+void setupClientDependencies() {
+	CL_Init();
+}
+
 void threadFunc(appConfig config) {
 
 	int start = Sys_MilliSeconds();
 	if (!clientIntialized) {
 		fputs("Initializing client side...", stdout);
-		CL_Init();
+		setupClientDependencies();
 		printf("Done in %d ms", (Sys_MilliSeconds() - start));
 		puts("");
 		clientIntialized = 1;
@@ -54,7 +58,7 @@ void threadFunc(appConfig config) {
 
 }
 
-void thread(void) {
+void configSetup(void) {
 
 	appConfig config;	
 	config.errorType = CONNECT_FAIL;
@@ -63,18 +67,29 @@ void thread(void) {
 	config.finished = FALSE;
 	config.reset = FALSE;
 	config.server = 1;
-	config.next = NULL;
+	//config.next = NULL;
 
-	/*appConfig config2;
+	appConfig config2;
 	config2.errorType = CONNECT_FAIL;
 	config2.ptr = &threadFunc;
 	config2.execString = "";
 	config2.finished = FALSE;
 	config2.prev = &config;
 	config2.next = 0;
-	config2.reset = TRUE;
+	config2.reset = FALSE;
 
-	config.next = &config2;*/
+	config.next = &config2;
+
+	appConfig config3;
+	config3.errorType = CONNECT_FAIL;
+	config3.ptr = &threadFunc;
+	config3.execString = "";
+	config3.finished = FALSE;
+	config3.prev = &config2;
+	config3.next = 0;
+	config3.reset = TRUE;
+
+	config2.next = &config3;
 
 	RunApplication(config, NULL, NULL, "", SW_SHOW);
 }
@@ -94,7 +109,7 @@ HANDLE startThread(void* func, int* threadId) {
 
 void startQuake(void) {
 	int threadId;
-	HANDLE Threadhandle = startThread(&thread, &threadId);
+	HANDLE Threadhandle = startThread(&configSetup, &threadId);
 }
 
 int equals(char* c1, char* c2) {
