@@ -233,12 +233,12 @@ void addTestCase(testCase tc)
 void setupTests()
 {
 	// CREATE ALL TESTS HERE AND BIND TO FUNCTIONS
-	
+
 	// CREATING TEST CONTAINER
 	testCase testCaseOne;
 	testCaseOne.testFunction = &clientConnectivity;
 	testCaseOne.testName = "Client connectvity";
-	
+
 	// CREATING TEST CONFIG THAT WILL BE RUN WITH THE QUAKE CODE
 	appConfig config;
 	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
@@ -260,9 +260,9 @@ void setupTests()
 	addTestCase(testCaseOne);
 
 	// RINSE, REPEAT
+}
 
-void runTest(int testIndex)
-{
+void runTest(int testIndex) {
 	int threadId;
 	testCase tc = testCases[testIndex];
 	if (tc.testConfig.ptr != 0xcccccccc)
