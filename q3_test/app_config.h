@@ -17,6 +17,7 @@ typedef struct appConfigT {
 	char* commandName;
 	char* execString;
 	int* finished;
+	int* breakDown;
 	struct appConfigT *next;
 	struct appConfigT *prev;
 } appConfig;

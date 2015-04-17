@@ -11,6 +11,7 @@ int clientIntialized = 0;
 int mapSet = 0;
 HANDLE conHandle;
 appConfig activeTestConfig;
+appConfig breakDownConfig;
 
 #define MAX_TEST_CASES 10
 
@@ -106,6 +107,18 @@ int setupEnviroment()
 }
 
 void threadFunc(appConfig config) {
+
+	if (config.breakDown)
+	{
+		puts("\nBreaking down quake...\n");
+		Cbuf_ExecuteText(1, config.execString);
+		
+		puts("\n:::Resetting game state...:::\n");
+		clientIntialized = 0;
+		mapSet = 0;
+
+		return;
+	}
 
 	setColor(Color.green);
 	printf(config.testName);
@@ -230,8 +243,21 @@ void addTestCase(testCase tc)
 	}
 }
 
+void initBreakDownConfig()
+{
+	breakDownConfig.ptr = &threadFunc;
+	breakDownConfig.execString = "quit";
+	breakDownConfig.finished = FALSE;
+	breakDownConfig.next = 0;
+	breakDownConfig.reset = TRUE;
+	breakDownConfig.breakDown = TRUE;
+}
+
 void setupTests()
 {
+	// BREAKDOWN CONFIG INIT
+	initBreakDownConfig();
+
 	// CREATE ALL TESTS HERE AND BIND TO FUNCTIONS
 
 	// CREATING TEST CONTAINER
@@ -248,10 +274,15 @@ void setupTests()
 	config.finished = FALSE;
 	config.reset = FALSE;
 	config.server = TRUE;
-	config.next = NULL;
+	config.breakDown = FALSE;
 
 	// POSSIBLITY TO ADD MORE CONFIGS TO A TEST IF THERE IS A NEED TO REACH A CERTAIN STATE
 	// USE config.next = &nextConfig;
+
+	// IF YOU WISH TO BREAK DOWN THE QUAKE ENVIRONMENT BEFORE FURTHER TESTS-
+	// ADD config.next = &breakDownConfig TO LAST TEST CONFIG
+
+	config.next = &breakDownConfig;
 
 	// ASSIGN CONFIG TO TEST CONTAINER
 	testCaseOne.testConfig = config;
