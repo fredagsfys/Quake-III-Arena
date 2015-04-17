@@ -242,6 +242,8 @@ void SV_DirectConnect( netadr_t from ) {
 	char		*denied;
 	int			count;
 
+	printStack();
+
 	Com_DPrintf ("SVC_DirectConnect ()\n");
 
 	Q_strncpyz( userinfo, Cmd_Argv(1), sizeof(userinfo) );

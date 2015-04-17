@@ -1,6 +1,9 @@
 #include <Windows.h>
+#include <DbgHelp.h>
 #include "app_config.h"
 #include "unity.h"
+
+#pragma comment(lib, "Dbghelp.lib")
 
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 void Cbuf_ExecuteText(int exec_when, const char *text);
@@ -12,6 +15,33 @@ int mapSet = 0;
 HANDLE conHandle;
 appConfig activeTestConfig;
 appConfig breakDownConfig;
+
+void printStack(void)
+{
+	unsigned int   i;
+	void         * stack[100];
+	unsigned short frames;
+	SYMBOL_INFO  * symbol;
+	HANDLE         process;
+
+	process = GetCurrentProcess();
+
+	SymInitialize(process, NULL, TRUE);
+
+	frames = CaptureStackBackTrace(0, 100, stack, NULL);
+	symbol = (SYMBOL_INFO *)calloc(sizeof(SYMBOL_INFO) + 256 * sizeof(char), 1);
+	symbol->MaxNameLen = 255;
+	symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
+
+	for (i = 0; i < frames; i++)
+	{
+		SymFromAddr(process, (DWORD64)(stack[i]), 0, symbol);
+
+		printf("%i: %s - 0x%0X\n", frames - i - 1, symbol->Name, symbol->Address);
+	}
+
+	free(symbol);
+}
 
 #define MAX_TEST_CASES 10
 
@@ -301,6 +331,7 @@ void runTest(int testIndex) {
 		activeTestConfig = tc.testConfig;
 		HANDLE threadHandle = startThread(tc.testFunction, &threadId);
 	}
+	
 }
 
 int main(void) {

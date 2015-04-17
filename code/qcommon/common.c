@@ -2353,6 +2353,11 @@ Com_Init
 void Com_Init( char *commandLine) {
 	char	*s;
 
+
+	void* stack[1000];
+	unsigned short frames;
+	frames = CaptureStackBackTrace(0, 1000, stack, NULL);
+
 	Com_Printf( "%s %s %s\n", Q3_VERSION, CPUSTRING, __DATE__ );
 
 	if ( setjmp (abortframe) ) {
@@ -2513,6 +2518,8 @@ void Com_Init( char *commandLine) {
 
 	com_fullyInitialized = qtrue;
 	Com_Printf ("--- Common Initialization Complete ---\n");	
+
+
 }
 
 //==================================================================

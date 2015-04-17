@@ -23,3 +23,4 @@ typedef struct appConfigT {
 } appConfig;
 
 appConfig getConfig(void);
+void printStack(void);
