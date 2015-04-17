@@ -21,6 +21,7 @@ typedef struct testCase {
 } testCase;
 
 testCase testCases[MAX_TEST_CASES];
+int testCaseAmount;
 
 void clientConnectivity(void)
 {
@@ -195,7 +196,7 @@ int equals(char* c1, char* c2) {
 void printTestCases()
 {
 	int count = 1;
-	for (int i = 0; i < MAX_TEST_CASES; i++)
+	for (int i = 0; i < testCaseAmount; i++)
 	{
 		if (testCases[i].testName != NULL)
 		{
@@ -222,6 +223,7 @@ void addTestCase(testCase tc)
 	{
 		if (testCases[i].testName == NULL)
 		{
+			testCaseAmount = i + 1;
 			testCases[i] = tc;
 			return;
 		}
@@ -231,10 +233,13 @@ void addTestCase(testCase tc)
 void setupTests()
 {
 	// CREATE ALL TESTS HERE AND BIND TO FUNCTIONS
+	
+	// CREATING TEST CONTAINER
 	testCase testCaseOne;
 	testCaseOne.testFunction = &clientConnectivity;
 	testCaseOne.testName = "Client connectvity";
 	
+	// CREATING TEST CONFIG THAT WILL BE RUN WITH THE QUAKE CODE
 	appConfig config;
 	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
 	config.errorType = CONNECT_FAIL;
@@ -245,29 +250,26 @@ void setupTests()
 	config.server = TRUE;
 	config.next = NULL;
 
+	// POSSIBLITY TO ADD MORE CONFIGS TO A TEST IF THERE IS A NEED TO REACH A CERTAIN STATE
+	// USE config.next = &nextConfig;
+
+	// ASSIGN CONFIG TO TEST CONTAINER
 	testCaseOne.testConfig = config;
 
+	// ADD TEST CASE TO COLLECTION
 	addTestCase(testCaseOne);
 
-	testCase testCaseTwo;
-	testCaseTwo.testFunction = &threadFunc;
-	testCaseTwo.testName = "Disconnect client";
-	addTestCase(testCaseTwo);
+	// RINSE, REPEAT
 
-	testCase testCaseThree;
-	testCaseThree.testFunction = &threadFunc;
-	testCaseThree.testName = "Kick client";
-	addTestCase(testCaseThree);
-
-	testCase testCaseFour;
-	testCaseFour.testFunction = &threadFunc;
-	testCaseFour.testName = "Do the rumba";
-	addTestCase(testCaseFour);
-
-	testCase testCaseFive;
-	testCaseFive.testFunction = &threadFunc;
-	testCaseFive.testName = "YOLO";
-	addTestCase(testCaseFive);
+void runTest(int testIndex)
+{
+	int threadId;
+	testCase tc = testCases[testIndex];
+	if (tc.testConfig.ptr != 0xcccccccc)
+	{
+		activeTestConfig = tc.testConfig;
+		HANDLE threadHandle = startThread(tc.testFunction, &threadId);
+	}
 }
 
 int main(void) {
@@ -276,27 +278,35 @@ int main(void) {
 	setupColors();
 	setupTests();
 
-	puts("Starting quake3 environment...");
+	puts("Starting quake3 test environment...");
 	puts("");
 
 	char* line[1024];
-	printf("Select tests to run\n\n");
 	printTestCases();
-	puts("");
+	printf("\nSelect test to run: ");
 
 	do {
 
 		scanf("%s", line);
 
 		int number = atoi(line);
-		if (number <= MAX_TEST_CASES && number > 0 && testCases[number].testName != NULL)
+		if (number <= MAX_TEST_CASES && number > 0)
 		{
 			number--;
-			int threadId;
-			testCase tc = testCases[number];
-			activeTestConfig = tc.testConfig;
-			void(*test)(void) = tc.testFunction;
-			HANDLE threadHandle = startThread(&test, &threadId);
+
+			if (number == testCaseAmount)
+			{
+				for (int i = 0; i < testCaseAmount; i++)
+				{
+					if (testCases[i].testName != NULL)
+						runTest(i);
+				}
+			}
+			else
+			{
+				if (testCases[number].testName != NULL)
+					runTest(number);
+			}
 		}
 
 		if (equals(line, "start")) {
