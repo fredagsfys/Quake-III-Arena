@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include <DbgHelp.h>
-#include "app_config.h"
+#include "../code/server/server.h"
 #include "../code/game/q_shared.h"
 
 #pragma comment(lib, "Dbghelp.lib")
@@ -143,7 +143,7 @@ void execConfig(appConfig config, int time)
 		setColor(Color.gray);
 		Cbuf_ExecuteText(1, config.execString);
 
-		printf("\n - TEST DONE in %d ms", (Sys_MilliSeconds() - time));
+		printf("\n - Executed in %d ms", (Sys_MilliSeconds() - time));
 
 		puts("");
 		puts("");
@@ -162,37 +162,36 @@ void threadFunc(appConfig config) {
 
 	if (config.breakDown)
 	{
-		puts("\nBreaking down quake...\n");
-		Cbuf_ExecuteText(1, config.execString);
-		
-		puts("\n:::Resetting game state...:::\n");
-		clientIntialized = 0;
-		mapSet = 0;
-
 		// Assert
-		int expected = TRUE;
-		int actual = IsStateEqualTo((appConfig*)config.first->connstate);
+		int expected = (appConfig*)config.first->connstate;
+		int actual = IsStateEqualTo((appConfig*)config.first->connstate, "HSKINGEN");
 		TEST_ASSERT_EQUAL_INT(expected, actual);
 		int result = TestPassed();
 
-		puts("Test complated!");
+		puts("Test completed!");
 		puts("");
-		printf("Expected: %d\n", expected);
-		printf("  Actual: %d\n\n", actual);
-		printf("Test ");
+		//printf("Expected: %d\n", expected);
+		//printf("  Actual: %d\n\n", actual);
 		if (result)
 		{
 			setColor(Color.green);
-			printf("PASSED");
+			printf(":::PASSED:::");
 		} 
 		else
 		{
 			setColor(Color.red);
-			printf("FAILED");
+			printf(":::FAILED:::");
 		}
 		setColor(Color.gray);
 		puts("");
 		puts("");
+
+		puts("\nBreaking down quake...\n");
+		Cbuf_ExecuteText(1, config.execString);
+
+		puts("\n:::Resetting game state...:::\n");
+		clientIntialized = 0;
+		mapSet = 0;
 
 		return;
 	}
@@ -318,8 +317,6 @@ void runTest(int testIndex) {
 	{
 		activeTestConfig = tc.testConfig;
 		HANDLE threadHandle = startThread(tc.testFunction, &threadId);
-
-
 	}
 	
 }
@@ -376,7 +373,7 @@ appConfig PlayerConnectsToGame(){
 	ac->finished = FALSE;
 	ac->reset = FALSE;
 	ac->server = TRUE;
-	ac->connstate = (int)CA_CONNECTED;
+	ac->connstate = (int)CS_CONNECTED;
 	ac->breakDown = FALSE;
 	ac->first = ac;
 
@@ -396,6 +393,7 @@ appConfig PlayerDisconnectsFromGame() {
 	ac->execString = "connect 127.0.0.1";
 	ac->finished = FALSE;
 	ac->reset = FALSE;
+	ac->connstate = (int)CS_FREE;
 	ac->server = TRUE;
 	ac->breakDown = FALSE;
 
@@ -404,10 +402,12 @@ appConfig PlayerDisconnectsFromGame() {
 	ac->next->ptr = &threadFunc;
 	ac->next->execString = "disconnect";
 	ac->next->finished = FALSE;
-	ac->next->next = NULL;
 	ac->next->breakDown = FALSE;
 	ac->next->reset = FALSE;
-	
+
+	ac->next->next = &tearDownConfig;
+	ac->next->next->first = ac;
+
 	return *ac;
 }
 
@@ -421,6 +421,7 @@ appConfig PlayerKickedFromGame(){
 	ac->execString = "connect 127.0.0.1";
 	ac->finished = FALSE;
 	ac->reset = FALSE;
+	ac->connstate = (int)CS_FREE;
 	ac->server = TRUE;
 	ac->breakDown = FALSE;
 
@@ -432,6 +433,9 @@ appConfig PlayerKickedFromGame(){
 	ac->next->next = NULL;
 	ac->next->breakDown = FALSE;
 	ac->next->reset = TRUE;
+
+	ac->next->next = &tearDownConfig;
+	ac->next->next->first = ac;
 
 	return *ac;
 }

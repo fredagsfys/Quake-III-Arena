@@ -79,10 +79,7 @@ refexport_t	re;
 
 ping_t	cl_pinglist[MAX_PINGREQUESTS];
 
-int IsStateEqualTo(int* connState)
-{
-	return (int*)cls.state == connState;
-}
+
 
 typedef struct serverStatus_s
 {
