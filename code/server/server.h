@@ -107,7 +107,7 @@ typedef enum {
 } clientState_t;
 
 
-int IsStateEqualTo(int* connState, char playerName);
+int IsStateEqualTo(char* playerName);
 
 typedef struct netchan_buffer_s {
 	msg_t           msg;

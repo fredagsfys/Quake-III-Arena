@@ -19,7 +19,17 @@ int clientIntialized = 0;
 int mapSet = 0;
 HANDLE conHandle;
 appConfig activeTestConfig;
-appConfig tearDownConfig;
+
+#define MAX_TEST_CASES 10
+
+typedef struct testCase {
+	void* testFunction;
+	char* testName;
+	appConfig testConfig;
+} testCase;
+
+testCase testCases[MAX_TEST_CASES];
+int testCaseAmount;
 
 appConfig* allocConfig(int size)
 {
@@ -65,16 +75,6 @@ void printStack(void)
 	free(symbol);
 }
 
-#define MAX_TEST_CASES 10
-
-typedef struct testCase {
-	void* testFunction;
-	char* testName;
-	appConfig testConfig;
-} testCase;
-
-testCase testCases[MAX_TEST_CASES];
-int testCaseAmount;
 
 void clientConnectivity(void)
 {
@@ -164,7 +164,7 @@ void threadFunc(appConfig config) {
 	{
 		// Assert
 		int expected = (appConfig*)config.first->connstate;
-		int actual = IsStateEqualTo((appConfig*)config.first->connstate, "HSKINGEN");
+		int actual = IsStateEqualTo("HSKINGEN2");
 		TEST_ASSERT_EQUAL_INT(expected, actual);
 		int result = TestPassed();
 
@@ -210,6 +210,18 @@ void threadFunc(appConfig config) {
 		clientIntialized = 0;
 		mapSet = 0;
 	}
+}
+
+appConfig* allocTearDownConfig()
+{
+	appConfig* config = allocConfig(1);
+	config->ptr = &threadFunc;
+	config->execString = "quit";
+	config->finished = FALSE;
+	config->next = 0;
+	config->reset = TRUE;
+	config->breakDown = TRUE;
+	return config;
 }
 
 HANDLE startThread(void* func, int* threadId) {
@@ -275,21 +287,8 @@ void addTestCase(testCase tc)
 	}
 }
 
-void initTearDownConfig()
-{
-	tearDownConfig.ptr = &threadFunc;
-	tearDownConfig.execString = "quit";
-	tearDownConfig.finished = FALSE;
-	tearDownConfig.next = 0;
-	tearDownConfig.reset = TRUE;
-	tearDownConfig.breakDown = TRUE;
-}
-
 void setupTests()
 {
-	// BREAKDOWN CONFIG INIT
-	initTearDownConfig();
-
 	// Arrange 
 	testCase testCaseOne;
 	testCaseOne.testFunction = &clientConnectivity;
@@ -375,9 +374,8 @@ appConfig PlayerConnectsToGame(){
 	ac->server = TRUE;
 	ac->connstate = (int)CS_CONNECTED;
 	ac->breakDown = FALSE;
-	ac->first = ac;
 
-	ac->next = &tearDownConfig;
+	ac->next = allocTearDownConfig();
 	ac->next->first = ac;
 
 	return *ac;
@@ -405,7 +403,7 @@ appConfig PlayerDisconnectsFromGame() {
 	ac->next->breakDown = FALSE;
 	ac->next->reset = FALSE;
 
-	ac->next->next = &tearDownConfig;
+	ac->next->next = allocTearDownConfig();
 	ac->next->next->first = ac;
 
 	return *ac;
@@ -434,7 +432,7 @@ appConfig PlayerKickedFromGame(){
 	ac->next->breakDown = FALSE;
 	ac->next->reset = TRUE;
 
-	ac->next->next = &tearDownConfig;
+	ac->next->next = allocTearDownConfig();
 	ac->next->next->first = ac;
 
 	return *ac;

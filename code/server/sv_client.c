@@ -43,7 +43,7 @@ When an authorizeip is returned, a challenge response will be
 sent to that ip.
 =================
 */
-int IsStateEqualTo(int* connState, char playerName)
+int IsStateEqualTo(char* playerName)
 {
 	client_t	*cl;
 	int			i;
