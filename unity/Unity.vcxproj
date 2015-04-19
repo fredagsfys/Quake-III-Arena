@@ -78,6 +78,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="unity.h" />
+    <ClInclude Include="unity_internals.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="unity.c" />

@@ -1339,7 +1339,7 @@ typedef enum {
 	CA_CINEMATIC		// playing a cinematic or a static pic, not connected to a server
 } connstate_t;
 
-int IsStateEqualTo(connstate_t connState);
+int IsStateEqualTo(int* connState);
 
 // font support 
 

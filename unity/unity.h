@@ -1,11 +1,12 @@
 /* ==========================================
     Unity Project - A Test Framework for C
-    Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams
+    Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams
     [Released under MIT License. Please refer to license.txt for details]
 ========================================== */
 
 #ifndef UNITY_FRAMEWORK_H
 #define UNITY_FRAMEWORK_H
+
 #define UNITY
 
 #include "unity_internals.h"
@@ -16,15 +17,10 @@
 // All options described below should be passed as a compiler flag to all files using Unity. If you must add #defines, place them BEFORE the #include above.
 
 // Integers/longs/pointers
-//     - Unity attempts to automatically discover your integer sizes
-//       - define UNITY_EXCLUDE_STDINT_H to stop attempting to look in <stdint.h>
-//       - define UNITY_EXCLUDE_LIMITS_H to stop attempting to look in <limits.h>
-//       - define UNITY_EXCLUDE_SIZEOF to stop attempting to use sizeof in macros
-//     - If you cannot use the automatic methods above, you can force Unity by using these options:
-//       - define UNITY_SUPPORT_64
-//       - define UNITY_INT_WIDTH
-//       - UNITY_LONG_WIDTH
-//       - UNITY_POINTER_WIDTH
+//     - Unity assumes 32 bit integers, longs, and pointers by default
+//     - If your compiler treats ints of a different size, options are:
+//       - define UNITY_USE_LIMITS_H to use limits.h to determine sizes
+//       - define UNITY_INT_WIDTH, UNITY_LONG_WIDTH, nand UNITY_POINTER_WIDTH
 
 // Floats
 //     - define UNITY_EXCLUDE_FLOAT to disallow floating point comparisons
@@ -49,6 +45,21 @@
 
 // Parameterized Tests
 //     - you'll want to create a define of TEST_CASE(...) which basically evaluates to nothing
+
+//-------------------------------------------------------
+// Test Running Macros
+//-------------------------------------------------------
+
+#define TEST_PROTECT() (UNITY_TRUE)
+
+#define TEST_ABORT() {return 1;}
+
+#ifndef RUN_TEST
+#define RUN_TEST(func, line_num) UnityDefaultTestRun(func, #func, line_num)
+#endif
+
+#define TEST_LINE_NUM (Unity.CurrentTestLineNumber)
+#define TEST_IS_IGNORED (Unity.CurrentTestIgnored)
 
 //-------------------------------------------------------
 // Basic Fail and Ignore
@@ -95,6 +106,56 @@
 #define TEST_ASSERT_BITS_LOW(mask, actual)                                                         UNITY_TEST_ASSERT_BITS((mask), (_UU32)(0), (actual), __LINE__, NULL)
 #define TEST_ASSERT_BIT_HIGH(bit, actual)                                                          UNITY_TEST_ASSERT_BITS(((_UU32)1 << bit), (_UU32)(-1), (actual), __LINE__, NULL)
 #define TEST_ASSERT_BIT_LOW(bit, actual)                                                           UNITY_TEST_ASSERT_BITS(((_UU32)1 << bit), (_UU32)(0), (actual), __LINE__, NULL)
+
+// Integers signed compares (of all sizes)
+#define TEST_ASSERT_GREATER_INT(border,actual)                                                     UNITY_TEST_ASSERT_GREATER_INT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_INT8(border, actual)                                                   UNITY_TEST_ASSERT_GREATER_INT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_INT16(border, actual)                                                  UNITY_TEST_ASSERT_GREATER_INT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_INT32(border, actual)                                                  UNITY_TEST_ASSERT_GREATER_INT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_INT64(border, actual)                                                  UNITY_TEST_ASSERT_GREATER_INT64((border), (actual), __LINE__, NULL)
+// ---
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT(border,actual)                                            UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT8(border, actual)                                          UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT16(border, actual)                                         UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT32(border, actual)                                         UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT64(border, actual)                                         UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT64((border), (actual), __LINE__, NULL)
+// ---
+#define TEST_ASSERT_LESS_OR_EQUAL_INT(border,actual)                                               UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT8(border, actual)                                             UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT16(border, actual)                                            UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT32(border, actual)                                            UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT64(border, actual)                                            UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT64((border), (actual), __LINE__, NULL)
+// ---
+#define TEST_ASSERT_LESS_INT(border,actual)                                                        UNITY_TEST_ASSERT_LESS_INT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_INT8(border, actual)                                                      UNITY_TEST_ASSERT_LESS_INT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_INT16(border, actual)                                                     UNITY_TEST_ASSERT_LESS_INT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_INT32(border, actual)                                                     UNITY_TEST_ASSERT_LESS_INT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_INT64(border, actual)                                                     UNITY_TEST_ASSERT_LESS_INT64((border), (actual), __LINE__, NULL)
+
+// Integers unsigned compares (of all sizes)
+#define TEST_ASSERT_GREATER_UINT(border,actual)                                                    UNITY_TEST_ASSERT_GREATER_UINT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_UINT8(border, actual)                                                  UNITY_TEST_ASSERT_GREATER_UINT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_UINT16(border, actual)                                                 UNITY_TEST_ASSERT_GREATER_UINT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_UINT32(border, actual)                                                 UNITY_TEST_ASSERT_GREATER_UINT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_UINT64(border, actual)                                                 UNITY_TEST_ASSERT_GREATER_UINT64((border), (actual), __LINE__, NULL)
+// ---
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT(border,actual)                                           UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT8(border, actual)                                         UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT16(border, actual)                                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT32(border, actual)                                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT64(border, actual)                                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT64((border), (actual), __LINE__, NULL)
+// ---
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT(border,actual)                                              UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT8(border, actual)                                            UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT16(border, actual)                                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT32(border, actual)                                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT64(border, actual)                                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT64((border), (actual), __LINE__, NULL)
+// ---
+#define TEST_ASSERT_LESS_UINT(border,actual)                                                       UNITY_TEST_ASSERT_LESS_UINT((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_UINT8(border, actual)                                                     UNITY_TEST_ASSERT_LESS_UINT8((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_UINT16(border, actual)                                                    UNITY_TEST_ASSERT_LESS_UINT16((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_UINT32(border, actual)                                                    UNITY_TEST_ASSERT_LESS_UINT32((border), (actual), __LINE__, NULL)
+#define TEST_ASSERT_LESS_UINT64(border, actual)                                                    UNITY_TEST_ASSERT_LESS_UINT64((border), (actual), __LINE__, NULL)
 
 //Integer Ranges (of all sizes)
 #define TEST_ASSERT_INT_WITHIN(delta, expected, actual)                                            UNITY_TEST_ASSERT_INT_WITHIN(delta, expected, actual, __LINE__, NULL)
@@ -200,6 +261,56 @@
 #define TEST_ASSERT_BIT_HIGH_MESSAGE(bit, actual, message)                                         UNITY_TEST_ASSERT_BITS(((_UU32)1 << bit), (_UU32)(-1), (actual), __LINE__, message)
 #define TEST_ASSERT_BIT_LOW_MESSAGE(bit, actual, message)                                          UNITY_TEST_ASSERT_BITS(((_UU32)1 << bit), (_UU32)(0), (actual), __LINE__, message)
 
+// Signed integers compares (of all sizes)
+#define TEST_ASSERT_GREATER_INT_MESSAGE(border,actual, message)                                    UNITY_TEST_ASSERT_GREATER_INT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_INT8_MESSAGE(border, actual, message)                                  UNITY_TEST_ASSERT_GREATER_INT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_INT16_MESSAGE(border, actual, message)                                 UNITY_TEST_ASSERT_GREATER_INT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_INT32_MESSAGE(border, actual, message)                                 UNITY_TEST_ASSERT_GREATER_INT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_INT64_MESSAGE(border, actual, message)                                 UNITY_TEST_ASSERT_GREATER_INT64((border), (actual), __LINE__, message)
+// ---
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT_MESSAGE(border,actual, message)                           UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT8_MESSAGE(border, actual, message)                         UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT16_MESSAGE(border, actual, message)                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT32_MESSAGE(border, actual, message)                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_INT64_MESSAGE(border, actual, message)                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_INT64((border), (actual), __LINE__, message)
+// ---
+#define TEST_ASSERT_LESS_OR_EQUAL_INT_MESSAGE(border,actual, message)                              UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT8_MESSAGE(border, actual, message)                            UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT16_MESSAGE(border, actual, message)                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT32_MESSAGE(border, actual, message)                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_INT64_MESSAGE(border, actual, message)                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_INT64((border), (actual), __LINE__, message)
+// ---
+#define TEST_ASSERT_LESS_INT_MESSAGE(border,actual, message)                                       UNITY_TEST_ASSERT_LESS_INT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_INT8_MESSAGE(border, actual, message)                                     UNITY_TEST_ASSERT_LESS_INT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_INT16_MESSAGE(border, actual, message)                                    UNITY_TEST_ASSERT_LESS_INT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_INT32_MESSAGE(border, actual, message)                                    UNITY_TEST_ASSERT_LESS_INT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_INT64_MESSAGE(border, actual, message)                                    UNITY_TEST_ASSERT_LESS_INT64((border), (actual), __LINE__, message)
+
+// Unigned integers compares (of all sizes)
+#define TEST_ASSERT_GREATER_UINT_MESSAGE(border,actual, message)                                   UNITY_TEST_ASSERT_GREATER_UINT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_UINT8_MESSAGE(border, actual, message)                                 UNITY_TEST_ASSERT_GREATER_UINT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_UINT16_MESSAGE(border, actual, message)                                UNITY_TEST_ASSERT_GREATER_UINT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_UINT32_MESSAGE(border, actual, message)                                UNITY_TEST_ASSERT_GREATER_UINT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_UINT64_MESSAGE(border, actual, message)                                UNITY_TEST_ASSERT_GREATER_UINT64((border), (actual), __LINE__, message)
+// --
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT_MESSAGE(border,actual, message)                          UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT8_MESSAGE(border, actual, message)                        UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT16_MESSAGE(border, actual, message)                       UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT32_MESSAGE(border, actual, message)                       UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_GREATER_OR_EQUAL_UINT64_MESSAGE(border, actual, message)                       UNITY_TEST_ASSERT_GREATER_OR_EQUAL_UINT64((border), (actual), __LINE__, message)
+// ---
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT_MESSAGE(border,actual, message)                             UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT8_MESSAGE(border, actual, message)                           UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT16_MESSAGE(border, actual, message)                          UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT32_MESSAGE(border, actual, message)                          UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_OR_EQUAL_UINT64_MESSAGE(border, actual, message)                          UNITY_TEST_ASSERT_LESS_OR_EQUAL_UINT64((border), (actual), __LINE__, message)
+// ---
+#define TEST_ASSERT_LESS_UINT_MESSAGE(border,actual, message)                                      UNITY_TEST_ASSERT_LESS_UINT((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_UINT8_MESSAGE(border, actual, message)                                    UNITY_TEST_ASSERT_LESS_UINT8((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_UINT16_MESSAGE(border, actual, message)                                   UNITY_TEST_ASSERT_LESS_UINT16((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_UINT32_MESSAGE(border, actual, message)                                   UNITY_TEST_ASSERT_LESS_UINT32((border), (actual), __LINE__, message)
+#define TEST_ASSERT_LESS_UINT64_MESSAGE(border, actual, message)                                   UNITY_TEST_ASSERT_LESS_UINT64((border), (actual), __LINE__, message)
+
 //Integer Ranges (of all sizes)
 #define TEST_ASSERT_INT_WITHIN_MESSAGE(delta, expected, actual, message)                           UNITY_TEST_ASSERT_INT_WITHIN(delta, expected, actual, __LINE__, message)
 #define TEST_ASSERT_INT8_WITHIN_MESSAGE(delta, expected, actual, message)                          UNITY_TEST_ASSERT_INT8_WITHIN(delta, expected, actual, __LINE__, message)
@@ -267,6 +378,4 @@
 #define TEST_ASSERT_DOUBLE_IS_NOT_NEG_INF_MESSAGE(actual, message)                                 UNITY_TEST_ASSERT_DOUBLE_IS_NOT_NEG_INF(actual, __LINE__, message)
 #define TEST_ASSERT_DOUBLE_IS_NOT_NAN_MESSAGE(actual, message)                                     UNITY_TEST_ASSERT_DOUBLE_IS_NOT_NAN(actual, __LINE__, message)
 #define TEST_ASSERT_DOUBLE_IS_NOT_DETERMINATE_MESSAGE(actual, message)                             UNITY_TEST_ASSERT_DOUBLE_IS_NOT_DETERMINATE(actual, __LINE__, message)
-
-//end of UNITY_FRAMEWORK_H
 #endif

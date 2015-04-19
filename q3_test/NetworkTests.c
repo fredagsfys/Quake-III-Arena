@@ -1,12 +1,11 @@
 #include <Windows.h>
 #include <DbgHelp.h>
 #include "app_config.h"
-#include "unity.h"
 #include "../code/game/q_shared.h"
 
-
 #pragma comment(lib, "Dbghelp.lib")
-#pragma comment(lib, "unity.lib")
+
+#include "unity.h"
 
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 void Cbuf_ExecuteText(int exec_when, const char *text);
@@ -24,7 +23,7 @@ appConfig tearDownConfig;
 
 appConfig* allocConfig(int size)
 {
-	appConfig *curr, *head;
+	appConfig *curr, *head, *first;
 	head = NULL;
 
 	for (int i = 0; i < size; i++)
@@ -170,6 +169,31 @@ void threadFunc(appConfig config) {
 		clientIntialized = 0;
 		mapSet = 0;
 
+		// Assert
+		int expected = TRUE;
+		int actual = IsStateEqualTo((appConfig*)config.first->connstate);
+		TEST_ASSERT_EQUAL_INT(expected, actual);
+		int result = TestPassed();
+
+		puts("Test complated!");
+		puts("");
+		printf("Expected: %d\n", expected);
+		printf("  Actual: %d\n\n", actual);
+		printf("Test ");
+		if (result)
+		{
+			setColor(Color.green);
+			printf("PASSED");
+		} 
+		else
+		{
+			setColor(Color.red);
+			printf("FAILED");
+		}
+		setColor(Color.gray);
+		puts("");
+		puts("");
+
 		return;
 	}
 
@@ -181,13 +205,6 @@ void threadFunc(appConfig config) {
 	execConfig(config, time);
 
 	// Act
-
-	// Assert
-	int expected = 1;
-
-	int actual = IsStateEqualTo(config.connstate);
-
-	TEST_ASSERT_EQUAL_INT(expected, actual);
 
 	if (config.reset) {
 		puts("\n:::Resetting game state...:::\n");
@@ -359,10 +376,12 @@ appConfig PlayerConnectsToGame(){
 	ac->finished = FALSE;
 	ac->reset = FALSE;
 	ac->server = TRUE;
-	ac->connstate = CA_CONNECTED;
+	ac->connstate = (int)CA_CONNECTED;
 	ac->breakDown = FALSE;
+	ac->first = ac;
 
 	ac->next = &tearDownConfig;
+	ac->next->first = ac;
 
 	return *ac;
 }
