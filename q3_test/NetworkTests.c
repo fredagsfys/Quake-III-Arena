@@ -2,8 +2,11 @@
 #include <DbgHelp.h>
 #include "app_config.h"
 #include "unity.h"
+#include "../code/game/q_shared.h"
+
 
 #pragma comment(lib, "Dbghelp.lib")
+#pragma comment(lib, "unity.lib")
 
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 void Cbuf_ExecuteText(int exec_when, const char *text);
@@ -177,6 +180,15 @@ void threadFunc(appConfig config) {
 	int time = setupEnviroment();
 	execConfig(config, time);
 
+	// Act
+
+	// Assert
+	int expected = 1;
+
+	int actual = IsStateEqualTo(config.connstate);
+
+	TEST_ASSERT_EQUAL_INT(expected, actual);
+
 	if (config.reset) {
 		puts("\n:::Resetting game state...:::\n");
 		clientIntialized = 0;
@@ -280,9 +292,6 @@ void setupTests()
 	testCaseOne.testName = "Client kicked from game";
 	testCaseOne.testConfig = PlayerKickedFromGame();
 	addTestCase(testCaseOne);
-
-
-	// RINSE, REPEAT
 }
 
 void runTest(int testIndex) {
@@ -292,6 +301,8 @@ void runTest(int testIndex) {
 	{
 		activeTestConfig = tc.testConfig;
 		HANDLE threadHandle = startThread(tc.testFunction, &threadId);
+
+
 	}
 	
 }
@@ -348,6 +359,7 @@ appConfig PlayerConnectsToGame(){
 	ac->finished = FALSE;
 	ac->reset = FALSE;
 	ac->server = TRUE;
+	ac->connstate = CA_CONNECTED;
 	ac->breakDown = FALSE;
 
 	ac->next = &tearDownConfig;

@@ -11,13 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D67E80BA-3F1E-4312-A3D2-9BEA1ECAC812}</ProjectGuid>
+    <ProjectGuid>{73EE5632-55E8-4F7E-82FC-E1CD823B0A9B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>q3_test</RootNamespace>
+    <RootNamespace>Unity</RootNamespace>
+    <ProjectName>unity</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -41,10 +42,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\code\ui;$(ProjectDir)..\code\win32;$(ProjectDir)..\unity;$(ProjectDir)..\code\qcommon;$(ProjectDir)..\code\splines;$(IncludePath)</IncludePath>
-    <SourcePath>$(VC_SourcePath);</SourcePath>
-    <LibraryPath>
-    </LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -56,17 +53,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
-      <CompileAs>CompileAsC</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(WindowsSDK_LibraryPath_x86);$(VC_LibraryPath_x86);$(ProjectDir)../code/Debug;$(ProjectDir)../code/botlib/Debug;$(ProjectDir)../code/renderer/Debug;C:\Users\Haris\Documents\Github\Quake-III-Arena\unity\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>unity.lib;botlib.lib;renderer.lib;quake3.lib;Ws2_32.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>
-      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -87,36 +77,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="NetworkTests.c" />
+    <ClInclude Include="unity.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\code\cgame\cg_public.h" />
-    <ClInclude Include="..\code\cgame\tr_types.h" />
-    <ClInclude Include="..\code\client\client.h" />
-    <ClInclude Include="..\code\client\keys.h" />
-    <ClInclude Include="..\code\client\snd_local.h" />
-    <ClInclude Include="..\code\client\snd_public.h" />
-    <ClInclude Include="..\code\game\bg_public.h" />
-    <ClInclude Include="..\code\game\g_public.h" />
-    <ClInclude Include="..\code\game\q_shared.h" />
-    <ClInclude Include="..\code\game\surfaceflags.h" />
-    <ClInclude Include="..\code\qcommon\cm_local.h" />
-    <ClInclude Include="..\code\qcommon\cm_patch.h" />
-    <ClInclude Include="..\code\qcommon\cm_polylib.h" />
-    <ClInclude Include="..\code\qcommon\cm_public.h" />
-    <ClInclude Include="..\code\qcommon\qcommon.h" />
-    <ClInclude Include="..\code\qcommon\qfiles.h" />
-    <ClInclude Include="..\code\qcommon\unzip.h" />
-    <ClInclude Include="..\code\qcommon\vm_local.h" />
-    <ClInclude Include="..\code\renderer\qgl.h" />
-    <ClInclude Include="..\code\renderer\tr_local.h" />
-    <ClInclude Include="..\code\renderer\tr_public.h" />
-    <ClInclude Include="..\code\server\server.h" />
-    <ClInclude Include="..\code\ui\keycodes.h" />
-    <ClInclude Include="..\code\ui\ui_public.h" />
-    <ClInclude Include="..\code\win32\resource.h" />
-    <ClInclude Include="..\code\win32\win_local.h" />
-    <ClInclude Include="app_config.h" />
+    <ClCompile Include="unity.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

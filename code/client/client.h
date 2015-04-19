@@ -300,6 +300,7 @@ typedef struct {
 	qhandle_t	consoleShader;
 } clientStatic_t;
 
+extern connstate_t state;
 extern	clientStatic_t		cls;
 
 //=============================================================================
