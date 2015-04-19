@@ -10,6 +10,9 @@ void Cbuf_ExecuteText(int exec_when, const char *text);
 void CL_Init(void);
 int checkIfCommandExists(char* command);
 int Sys_MilliSeconds(void);
+appConfig PlayerConnectsToGame();
+appConfig PlayerDisconnectsFromGame();
+appConfig PlayerKickedFromGame();
 int clientIntialized = 0;
 int mapSet = 0;
 HANDLE conHandle;
@@ -164,47 +167,6 @@ void threadFunc(appConfig config) {
 	}
 }
 
-void configSetup(void) {
-
-	appConfig config;	
-	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
-	config.errorType = CONNECT_FAIL;
-	config.ptr = &threadFunc;
-	config.execString = "connect 127.0.0.1";
-	config.finished = FALSE;
-	config.reset = FALSE;
-	config.server = 1;
-	//config.next = NULL;
-
-	appConfig config2;
-	config2.testName = "TEST # 2 - Player tries to disconnect from a online game.\n";
-	config2.errorType = CONNECT_FAIL;
-	config2.ptr = &threadFunc;
-	config2.execString = "";
-	config2.finished = FALSE;
-	config2.prev = &config;
-	config2.next = 0;
-	config2.reset = FALSE;
-
-	config.next = &config2;
-
-	appConfig config3;
-	config3.testName = "TEST # 3 - Connected player gets kicked by host.\n";
-	config3.errorType = CONNECT_FAIL;
-	config3.ptr = &threadFunc;
-	config3.execString = "kick HSKINGEN2";
-	config3.finished = FALSE;
-	config3.prev = &config2;
-	config3.next = 0;
-	config3.reset = TRUE;
-
-	config2.next = &config3;
-
-	RunApplication(config, NULL, NULL, "", SW_SHOW);
-}
-
-
-
 HANDLE startThread(void* func, int* threadId) {
 	
 	return CreateThread(
@@ -214,11 +176,6 @@ HANDLE startThread(void* func, int* threadId) {
 		0,			// LPVOID lpvThreadParm,
 		0,			//   DWORD fdwCreate,
 		&threadId);
-}
-
-void startQuake(void) {
-	int threadId;
-	HANDLE threadHandle = startThread(&configSetup, &threadId);
 }
 
 int equals(char* c1, char* c2) {
@@ -288,37 +245,25 @@ void setupTests()
 	// BREAKDOWN CONFIG INIT
 	initBreakDownConfig();
 
-	// CREATE ALL TESTS HERE AND BIND TO FUNCTIONS
-
-	// CREATING TEST CONTAINER
+	// Arrange 
 	testCase testCaseOne;
 	testCaseOne.testFunction = &clientConnectivity;
-	testCaseOne.testName = "Client connectvity";
 
-	// CREATING TEST CONFIG THAT WILL BE RUN WITH THE QUAKE CODE
-	appConfig config;
-	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
-	config.errorType = CONNECT_FAIL;
-	config.ptr = &threadFunc;
-	config.execString = "connect 127.0.0.1";
-	config.finished = FALSE;
-	config.reset = FALSE;
-	config.server = TRUE;
-	config.breakDown = FALSE;
-
-	// POSSIBLITY TO ADD MORE CONFIGS TO A TEST IF THERE IS A NEED TO REACH A CERTAIN STATE
-	// USE config.next = &nextConfig;
-
-	// IF YOU WISH TO BREAK DOWN THE QUAKE ENVIRONMENT BEFORE FURTHER TESTS-
-	// ADD config.next = &breakDownConfig TO LAST TEST CONFIG
-
-	config.next = &breakDownConfig;
-
-	// ASSIGN CONFIG TO TEST CONTAINER
-	testCaseOne.testConfig = config;
-
-	// ADD TEST CASE TO COLLECTION
+	// Act 1
+	testCaseOne.testName = "Client connectivity";
+	testCaseOne.testConfig = PlayerConnectsToGame();
 	addTestCase(testCaseOne);
+
+	// Act 2
+	testCaseOne.testName = "Client disconnects";
+	testCaseOne.testConfig = PlayerDisconnectsFromGame();
+	addTestCase(testCaseOne);
+
+	// Act 3
+	testCaseOne.testName = "Client kicked from game";
+	testCaseOne.testConfig = PlayerKickedFromGame();
+	addTestCase(testCaseOne);
+
 
 	// RINSE, REPEAT
 }
@@ -372,12 +317,85 @@ int main(void) {
 			}
 		}
 
-		if (equals(line, "start")) {
-			startQuake();
-		}
-
 	} while (!equals(line, "exit"));
 }
+
+appConfig PlayerConnectsToGame(){
+
+	// Assign
+	appConfig config;
+	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
+	config.errorType = CONNECT_FAIL;
+	config.ptr = &threadFunc;
+	config.execString = "connect 127.0.0.1";
+	config.finished = FALSE;
+	config.reset = FALSE;
+	config.server = TRUE;
+	config.breakDown = FALSE;
+
+	config.next = &breakDownConfig;
+
+	return config;
+}
+
+appConfig PlayerDisconnectsFromGame(){
+
+	// Assign
+	appConfig config;
+	config.testName = "";
+	config.errorType = CONNECT_FAIL;
+	config.ptr = &threadFunc;
+	config.execString = "connect 127.0.0.1";
+	config.finished = FALSE;
+	config.reset = FALSE;
+	config.server = TRUE;
+	config.breakDown = FALSE;
+
+	appConfig config2;
+	config2.testName = "TEST # 2 - Player tries to disconnect from a online game.\n";
+	config2.errorType = CONNECT_FAIL;
+	config2.ptr = &threadFunc;
+	config2.execString = "disconnect";
+	config2.finished = FALSE;
+	config2.prev = &config;
+	config2.next = NULL;
+	config2.breakDown = FALSE;
+	config2.reset = FALSE;
+
+	config.next = &config2;
+	
+	return config;
+}
+
+appConfig PlayerKickedFromGame(){
+
+	// Assign
+	appConfig config;
+	config.testName = "";
+	config.errorType = CONNECT_FAIL;
+	config.ptr = &threadFunc;
+	config.execString = "connect 127.0.0.1";
+	config.finished = FALSE;
+	config.reset = FALSE;
+	config.server = TRUE;
+	config.breakDown = FALSE;
+
+	appConfig config2;
+	config2.testName = "TEST # 3 - Connected player gets kicked by host.\n";
+	config2.errorType = CONNECT_FAIL;
+	config2.ptr = &threadFunc;
+	config2.execString = "kick HSKINGEN2";
+	config2.finished = FALSE;
+	config2.prev = &config2;
+	config2.next = NULL;
+	config2.breakDown = FALSE;
+	config2.reset = TRUE;
+
+	config.next = &config2;
+
+	return config;
+}
+
 
 
 
