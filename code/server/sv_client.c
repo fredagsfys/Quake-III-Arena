@@ -1505,7 +1505,8 @@ void SV_ExecuteClientMessage( client_t *cl, msg_t *msg ) {
 			Com_DPrintf( "%s : dropped gamestate, resending\n", cl->name );
 			SV_SendClientGameState( cl );
 		}
-		return;
+		//return;
+		// OSKAR FIX
 	}
 
 	// read optional clientCommand strings
