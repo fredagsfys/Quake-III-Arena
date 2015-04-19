@@ -19,6 +19,23 @@ HANDLE conHandle;
 appConfig activeTestConfig;
 appConfig breakDownConfig;
 
+appConfig* allocConfig(int size)
+{
+	appConfig *curr, *head;
+	head = NULL;
+
+	for (int i = 0; i < size; i++)
+	{
+		curr = (appConfig*)malloc(sizeof(appConfig));
+		curr->next = head;
+		head = curr;
+	}
+
+	curr = head;
+
+	return curr;
+}
+
 void printStack(void)
 {
 	unsigned int   i;
@@ -323,7 +340,7 @@ int main(void) {
 appConfig PlayerConnectsToGame(){
 
 	// Assign
-	appConfig config;
+	appConfig config = *allocConfig(2);
 	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
 	config.errorType = CONNECT_FAIL;
 	config.ptr = &threadFunc;
@@ -338,33 +355,29 @@ appConfig PlayerConnectsToGame(){
 	return config;
 }
 
-appConfig PlayerDisconnectsFromGame(){
+appConfig PlayerDisconnectsFromGame() {
 
 	// Assign
-	appConfig config;
-	config.testName = "";
-	config.errorType = CONNECT_FAIL;
-	config.ptr = &threadFunc;
-	config.execString = "connect 127.0.0.1";
-	config.finished = FALSE;
-	config.reset = FALSE;
-	config.server = TRUE;
-	config.breakDown = FALSE;
+	appConfig* ac = allocConfig(2);
+	ac->testName = "";
+	ac->errorType = CONNECT_FAIL;
+	ac->ptr = &threadFunc;
+	ac->execString = "connect 127.0.0.1";
+	ac->finished = FALSE;
+	ac->reset = FALSE;
+	ac->server = TRUE;
+	ac->breakDown = FALSE;
 
-	appConfig config2;
-	config2.testName = "TEST # 2 - Player tries to disconnect from a online game.\n";
-	config2.errorType = CONNECT_FAIL;
-	config2.ptr = &threadFunc;
-	config2.execString = "disconnect";
-	config2.finished = FALSE;
-	config2.prev = &config;
-	config2.next = NULL;
-	config2.breakDown = FALSE;
-	config2.reset = FALSE;
-
-	config.next = &config2;
+	ac->next->testName = "TEST # 2 - Player tries to disconnect from a online game.\n";
+	ac->next->errorType = CONNECT_FAIL;
+	ac->next->ptr = &threadFunc;
+	ac->next->execString = "disconnect";
+	ac->next->finished = FALSE;
+	ac->next->next = NULL;
+	ac->next->breakDown = FALSE;
+	ac->next->reset = FALSE;
 	
-	return config;
+	return *ac;
 }
 
 appConfig PlayerKickedFromGame(){
@@ -386,7 +399,6 @@ appConfig PlayerKickedFromGame(){
 	config2.ptr = &threadFunc;
 	config2.execString = "kick HSKINGEN2";
 	config2.finished = FALSE;
-	config2.prev = &config2;
 	config2.next = NULL;
 	config2.breakDown = FALSE;
 	config2.reset = TRUE;

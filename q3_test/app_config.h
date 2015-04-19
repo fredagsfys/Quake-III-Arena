@@ -19,7 +19,6 @@ typedef struct appConfigT {
 	int* finished;
 	int* breakDown;
 	struct appConfigT *next;
-	struct appConfigT *prev;
 } appConfig;
 
 appConfig getConfig(void);

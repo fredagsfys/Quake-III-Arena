@@ -651,7 +651,8 @@ void CL_FlushMemory( void ) {
 		Hunk_ClearToMark();
 	}
 
-	CL_StartHunkUsers();
+	//CL_StartHunkUsers();
+	// OSKAR FIX
 }
 
 /*
