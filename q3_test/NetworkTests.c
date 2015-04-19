@@ -17,7 +17,7 @@ int clientIntialized = 0;
 int mapSet = 0;
 HANDLE conHandle;
 appConfig activeTestConfig;
-appConfig breakDownConfig;
+appConfig tearDownConfig;
 
 appConfig* allocConfig(int size)
 {
@@ -247,20 +247,20 @@ void addTestCase(testCase tc)
 	}
 }
 
-void initBreakDownConfig()
+void initTearDownConfig()
 {
-	breakDownConfig.ptr = &threadFunc;
-	breakDownConfig.execString = "quit";
-	breakDownConfig.finished = FALSE;
-	breakDownConfig.next = 0;
-	breakDownConfig.reset = TRUE;
-	breakDownConfig.breakDown = TRUE;
+	tearDownConfig.ptr = &threadFunc;
+	tearDownConfig.execString = "quit";
+	tearDownConfig.finished = FALSE;
+	tearDownConfig.next = 0;
+	tearDownConfig.reset = TRUE;
+	tearDownConfig.breakDown = TRUE;
 }
 
 void setupTests()
 {
 	// BREAKDOWN CONFIG INIT
-	initBreakDownConfig();
+	initTearDownConfig();
 
 	// Arrange 
 	testCase testCaseOne;
@@ -340,26 +340,26 @@ int main(void) {
 appConfig PlayerConnectsToGame(){
 
 	// Assign
-	appConfig config = *allocConfig(2);
-	config.testName = "TEST # 1 - Player tries to connect to a online game.\n";
-	config.errorType = CONNECT_FAIL;
-	config.ptr = &threadFunc;
-	config.execString = "connect 127.0.0.1";
-	config.finished = FALSE;
-	config.reset = FALSE;
-	config.server = TRUE;
-	config.breakDown = FALSE;
+	appConfig* ac = allocConfig(2);
+	ac->testName = "TEST # 1 - Player tries to connect to a online game.\n";
+	ac->errorType = CONNECT_FAIL;
+	ac->ptr = &threadFunc;
+	ac->execString = "connect 127.0.0.1";
+	ac->finished = FALSE;
+	ac->reset = FALSE;
+	ac->server = TRUE;
+	ac->breakDown = FALSE;
 
-	config.next = &breakDownConfig;
+	ac->next = &tearDownConfig;
 
-	return config;
+	return *ac;
 }
 
 appConfig PlayerDisconnectsFromGame() {
 
 	// Assign
 	appConfig* ac = allocConfig(2);
-	ac->testName = "";
+	ac->testName = "Arranging game state.\n";
 	ac->errorType = CONNECT_FAIL;
 	ac->ptr = &threadFunc;
 	ac->execString = "connect 127.0.0.1";
@@ -383,29 +383,26 @@ appConfig PlayerDisconnectsFromGame() {
 appConfig PlayerKickedFromGame(){
 
 	// Assign
-	appConfig config;
-	config.testName = "";
-	config.errorType = CONNECT_FAIL;
-	config.ptr = &threadFunc;
-	config.execString = "connect 127.0.0.1";
-	config.finished = FALSE;
-	config.reset = FALSE;
-	config.server = TRUE;
-	config.breakDown = FALSE;
+	appConfig* ac = allocConfig(2);
+	ac->testName = "Arranging game state";
+	ac->errorType = CONNECT_FAIL;
+	ac->ptr = &threadFunc;
+	ac->execString = "connect 127.0.0.1";
+	ac->finished = FALSE;
+	ac->reset = FALSE;
+	ac->server = TRUE;
+	ac->breakDown = FALSE;
 
-	appConfig config2;
-	config2.testName = "TEST # 3 - Connected player gets kicked by host.\n";
-	config2.errorType = CONNECT_FAIL;
-	config2.ptr = &threadFunc;
-	config2.execString = "kick HSKINGEN2";
-	config2.finished = FALSE;
-	config2.next = NULL;
-	config2.breakDown = FALSE;
-	config2.reset = TRUE;
+	ac->next->testName = "TEST # 3 - Connected player gets kicked by host.\n";
+	ac->next->errorType = CONNECT_FAIL;
+	ac->next->ptr = &threadFunc;
+	ac->next->execString = "kick HSKINGEN";
+	ac->next->finished = FALSE;
+	ac->next->next = NULL;
+	ac->next->breakDown = FALSE;
+	ac->next->reset = TRUE;
 
-	config.next = &config2;
-
-	return config;
+	return *ac;
 }
 
 
