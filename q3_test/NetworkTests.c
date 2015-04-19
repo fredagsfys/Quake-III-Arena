@@ -350,6 +350,7 @@ int main(void) {
 	do {
 
 		scanf("%s", line);
+		system("cls");
 
 		int number = atoi(line);
 		if (number <= MAX_TEST_CASES && number > 0)
