@@ -43,32 +43,7 @@ When an authorizeip is returned, a challenge response will be
 sent to that ip.
 =================
 */
-int IsStateEqualTo(char* playerName)
-{
-	client_t	*cl;
-	int			i;
-	char		cleanName[64];
 
-	// check for a name match
-	for (i = 0, cl = svs.clients; i < sv_maxclients->integer; i++, cl++) {
-		if (!cl->state) {
-			continue;
-		}
-		if (!Q_stricmp(cl->name, playerName)) {
-			return cl->state;
-		}
-
-		Q_strncpyz(cleanName, cl->name, sizeof(cleanName));
-		Q_CleanStr(cleanName);
-		if (!Q_stricmp(cleanName, playerName)) {
-			return cl->state;
-		}
-	}
-
-	Com_Printf("Player %s is not on the server\n", playerName);
-
-	return -1;
-}
 
 void SV_GetChallenge( netadr_t from ) {
 	int		i;

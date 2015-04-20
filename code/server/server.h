@@ -106,9 +106,6 @@ typedef enum {
 	CS_ACTIVE		// client is fully in game
 } clientState_t;
 
-
-int IsStateEqualTo(char* playerName);
-
 typedef struct netchan_buffer_s {
 	msg_t           msg;
 	byte            msgBuffer[MAX_MSGLEN];

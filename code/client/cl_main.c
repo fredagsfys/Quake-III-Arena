@@ -104,6 +104,12 @@ void CL_ShowIP_f(void);
 void CL_ServerStatus_f(void);
 void CL_ServerStatusResponse( netadr_t from, msg_t *msg );
 
+
+int IsStateEqualTo(void)
+{
+	return (int*)cls.state;
+}
+
 /*
 ===============
 CL_CDDialog

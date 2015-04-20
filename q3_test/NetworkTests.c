@@ -1,8 +1,7 @@
 #include <Windows.h>
 #include <DbgHelp.h>
-#include "../code/server/server.h"
 #include "../code/game/q_shared.h"
-
+#include "app_config.h"
 #pragma comment(lib, "Dbghelp.lib")
 
 #include "unity.h"
@@ -164,7 +163,7 @@ void threadFunc(appConfig config) {
 	{
 		// Assert
 		int expected = (appConfig*)config.first->connstate;
-		int actual = IsStateEqualTo("HSKINGEN2");
+		int actual = IsStateEqualTo();
 		TEST_ASSERT_EQUAL_INT(expected, actual);
 		int result = TestPassed();
 
@@ -372,7 +371,7 @@ appConfig PlayerConnectsToGame(){
 	ac->finished = FALSE;
 	ac->reset = FALSE;
 	ac->server = TRUE;
-	ac->connstate = (int)CS_CONNECTED;
+	ac->connstate = (int)CA_CONNECTED;
 	ac->breakDown = FALSE;
 
 	ac->next = allocTearDownConfig();
@@ -391,7 +390,7 @@ appConfig PlayerDisconnectsFromGame() {
 	ac->execString = "connect 127.0.0.1";
 	ac->finished = FALSE;
 	ac->reset = FALSE;
-	ac->connstate = (int)CS_FREE;
+	ac->connstate = (int)CA_DISCONNECTED;
 	ac->server = TRUE;
 	ac->breakDown = FALSE;
 
@@ -419,7 +418,7 @@ appConfig PlayerKickedFromGame(){
 	ac->execString = "connect 127.0.0.1";
 	ac->finished = FALSE;
 	ac->reset = FALSE;
-	ac->connstate = (int)CS_FREE;
+	ac->connstate = (int)CA_DISCONNECTED;
 	ac->server = TRUE;
 	ac->breakDown = FALSE;
 
