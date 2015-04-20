@@ -377,6 +377,9 @@ static void SV_Kick_f( void ) {
 
 	SV_DropClient( cl, "was kicked" );
 	cl->lastPacketTime = svs.time;	// in case there is a funny zombie
+
+	NET_OutOfBandPrint(NS_SERVER, cl->netchan.remoteAddress, "disconnectResponse");
+
 }
 
 /*

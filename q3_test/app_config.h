@@ -11,14 +11,13 @@ typedef struct appConfigT {
 	simulatedError errorType;
 	int* connstate;
 	void* ptr;
-	void* commandPtr;
 	int* server;
 	int* reset;
 	char* testName;
-	char* commandName;
 	char* execString;
 	int* finished;
 	int* breakDown;
+	int* timeout;
 	struct appConfigT *first;
 	struct appConfigT *next;
 } appConfig;

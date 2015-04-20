@@ -39,6 +39,7 @@ appConfig* allocConfig(int size)
 	{
 		curr = (appConfig*)malloc(sizeof(appConfig));
 		curr->next = head;
+		curr->timeout = 0;
 		head = curr;
 	}
 
@@ -195,6 +196,11 @@ void threadFunc(appConfig config) {
 		return;
 	}
 
+	if (config.timeout > 0)
+	{
+		return;
+	}
+
 	setColor(Color.green);
 	printf(config.testName);
 	setColor(Color.gray);
@@ -209,6 +215,19 @@ void threadFunc(appConfig config) {
 		clientIntialized = 0;
 		mapSet = 0;
 	}
+}
+
+appConfig* allocTimeoutConfig()
+{
+	appConfig* config = allocConfig(1);
+	config->ptr = &threadFunc;
+	config->execString = "";
+	config->finished = FALSE;
+	config->next = 0;
+	config->reset = FALSE;
+	config->breakDown = FALSE;
+	config->timeout = 100;
+	return config;
 }
 
 appConfig* allocTearDownConfig()
@@ -412,7 +431,7 @@ appConfig PlayerKickedFromGame(){
 
 	// Assign
 	appConfig* ac = allocConfig(2);
-	ac->testName = "Arranging game state";
+	ac->testName = "Arranging game state\n";
 	ac->errorType = CONNECT_FAIL;
 	ac->ptr = &threadFunc;
 	ac->execString = "connect 127.0.0.1";
@@ -425,14 +444,17 @@ appConfig PlayerKickedFromGame(){
 	ac->next->testName = "TEST # 3 - Connected player gets kicked by host.\n";
 	ac->next->errorType = CONNECT_FAIL;
 	ac->next->ptr = &threadFunc;
-	ac->next->execString = "kick HSKINGEN";
+	ac->next->execString = "kick HSKINGEN2";
 	ac->next->finished = FALSE;
 	ac->next->next = NULL;
 	ac->next->breakDown = FALSE;
-	ac->next->reset = TRUE;
+	ac->next->reset = FALSE;
 
-	ac->next->next = allocTearDownConfig();
-	ac->next->next->first = ac;
+	appConfig* ac2 = ac->next;
+	ac2->next = allocTimeoutConfig();
+
+	ac2->next->next = allocTearDownConfig();
+	ac2->next->next->first = ac;
 
 	return *ac;
 }

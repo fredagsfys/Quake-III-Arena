@@ -1795,6 +1795,15 @@ void CL_ConnectionlessPacket( netadr_t from, msg_t *msg ) {
 
 	Com_DPrintf ("CL packet %s: %s\n", NET_AdrToString(from), c);
 
+	// OSKAR FIX - DISCONNECT RESPONSE FROM SERVER BECAUASE OF KICK
+	if (!Q_stricmp(c, "disconnectResponse")) {
+		if (cls.state == CA_CONNECTED)
+		{
+			CL_Disconnect(qtrue);
+		}
+		return;
+	}
+
 	// challenge from the server we are connecting to
 	if ( !Q_stricmp(c, "challengeResponse") ) {
 		if ( cls.state != CA_CONNECTING ) {
