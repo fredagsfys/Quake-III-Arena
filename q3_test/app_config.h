@@ -7,6 +7,14 @@ typedef enum simulatedError {
 	CONNECTED,
 } simulatedError;
 
+typedef struct printStack_s {
+	char* line;
+	struct printStack_s *next;
+	struct printStack_s *prev;
+	struct printStack_s *last;
+	int* combinedLength;
+} printStack_s;
+
 typedef struct appConfigT {
 	simulatedError errorType;
 	void* printStackPtr;

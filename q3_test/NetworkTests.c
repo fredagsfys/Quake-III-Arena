@@ -19,6 +19,9 @@ int mapSet = 0;
 HANDLE conHandle;
 appConfig activeTestConfig;
 
+printStack_s printStacks[2];
+int printStackNumber = -1;
+
 #define MAX_TEST_CASES 10
 
 typedef struct testCase {
@@ -29,6 +32,15 @@ typedef struct testCase {
 
 testCase testCases[MAX_TEST_CASES];
 int testCaseAmount;
+
+void stackTraceAnalysis(void)
+{
+	printStack_s faultStack = printStacks[0];
+	printStack_s runStack = printStacks[1];
+
+
+
+}
 
 appConfig* allocConfig(int size)
 {
@@ -154,6 +166,9 @@ void threadFunc(appConfig config) {
 		{
 			setColor(Color.red);
 			printf(":::FAILED:::");
+
+			// ANALYSIS OF STACKTRACES
+			stackTraceAnalysis();
 		}
 		setColor(Color.gray);
 		puts("");
@@ -165,6 +180,9 @@ void threadFunc(appConfig config) {
 		puts("\n:::Resetting game state...:::\n");
 		clientIntialized = 0;
 		mapSet = 0;
+		printStackNumber = -1;
+
+		free(config.first);
 
 		return;
 	}
@@ -187,7 +205,29 @@ void threadFunc(appConfig config) {
 		puts("\n:::Resetting game state...:::\n");
 		clientIntialized = 0;
 		mapSet = 0;
+		printStackNumber = -1;
 	}
+}
+
+printStack_s* allocPrintStacks(int size)
+{
+	printStack_s *curr, *head, *last;
+	head = NULL;
+
+	for (int i = 0; i < size; i++)
+	{
+		curr = (printStack_s*)malloc(sizeof(printStack_s));
+		if (head != NULL) head->prev = curr;
+		if (i == 0) last = curr;
+		curr->next = head;
+		head = curr;
+	}
+
+	curr = head;
+	curr->last = last;
+	curr->combinedLength = size;
+
+	return curr;
 }
 
 appConfig* allocTimeoutConfig()
@@ -432,6 +472,16 @@ appConfig PlayerKickedFromGame(){
 	return *ac;
 }
 
+void setPrintStackValues(struct printStack_s *s, char** values)
+{
+	int i = 0;
+	while (s)
+	{
+		s->line = values[i++];
+		s = s->next;
+	}
+}
+
 void printStack(void)
 {
 	unsigned int   i;
@@ -449,12 +499,21 @@ void printStack(void)
 	symbol->MaxNameLen = 255;
 	symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
 
+	printStack_s* ps = allocPrintStacks(frames);
+	char* stackFrames[100];
+
 	for (i = 0; i < frames; i++)
 	{
+		stackFrames[i] = (char*)malloc(100);
+		char str[100];
 		SymFromAddr(process, (DWORD64)(stack[i]), 0, symbol);
-
-		printf("%i: %s - 0x%0X\n", frames - i - 1, symbol->Name, symbol->Address);
+		sprintf(str, "%i: %s - 0x%0X\n", frames - i - 1, symbol->Name, symbol->Address);
+		strcpy(stackFrames[i], str);
 	}
+
+	setPrintStackValues(ps, stackFrames);
+
+	printStacks[++printStackNumber] = *ps;
 
 	free(symbol);
 }
