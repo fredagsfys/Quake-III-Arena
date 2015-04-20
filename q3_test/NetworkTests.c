@@ -74,6 +74,29 @@ void setColor(int* color)
 	SetConsoleTextAttribute(conHandle, color);
 }
 
+char* getFunctionNameFromLineInfo(char* line)
+{
+	char* lineCopy = (char*)malloc(100);
+	strcpy(lineCopy, line);
+	char *token = strtok(lineCopy, "-");
+	char* tok = strtok(token, ":");
+	tok = strtok(NULL, ":");
+	return tok;
+}
+
+int getLineNumberFromLineInfo(char* line)
+{
+	char* lineCopy = (char*)malloc(100);
+	strcpy(lineCopy, line);
+	char *token = strtok(lineCopy, ";");
+	while (token != NULL)
+	{
+		char* tok = strtok(NULL, ";");
+		token = strtok(NULL, ";");
+		if (token == NULL) return atoi(tok);
+	}
+}
+
 void stackTraceAnalysis(void)
 {
 	printStack_s faultStack = printStacks[0];
@@ -85,20 +108,27 @@ void stackTraceAnalysis(void)
 	int methodVariance = fsl > rsl ? fsl - rsl : rsl - fsl;
 
 	setColor(Color.yellow);
-	puts(" == STACK TRACE ANALYSIS ==\n");
+	puts(" == STACK TRACE ANALYSIS == \n");
 	
 	setColor(Color.green);
-	puts(" - Method calls -\n");
+	puts(" - Method calls - \n");
 	setColor(Color.gray);
 
-	printf("  Faultstack: %d\n", faultStack.combinedLength);
-	printf("    Runstack: %d\n\n", runStack.combinedLength);
-	printf("    Variance: %d\n\n", methodVariance);
+	printf("  Faultstack: %d \n", faultStack.combinedLength);
+	printf("    Runstack: %d \n\n", runStack.combinedLength);
+	printf("    Variance: %d \n\n", methodVariance);
 
 	setColor(Color.green);
-	puts(" - Fault observation -");
+	puts(" - Fault observation - \n");
 	setColor(Color.gray);
 
+	printf("  Fault introduced at line: %d - in function: %s \n", 
+		getLineNumberFromLineInfo(faultStack.next->line), 
+		getFunctionNameFromLineInfo(faultStack.next->line));
+
+	printf("   Test discovered at line: %d - in function: %s \n", 
+		getLineNumberFromLineInfo(runStack.next->line),
+		getFunctionNameFromLineInfo(runStack.next->line));
 }
 
 void setupClient()
@@ -511,10 +541,16 @@ void printStack(void)
 	unsigned short frames;
 	SYMBOL_INFO  * symbol;
 	HANDLE         process;
+	DWORD64  dwAddress;
+	DWORD  dwDisplacement;
+	IMAGEHLP_LINE64 line;
+
+	line.SizeOfStruct = sizeof(IMAGEHLP_LINE);
 
 	process = GetCurrentProcess();
 
 	SymInitialize(process, NULL, TRUE);
+	SymSetOptions(SYMOPT_LOAD_LINES);
 
 	frames = CaptureStackBackTrace(0, 100, stack, NULL);
 	symbol = (SYMBOL_INFO *)calloc(sizeof(SYMBOL_INFO) + 256 * sizeof(char), 1);
@@ -529,7 +565,14 @@ void printStack(void)
 		stackFrames[i] = (char*)malloc(100);
 		char str[100];
 		SymFromAddr(process, (DWORD64)(stack[i]), 0, symbol);
-		sprintf(str, "%i: %s - 0x%0X\n", frames - i - 1, symbol->Name, symbol->Address);
+		if (i == 1) 
+		{
+			if (!SymGetLineFromAddr64(process, symbol->Address, &dwDisplacement, &line)) { /* LINE FAILED */ }
+		}
+		char test[50];
+		sprintf(test, " - Line; %lu", line.LineNumber);
+		sprintf(str, "%i: %s - 0x%0X", frames - i - 1, symbol->Name, symbol->Address, line.LineNumber);
+		strcat(str, test);
 		strcpy(stackFrames[i], str);
 	}
 
