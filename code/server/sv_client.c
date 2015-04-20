@@ -251,11 +251,11 @@ void SV_DirectConnect( netadr_t from ) {
 	appConfig config = getConfig();
 
 	void(*printTheStack)(void) = config.printStackPtr;
-	printTheStack();
 
 	// OSKAR FIX TEST
 	if (config.errorType == SERVER_REJECT) {
 		Com_Printf("Client named '%s' was rejected.\n", Info_ValueForKey(userinfo, "name"));
+		printTheStack();
 		return;
 	}
 

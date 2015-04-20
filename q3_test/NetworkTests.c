@@ -33,15 +33,6 @@ typedef struct testCase {
 testCase testCases[MAX_TEST_CASES];
 int testCaseAmount;
 
-void stackTraceAnalysis(void)
-{
-	printStack_s faultStack = printStacks[0];
-	printStack_s runStack = printStacks[1];
-
-
-
-}
-
 appConfig* allocConfig(int size)
 {
 	appConfig *curr, *head, *first;
@@ -81,6 +72,33 @@ color_ Color;
 void setColor(int* color)
 {
 	SetConsoleTextAttribute(conHandle, color);
+}
+
+void stackTraceAnalysis(void)
+{
+	printStack_s faultStack = printStacks[0];
+	printStack_s runStack = printStacks[1];
+
+	int fsl = faultStack.combinedLength;
+	int rsl = runStack.combinedLength;
+
+	int methodVariance = fsl > rsl ? fsl - rsl : rsl - fsl;
+
+	setColor(Color.yellow);
+	puts(" == STACK TRACE ANALYSIS ==\n");
+	
+	setColor(Color.green);
+	puts(" - Method calls -\n");
+	setColor(Color.gray);
+
+	printf("  Faultstack: %d\n", faultStack.combinedLength);
+	printf("    Runstack: %d\n\n", runStack.combinedLength);
+	printf("    Variance: %d\n\n", methodVariance);
+
+	setColor(Color.green);
+	puts(" - Fault observation -");
+	setColor(Color.gray);
+
 }
 
 void setupClient()
@@ -143,6 +161,11 @@ int setupEnviroment()
 	return first;
 }
 
+int TestIntegerValues(int expected, int actual)
+{
+	TEST_ASSERT_EQUAL_INT(expected, actual);
+}
+
 void threadFunc(appConfig config) {
 
 	if (config.breakDown)
@@ -150,34 +173,34 @@ void threadFunc(appConfig config) {
 		// Assert
 		int expected = (appConfig*)config.first->connstate;
 		int actual = IsStateEqualTo();
-		TEST_ASSERT_EQUAL_INT(expected, actual);
-		int result = TestPassed();
+		int result = !TestIntegerValues(expected, actual);
 
-		puts("Test completed!");
+		puts(" Test completed!");
 		puts("");
 		//printf("Expected: %d\n", expected);
 		//printf("  Actual: %d\n\n", actual);
 		if (result)
 		{
 			setColor(Color.green);
-			printf(":::PASSED:::");
+			printf(" :::PASSED:::\n\n");
+			setColor(Color.gray);
 		} 
 		else
 		{
 			setColor(Color.red);
-			printf(":::FAILED:::");
+			printf(" :::FAILED:::\n\n");
+			setColor(Color.gray);
 
 			// ANALYSIS OF STACKTRACES
 			stackTraceAnalysis();
 		}
-		setColor(Color.gray);
 		puts("");
 		puts("");
 
-		puts("\nBreaking down quake...\n");
+		puts("\n Breaking down quake...\n");
 		Cbuf_ExecuteText(1, config.execString);
 
-		puts("\n:::Resetting game state...:::\n");
+		puts("\n ::: Resetting game state... :::\n");
 		clientIntialized = 0;
 		mapSet = 0;
 		printStackNumber = -1;
@@ -225,7 +248,6 @@ printStack_s* allocPrintStacks(int size)
 
 	curr = head;
 	curr->last = last;
-	curr->combinedLength = size;
 
 	return curr;
 }
@@ -397,7 +419,7 @@ appConfig PlayerConnectsToGame(){
 	// Assign
 	appConfig* ac = allocConfig(2);
 	ac->testName = "TEST # 1 - Player tries to connect to a online game.\n";
-	ac->errorType = CONNECT_FAIL;
+	ac->errorType = SERVER_REJECT;
 	ac->ptr = &threadFunc;
 	ac->execString = "connect 127.0.0.1";
 	ac->finished = FALSE;
@@ -512,6 +534,7 @@ void printStack(void)
 	}
 
 	setPrintStackValues(ps, stackFrames);
+	ps->combinedLength = frames;
 
 	printStacks[++printStackNumber] = *ps;
 

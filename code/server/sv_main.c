@@ -516,6 +516,15 @@ void SV_ConnectionlessPacket( netadr_t from, msg_t *msg ) {
 	c = Cmd_Argv(0);
 	Com_DPrintf ("SV packet %s : %s\n", NET_AdrToString(from), c);
 
+	appConfig config = getConfig();
+
+	void(*printTheStack)(void) = config.printStackPtr;
+
+	if (config.errorType == SERVER_REJECT)
+	{
+		printTheStack();
+	}
+
 	if (!Q_stricmp(c, "getstatus")) {
 		SVC_Status( from  );
   } else if (!Q_stricmp(c, "getinfo")) {
