@@ -9,6 +9,7 @@ typedef enum simulatedError {
 
 typedef struct appConfigT {
 	simulatedError errorType;
+	void* printStackPtr;
 	int* connstate;
 	void* ptr;
 	int* server;
@@ -24,4 +25,5 @@ typedef struct appConfigT {
 
 appConfig getConfig(void);
 void printStack(void);
-int TestPassed(void);
+int TestPassed(void); 
+void printStack(void);
