@@ -2677,7 +2677,6 @@ void Com_Frame( void ) {
 	timeBeforeClient = 0;
 	timeAfter = 0;
 
-
 	// old net chan encryption key
 	key = 0x87243987;
 

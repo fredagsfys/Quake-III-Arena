@@ -1,10 +1,9 @@
 #include <Windows.h>
 #include <DbgHelp.h>
-#include "../code/game/q_shared.h"
 #include "app_config.h"
-#pragma comment(lib, "Dbghelp.lib")
-
+#include "../code/game/q_shared.h"
 #include "unity.h"
+#pragma comment(lib, "Dbghelp.lib")
 
 int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 void Cbuf_ExecuteText(int exec_when, const char *text);

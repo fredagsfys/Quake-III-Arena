@@ -1,6 +1,6 @@
  qagamex86
 
- Timestamp is 55355de5 (Mon Apr 20 22:13:25 2015)
+ Timestamp is 55365faa (Tue Apr 21 16:33:14 2015)
 
  Preferred load address is 20000000
 
@@ -42,9 +42,9 @@
   Address         Publics by Value              Rva+Base       Lib:Object
 
  0000:00000000       ___guard_fids_table        00000000     <absolute>
- 0000:00000000       ___guard_flags             00000000     <absolute>
  0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___guard_fids_count        00000000     <absolute>
+ 0000:00000000       ___guard_flags             00000000     <absolute>
  0000:0000000c       ___safe_se_handler_count   0000000c     <absolute>
  0000:00000000       ___ImageBase               20000000     <linker-defined>
  0001:00000000       _BotChatTest               20001000 f   ai_chat.obj
@@ -1757,8 +1757,8 @@
  0001:00097cb0       ??0bad_exception@std@@QAE@ABV01@@Z 20098cb0 f i LIBCMTD:frame.obj
  0001:00097ce0       ??0bad_exception@std@@QAE@PBD@Z 20098ce0 f i LIBCMTD:frame.obj
  0001:00097d10       ??1bad_exception@std@@UAE@XZ 20098d10 f i LIBCMTD:frame.obj
- 0001:00097d30       ??_Gbad_exception@std@@UAEPAXI@Z 20098d30 f i LIBCMTD:frame.obj
  0001:00097d30       ??_Ebad_exception@std@@UAEPAXI@Z 20098d30 f i LIBCMTD:frame.obj
+ 0001:00097d30       ??_Gbad_exception@std@@UAEPAXI@Z 20098d30 f i LIBCMTD:frame.obj
  0001:00098920       ?__uncaught_exception@@YA_NXZ 20099920 f   LIBCMTD:frame.obj
  0001:00098950       ?_is_exception_typeof@@YAHABVtype_info@@PAU_EXCEPTION_POINTERS@@@Z 20099950 f   LIBCMTD:frame.obj
  0001:00098a30       __SetWinRTOutOfMemoryExceptionCallback 20099a30 f   LIBCMTD:frame.obj
@@ -1877,8 +1877,8 @@
  0001:000a14f0       ??4type_info@@AAEAAV0@ABV0@@Z 200a24f0 f   LIBCMTD:typinfo.obj
  0001:000a1500       ??8type_info@@QBE_NABV0@@Z 200a2500 f   LIBCMTD:typinfo.obj
  0001:000a1540       ??9type_info@@QBE_NABV0@@Z 200a2540 f   LIBCMTD:typinfo.obj
- 0001:000a1580       ??_Etype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
  0001:000a1580       ??_Gtype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
+ 0001:000a1580       ??_Etype_info@@UAEPAXI@Z   200a2580 f i LIBCMTD:typinfo.obj
  0001:000a15b0       ?_name_internal_method@type_info@@QBEPBDPAU__type_info_node@@@Z 200a25b0 f   LIBCMTD:typinfo.obj
  0001:000a15d0       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 200a25d0 f   LIBCMTD:typinfo.obj
  0001:000a15f0       ?before@type_info@@QBE_NABV1@@Z 200a25f0 f   LIBCMTD:typinfo.obj
@@ -1901,8 +1901,8 @@
  0001:000a18f0       ??4exception@std@@QAEAAV01@ABV01@@Z 200a28f0 f   LIBCMTD:stdexcpt.obj
  0001:000a1940       ??_E__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
  0001:000a1940       ??_G__non_rtti_object@std@@UAEPAXI@Z 200a2940 f i LIBCMTD:stdexcpt.obj
- 0001:000a1970       ??_Ebad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
  0001:000a1970       ??_Gbad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
+ 0001:000a1970       ??_Ebad_cast@std@@UAEPAXI@Z 200a2970 f i LIBCMTD:stdexcpt.obj
  0001:000a19a0       ??_Ebad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
  0001:000a19a0       ??_Gbad_typeid@std@@UAEPAXI@Z 200a29a0 f i LIBCMTD:stdexcpt.obj
  0001:000a19d0       ??_Eexception@std@@UAEPAXI@Z 200a29d0 f i LIBCMTD:stdexcpt.obj
@@ -3385,7 +3385,7 @@
  0002:00004ddc       ??_C@_08HCPAIKAO@gamename?$AA@ 200b4ddc     g_main.obj
  0002:00004de8       ??_C@_06KOMAFLML@baseq3?$AA@ 200b4de8     g_main.obj
  0002:00004df0       ??_C@_08CLLHAKFA@gamedate?$AA@ 200b4df0     g_main.obj
- 0002:00004dfc       ??_C@_0M@GFPGONMI@Apr?520?52015?$AA@ 200b4dfc     g_main.obj
+ 0002:00004dfc       ??_C@_0M@MDIBOGHM@Apr?521?52015?$AA@ 200b4dfc     g_main.obj
  0002:00004e08       ??_C@_0M@GHMJJAD@g_restarted?$AA@ 200b4e08     g_main.obj
  0002:00004e14       ??_C@_0L@DFBEGALI@sv_mapname?$AA@ 200b4e14     g_main.obj
  0002:00004e20       ??_C@_0BB@JCLDAPBF@g_maxGameClients?$AA@ 200b4e20     g_main.obj

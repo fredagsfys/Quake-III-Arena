@@ -1246,9 +1246,8 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 
 		// make sure mouse and joystick are only called once a frame
 		IN_Frame();
-
-		// run the game
 		Com_Frame();
+
 
 		endTime = Sys_Milliseconds();
 		totalMsec += endTime - startTime;
@@ -1301,6 +1300,8 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 		Sys_ShowConsole(0, qfalse);
 	}
 
+
+
 	// main game loop
 	while (1) {
 		// if not running as a game client, sleep a bit
@@ -1318,7 +1319,6 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 
 		// make sure mouse and joystick are only called once a frame
 		IN_Frame();
-
 		// run the game
 		Com_Frame();
 
@@ -1330,7 +1330,8 @@ int RunApplication(appConfig config, HINSTANCE hInstance, HINSTANCE hPrevInstanc
 				testing(activeConfig);
 				activeConfig.finished = 1;
 			}
-		} else {
+		}
+		else {
 			void(*testing)(appConfig config) = activeConfig.ptr;
 			testing(activeConfig);
 			activeConfig.finished = 1;

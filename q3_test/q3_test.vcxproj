@@ -63,8 +63,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(WindowsSDK_LibraryPath_x86);$(VC_LibraryPath_x86);$(ProjectDir)../code/Debug;$(ProjectDir)../code/botlib/Debug;$(ProjectDir)../code/renderer/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>unity.lib;botlib.lib;renderer.lib;quake3.lib;Ws2_32.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(WindowsSDK_LibraryPath_x86);$(VC_LibraryPath_x86);$(ProjectDir)../code/Debug;$(ProjectDir)../code/botlib/Debug;$(ProjectDir)../code/renderer/Debug;$(ProjectDir)../e4c;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>e4c.lib;unity.lib;botlib.lib;renderer.lib;quake3.lib;Ws2_32.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
