@@ -1773,6 +1773,12 @@ void CL_ServersResponsePacket( netadr_t from, msg_t *msg ) {
 	Com_Printf("%d servers parsed (total %d)\n", numservers, total);
 }
 
+void testSignal2(int signal_number)
+{
+	printf("Signal: %d", signal_number);
+}
+
+
 /*
 =================
 CL_ConnectionlessPacket
@@ -1792,6 +1798,15 @@ void CL_ConnectionlessPacket( netadr_t from, msg_t *msg ) {
 	Cmd_TokenizeString( s );
 
 	c = Cmd_Argv(0);
+
+
+	typedef void(*SignalHandlerPointer)(int);
+	SignalHandlerPointer previousHandler;
+
+	previousHandler = signal(SIGSEGV, testSignal2);
+
+	int *pointer = NULL;
+	int hej = *pointer;
 
 	Com_DPrintf ("CL packet %s: %s\n", NET_AdrToString(from), c);
 

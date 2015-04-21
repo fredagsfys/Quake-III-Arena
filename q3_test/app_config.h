@@ -1,3 +1,5 @@
+#include <signal.h>
+
 typedef enum simulatedError {
 	CLIENT_DROPPED,
 	SERVER_KICKED,
